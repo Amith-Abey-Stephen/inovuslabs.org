@@ -1,6 +1,27 @@
 import axios from 'axios';
 
 const BASE_URL = "https://storage.googleapis.com/inovuslabs-cdn.appspot.com";
+// Firebase imports
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, get } from "firebase/database"; // Make sure 'get' is imported
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
+  databaseURL: import.meta.env.VITE_APP_FIREBASE_DATABASE_URL
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+
+
+
 
 
 let stockList = [
@@ -1202,10 +1223,18 @@ export const getBlogAuthors = async () => {
 // Get recent podcasts published on Inora: The Inovus Radio
 export const getPodcasts = async () => {
 
-    return [
-        //latest is added at the top
+const reference = ref(database, 'data'); // Replace with your Firebase node path
 
-        {
+    try {
+        const snapshot = await get(reference);
+        const data = snapshot.val();
+
+        const ids = Object.values(data).map(item => ({ id: item.id }));
+        return ids;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+         return [
+            {
             id: "097IqRJucvwRpT381XLPap",
         },
         {
@@ -1226,9 +1255,10 @@ export const getPodcasts = async () => {
         {
             id: "4NM5QuIiDVeUAy8FaKou4Q",
         },
-    ]
+         ];
+    };
+}
 
-};
 
 
 // Get all activity
@@ -4505,122 +4535,122 @@ export const getTeamMembers = async () => {
                 }, 
             ]
         }, {
-            title: 'Inovus 2nd Generation',
-            date: '2018-2020',
-            showTeam: false,
-            members: [
+                title: 'Inovus 2nd Generation',
+                date: '2018-2020',
+                showTeam: false,
+                members: [
+
+                    {
+                        name: ' Roji Thomas',
+                        position: 'Nodal Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/roji1978",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
+                        }
+                    }, {
+                        name: ' Jithin Shah',
+                        position: 'Student Co-ordinator',
+                    avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/last_riddler",
+                            github: "https://github.com/Waterloo",
+                            linkedin: "https://www.linkedin.com/in/jithinsha"
+                        }
+                    }, {
+                        name: ' Laya Anna Lalan',
+                        position: 'Chief Executive Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/layaanna.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/_laya.anna_",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/layaannalalan"
+                        }
+                    }, {
+                        name: ' Midhun Murali',
+                        position: 'Chief Technical Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/midhunmurali.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/midhun_art",
+                            github: "",
+                            linkedin: ""
+                        }
+                    }, {
+                        name: ' Megha Manoj',
+                        position: 'Chief Financial Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/meghamanoj.jpg',
+                        social: {
+                            instagram: "",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/megha-manoj-598057162"
+                        }
+                    }, {
+                        name: ' Karpaka Devi',
+                        position: 'Chief Marketing Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/karpaka.jpg',
+                        social: {
+                            instagram: "",
+                            github: "",
+                            linkedin: ""
+                        }
+                    }, {
+                        name:' Arjun Krishna',
+                        position: 'Chief Innovations Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/decoded_cipher",
+                            github: "https://github.com/decoded-cipher",
+                            linkedin: "https://www.linkedin.com/in/-arjunkrishna"
+                        }
+                    }, {
+                        name: ' Johna Aswin Selva',
+                        position: 'Chief Operations Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/johnaaswin.jpg',
+                        social: {
+                            instagram: "",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/johna-aswin-selva"
+                        }
+                    },{
+                        name:' Justin Titus',
+                        position: 'Chief Creative Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/justin.jpg',
+                        social: {
+                            instagram: "https://www.instagram.com/justinkuriantitus",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/justin-titus-psycho-oncologist-151458a8"
+                        }
+                    }, {
+                        name: ' Alan Varghese ',
+                        position: 'Chief Social Officer',
+                    avatar: BASE_URL + '/assets/team/2018-2020/alanvarghese.jpg',
+                        social: {
+                            instagram: "",
+                            github: "",
+                            linkedin: "https://www.linkedin.com/in/mindtraveller64"
+                        }
+                    },  
+                ]
+            }, {
+                title: 'The Founders of Inovus Labs IEDC',
+                date: '2017',
+                showTeam: false,
+                members: [
 
                 {
-                    name: ' Roji Thomas',
-                    position: 'Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/roji1978",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
-                    }
-                }, {
-                    name: ' Jithin Shah',
-                    position: 'Student Co-ordinator',
-                   avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/last_riddler",
-                        github: "https://github.com/Waterloo",
-                        linkedin: "https://www.linkedin.com/in/jithinsha"
-                    }
-                }, {
-                    name: ' Laya Anna Lalan',
-                    position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/layaanna.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/_laya.anna_",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/layaannalalan"
-                    }
-                }, {
-                    name: ' Midhun Murali',
-                    position: 'Chief Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/midhunmurali.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/midhun_art",
-                        github: "",
-                        linkedin: ""
-                    }
-                }, {
-                    name: ' Megha Manoj',
-                    position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/meghamanoj.jpg',
-                    social: {
-                        instagram: "",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/megha-manoj-598057162"
-                    }
-                }, {
-                    name: ' Karpaka Devi',
-                    position: 'Chief Marketing Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/karpaka.jpg',
-                    social: {
-                        instagram: "",
-                        github: "",
-                        linkedin: ""
-                    }
-                }, {
-                    name:' Arjun Krishna',
-                    position: 'Chief Innovations Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/decoded_cipher",
-                        github: "https://github.com/decoded-cipher",
-                        linkedin: "https://www.linkedin.com/in/-arjunkrishna"
-                    }
-                }, {
-                    name: ' Johna Aswin Selva',
-                    position: 'Chief Operations Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/johnaaswin.jpg',
-                    social: {
-                        instagram: "",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/johna-aswin-selva"
-                    }
-                },{
-                    name:' Justin Titus',
-                    position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/justin.jpg',
-                    social: {
-                        instagram: "https://www.instagram.com/justinkuriantitus",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/justin-titus-psycho-oncologist-151458a8"
-                    }
-                }, {
-                    name: ' Alan Varghese ',
-                    position: 'Chief Social Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/alanvarghese.jpg',
-                    social: {
-                        instagram: "",
-                        github: "",
-                        linkedin: "https://www.linkedin.com/in/mindtraveller64"
-                    }
-                },  
-            ]
-        }, {
-            title: 'The Founders of Inovus Labs IEDC',
-            date: '2017',
-            showTeam: false,
-            members: [
-
-            {
-              name: '',
-              position: '',
-              avatar: BASE_URL + '/assets/team/founders.jpg',
-              social: {
-                facebook: ""
-              }
+                name: '',
+                position: '',
+                avatar: BASE_URL + '/assets/team/founders.jpg',
+                social: {
+                    facebook: ""
+                }
+                },
+                
+                
+                
+                ]
             },
-             
-            
-             
-            ]
-        },
     ];
 
     return data;

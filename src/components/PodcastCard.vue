@@ -15,11 +15,11 @@
 
 
 <script>
-    export default {
+export default {
         name: 'PodcastCard',
         props: {
             data: {
-                type: Object,
+                 type: [String, Array], 
                 required: true
             }
         }

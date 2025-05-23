@@ -153,22 +153,22 @@
                 podcastStats: [
                     {
                         title: "Episodes",
-                        value: 3,
+                        value: 10,
                         mode: "accurate"
                     },
                     {
-                        title: "Months",
-                        value: 6,
-                        mode: "accurate"
+                        title: "Years",
+                        value: 2,
+                        mode: "approximate"
                     },
                     {
                         title: "Spotify Followers",
-                        value: 70,
+                        value: 78,
                         mode: "approximate"
                     },
                     {
                         title: "All-time Plays",
-                        value: 400,
+                        value: 592,
                         mode: "approximate"
                     },
                     {
@@ -223,7 +223,7 @@
         },
 
         async mounted() {
-            this.podcasts = await getPodcasts();
+            this.podcasts = await getPodcasts();            
         }
     }
 </script>
