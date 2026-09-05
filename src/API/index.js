@@ -1,6 +1,14 @@
 import axios from 'axios';
 
-const BASE_URL = "https://storage.googleapis.com/inovuslabs-cdn.appspot.com";
+export const CDN_BASE_URL = (
+    import.meta.env.VITE_CDN_BASE_URL || "https://cdn.inovuslabs.org"
+).replace(/\/+$/, "");
+
+const BASE_URL = CDN_BASE_URL;
+
+
+
+
 
 
 let stockList = [
@@ -494,7 +502,7 @@ export const getProjects = async () => {
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
                     }
                 ]
-            }          
+            }
             ,
             {
                 "id": 24,
@@ -564,7 +572,7 @@ export const getProjects = async () => {
                 "description": "Open PC is a unique computer design where the system unit is openly fixed, providing easy access to internal components. Unlike traditional closed cases, an open PC allows users to see and interact with the motherboard, CPU, RAM, and other components without the hindrance of a closed casing. This design promotes better ventilation, aiding in cooling components for optimal performance. Open PCs often feature a minimalist and modern aesthetic, emphasizing transparency and ease of customization. Users can modify and upgrade hardware components with greater convenience, making it an attractive option for tech enthusiasts and those who enjoy a hands-on approach to computer maintenance. The open design not only offers a visually striking computer setup but also encourages a DIY spirit for users who want to personalize and optimize their computing experience.",
                 "thumbnail": BASE_URL + "/assets/projects/openpc.jpg",
                 "status": "Completed",
-                "tags": ["Hardware","Open-source"],
+                "tags": ["Hardware", "Open-source"],
                 "contributors": [
                     {
                         "name": "Badhusha Shaji",
@@ -591,16 +599,16 @@ export const getProjects = async () => {
                     {
                         "name": "Badhusha Shaji",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Nikhil T Das",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Nithin Daniel",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Abhishek V Gopal",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Arjun A Acharry",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
                     }
@@ -676,7 +684,7 @@ export const getProjects = async () => {
                     {
                         "name": "Badhusha Shaji",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Abhishek V Gopal",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
                     }
@@ -700,7 +708,7 @@ export const getProjects = async () => {
                     {
                         "name": "Badhusha Shaji",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
-                    },{
+                    }, {
                         "name": "Abhishek V Gopal",
                         "avatar": "https://flowbite.com/docs/images/avatars/avatar-1.jpg"
                     }
@@ -722,209 +730,209 @@ export const getBlogPosts = async () => {
         return res.data.posts;
     }
     catch (error) {
-            console.error('Error fetching data from API, using fallback data:', error);
-            return fallbackData;
-        }
+        console.error('Error fetching data from API, using fallback data:', error);
+        return fallbackData;
+    }
 
     // Dynamic ->error -> Static Fetching
-        const fallbackData = [
-            {
-                "title": "The Secret Friend",
-                "custom_excerpt": null,
-                "published_at": "2024-12-25T18:26:58.000+05:30",
-                "html": "<p>In a small village nestled between snow-covered mountains, life was simple yet challenging. The village, Snowvale, was a quaint place where chimneys puffed smoke into the cold air, and the cobblestone streets were lined with wooden cottages. At the very edge of the village stood a small, weather-worn cabin. It seemed almost too fragile to withstand the harsh winters, but it was home to a young boy named Liam.</p><p>Liam was only twelve years old, but life had already taught him to be resilient. His parents had passed away when he was very young, leaving him to grow up alone. The villagers did their best to look after him, offering food and kind words when they could, but they had their own struggles to face. Despite the loneliness that often accompanied him, Liam had a warm heart and a quiet determination. His bright blue eyes, framed by untidy brown hair, were filled with curiosity and a longing for connection.</p><p>Each day, Liam wandered through the snowy woods surrounding the village. He would talk to the birds, watch the deer, and listen to the sound of the wind rustling through the trees. He liked to imagine that the woods were his secret world, where he wasn’t alone. Still, he wished for a friend—someone who would truly understand him.</p><p>One frosty evening, as Liam sat by a frozen creek, he heard the crunch of snow behind him. Turning around, he saw an old man with a long silver beard and kind, twinkling eyes. The man wore simple, ragged clothes and carried a large sack over his shoulder.</p><p>“Hello, young one,” the man said warmly. “What brings you out here in the cold?”</p><p>“I like it here,” Liam replied, unsure whether to feel curious or cautious. “It’s peaceful. Who are you?”</p><p>“My name is Nicholas,” the man said with a gentle smile. “I’m just a traveler passing through. And you?”</p><p>“I’m Liam,” the boy answered, his voice soft but steady.</p><p>From that day on, Nicholas and Liam became inseparable. Nicholas was unlike anyone Liam had ever met. His laughter was hearty and comforting, his stories were enchanting, and he seemed to make even the coldest days feel warm. They spent hours together, building snowmen, exploring the woods, and sledding down hills. Nicholas often brought small gifts—an apple, a carved trinket, or a loaf of bread. To Liam, he was more than a friend; he was family.</p><p>What Liam didn’t know was that Nicholas was no ordinary traveler. He was Santa Claus, taking time away from his usual duties to bring joy and companionship to a boy who needed it most.</p><p>One day, while delivering toys to a villager in town, Liam met Eliza, the blacksmith’s daughter. Eliza had just moved to Snowvale and was about Liam’s age. She had fiery red hair that shone like embers against the snowy backdrop and a laugh that could brighten the gloomiest day. Despite her bold demeanor, Eliza was gentle and kind. They quickly became friends, spending hours together exploring the village, playing in the snow, and sharing stories by the fire.</p><p>Eliza’s presence brought new joy to Liam’s life. She often visited his little cabin, bringing freshly baked bread or warm soup. The once lonely home began to feel alive with laughter and warmth. Nicholas, watching from the sidelines, felt a deep sense of happiness seeing Liam thrive.</p><p>Under Nicholas’s guidance, Liam discovered a talent for carving wood. He began making simple toys—wooden animals, carts, and dolls. Eliza, ever resourceful, helped him set up a small workshop in his cabin. Soon, Liam’s toys became popular in Snowvale and beyond. Villagers came to him with orders, marveling at his skill. His success brought pride to the village, which had long been overshadowed by hardship.</p><p>As the years passed, Liam grew into a strong and kind young man. His bond with Eliza deepened, and the two fell in love. Together, they expanded the workshop, creating not just toys but hope for their community. Snowvale, once a quiet and struggling village, began to flourish.</p><p>On Christmas Eve, the village was alive with celebration. Candles lit up the square, carolers sang, and the air was filled with the scent of roasted chestnuts. Liam and Eliza stood hand in hand, marveling at how far they had come. Nicholas, ever the mysterious friend, joined them by the large Christmas tree.</p><p>“Close your eyes,” Nicholas said with a playful grin. “I have a surprise for you.”</p><p>Liam and Eliza exchanged curious glances but obeyed. When they opened their eyes, Nicholas was no longer the simple traveler they had known. Standing before them was Santa Claus, dressed in a bright red coat trimmed with white fur, his silver beard glowing under the starlight. A sleigh filled with gifts stood behind him, and reindeer pawed at the snow.</p><p>“You’re Santa Claus?” Liam whispered, his voice filled with wonder.</p><p>Santa smiled. “Yes, my dear friends. But more importantly, I am your friend. You have brought joy, love, and hope to this village, and for that, I am grateful.”</p><p>Liam and Eliza stood in awe, their hearts swelling with gratitude and amazement. Santa placed a hand on Liam’s shoulder and said, “You have shown that even in the hardest times, kindness and love can light the way. That is the true spirit of Christmas.”</p><p>With that, Santa climbed into his sleigh, waved goodbye, and disappeared into the starry sky. Liam and Eliza watched until the golden trail of light faded, their hearts full of wonder.</p><p>In the years that followed, Liam and Eliza continued to bring joy to Snowvale. Their love, kindness, and hard work transformed the village into a thriving, happy place. And every Christmas Eve, they would look up at the stars, remembering the friend who had shown them the magic of love and friendship.</p>",
-                "authors": [
-                    {
-                        "id": "66e54ca3d29ec7000177a480",
-                        "name": "Arjun A Acharry",
-                        "slug": "arjun-a-acharry",
-                        "profile_image": "https://res-5.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/_MG_2998---Copy.jpg",
-                        "cover_image": "https://res-4.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/df5bfb980dfb82fd5276065a3a6f8fa9.jpg",
-                        "bio": "Never Judge Anyone With His Past",
-                        "website": null,
-                        "location": null,
-                        "facebook": null,
-                        "twitter": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "url": "https://blog.inovuslabs.org/author/arjun-a-acharry/"
-                    }
-                ],
-                "tags": [
-                    {
-                        "id": "66e6c959b8d0440001291409",
-                        "name": "Fiction",
-                        "slug": "fiction",
-                        "description": null,
-                        "feature_image": "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDEwfHxmaWN0aW9ufGVufDB8fHx8MTcyODI4NTI4Mnww&ixlib=rb-4.0.3&q=80&w=2000",
-                        "visibility": "public",
-                        "og_image": null,
-                        "og_title": null,
-                        "og_description": null,
-                        "twitter_image": null,
-                        "twitter_title": null,
-                        "twitter_description": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "codeinjection_head": null,
-                        "codeinjection_foot": null,
-                        "canonical_url": null,
-                        "accent_color": null,
-                        "url": "https://blog.inovuslabs.org/tag/fiction/"
-                    }
-                ],
-                "url": "https://blog.inovuslabs.org/the-secret-friend/",
-                "excerpt": "In a small village nestled between snow-covered mountains, life was simple yet challenging. The village, Snowvale, was a quaint place where chimneys puffed smoke into the cold air, and the cobblestone streets were lined with wooden cottages. At the very edge of the village stood a small, weather-worn cabin. It seemed almost too fragile to withstand the harsh winters, but it was home to a young boy named Liam.\n\nLiam was only twelve years old, but life had already taught him to be resilient. His p",
-                "reading_time": 4
-            },
-            {
-                "title": "Let it Snow! A Festive Guide to add Snowfall Effect to your Website",
-                "custom_excerpt": "🎉 Look around! The snowfall you see on this very blog is a live demonstration of what we’re about to build. Yes, it’s already snowing here! Isn’t that magical? 🎄✨",
-                "published_at": "2024-12-25T08:11:40.000+05:30",
-                "html": "<p><strong>Merry Christmas, web enthusiasts!</strong> 🎄 Everyone has their own way of celebration &amp; entertainment, and this is mine—creating magical effects like this snowfall (also, crashing stuff—once in a while) is my way of spreading joy. It’s more than just code; it’s a celebration of creativity and holiday cheer! 🌟</p><figure class=\"kg-card kg-embed-card\"><iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/fuKmbuuhJy8?start=89&amp;feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\" title=\"This Is My Entertainment..!! | Aadu 2 Movie Scene | Vinayakan | Jayasurya |\"></iframe></figure><p>Ready to sprinkle some holiday magic on your website? Let's build a simple, lightweight snowfall animation using HTML, CSS, and JavaScript. Let’s make your site feel like Christmas! ❄️✨</p><hr><h3 id=\"why-add-snowfall-%F0%9F%8E%85\">Why Add Snowfall? 🎅</h3><p>Snowfall is the perfect seasonal touch for your website. It’s festive—nothing says \"holidays\" like snowflakes gently drifting down your screen. ❄️ It’s mesmerizing, capturing visitors' attention so much they might forget why they came to your site! 😄 And it’s fun and simple. Everyone has their unique way of celebrating, and adding snowfall is a charming, joyful way to spread holiday cheer. 🛠️</p><p>Convinced? Let’s make it snow! 🌨️</p><h3 id=\"what-we%E2%80%99ll-build\">What We’ll Build</h3><p>Let's create a snowfall overlay that works like a charm on both desktop and mobile devices. Here’s what you’ll get:</p><ul><li>Realistic, smooth snowfall animation. ❄️</li><li>A gentle horizontal drift for a natural, windy effect. 🌬️</li><li>Fully customizable size, speed, and density. 🎨</li></ul><p>Look around you! The snowfall you see right now on this very blog is not just a demonstration—it’s live magic in action! 🎉 Isn’t it amazing to see how a few lines of code can transform a webpage into a winter wonderland? That’s the power of creativity and a little holiday spirit.</p><p>Check out the full code on <a href=\"https://gist.github.com/decoded-cipher/5120fae27b42e6cf33043d1f060858ef\" rel=\"noreferrer\">GitHub Gist</a> attached below!</p><figure class=\"kg-card kg-bookmark-card\"><a class=\"kg-bookmark-container\" href=\"https://gist.github.com/decoded-cipher/5120fae27b42e6cf33043d1f060858ef\"><div class=\"kg-bookmark-content\"><div class=\"kg-bookmark-title\">snowfall.html</div><div class=\"kg-bookmark-description\">GitHub Gist: instantly share code, notes, and snippets.</div><div class=\"kg-bookmark-metadata\"><img class=\"kg-bookmark-icon\" src=\"https://static.ghost.org/v5.0.0/images/link-icon.svg\" alt=\"\"><span class=\"kg-bookmark-author\">Gist</span><span class=\"kg-bookmark-publisher\">262588213843476</span></div></div><div class=\"kg-bookmark-thumbnail\"><img src=\"https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png\" alt=\"\" onerror=\"this.style.display = 'none'\"></div></a></figure><hr><h3 id=\"the-magic-code-%F0%9F%AA%84\">The Magic Code 🪄</h3><p>Here’s the HTML, CSS, and JavaScript for the snowfall effect. Copy it, customize it, and let it snow on your website! ☃️</p><pre><code class=\"language-html\">&lt;div id=\"snowfall-overlay\"&gt;&lt;/div&gt;</code></pre><pre><code class=\"language-CSS\">#snowfall-overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    pointer-events: none;\n    z-index: 9999;\n    overflow: hidden;\n}\n\n.snowflake {\n    position: fixed;\n    top: -10px;\n    color: white;\n    line-height: 1;\n    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);\n    pointer-events: none;\n    animation: fall linear infinite;\n}\n\n@keyframes fall {\n    0% {\n        transform: translateY(-10vh) translateX(0);\n    }\n    25% {\n        transform: translateY(25vh) translateX(calc(var(--drift) * 0.5));\n    }\n    50% {\n        transform: translateY(50vh) translateX(calc(var(--drift) * -0.5));\n    }\n    75% {\n        transform: translateY(75vh) translateX(calc(var(--drift) * 0.5));\n    }\n    100% {\n        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));\n    }\n}</code></pre><pre><code class=\"language-js\">document.addEventListener('DOMContentLoaded', () =&gt; {\n    const container = document.getElementById('snowfall-overlay');\n    const snowflakeCount = window.innerWidth &lt;= 768 ? 50 : 100;\n\n    function createSnowflake() {\n        const snowflake = document.createElement('div');\n        snowflake.className = 'snowflake';\n        snowflake.textContent = '❄';\n\n        // Medium size range for a balanced effect\n        const size = Math.random() * (window.innerWidth &lt;= 768 ? 8 : 12) + 6; // Size: 6px to 14px\n        const drift = Math.random() * 20 - 10; // Drift range: -10vw to 10vw\n\n        // Apply styles\n        snowflake.style.cssText = `\n            left: ${Math.random() * 100}%;\n            opacity: ${Math.random() * 0.6 + 0.4};\n            font-size: ${size}px;\n            animation-duration: ${Math.random() * 5 + 10}s;\n            animation-delay: ${Math.random() * 5}s;\n            --drift: ${drift}vw;\n        `;\n\n        container.appendChild(snowflake);\n\n        // Remove snowflake after animation ends\n        snowflake.addEventListener('animationend', () =&gt; snowflake.remove());\n    }\n\n    // Initial batch of snowflakes\n    for (let i = 0; i &lt; snowflakeCount; i++) {\n        setTimeout(createSnowflake, Math.random() * 3000);\n    }\n\n    // Continuously generate snowflakes\n    setInterval(() =&gt; {\n        if (container.childElementCount &lt; snowflakeCount) createSnowflake();\n    }, 300);\n});</code></pre><hr><h3 id=\"how-it-works-%F0%9F%A7%A9\">How It Works 🧩</h3><ol><li><strong>The Snowflake Container</strong>: The <code>#snowfall-overlay</code> div is a full-screen, fixed-position container for our snowflakes. It ensures the snow stays on top of everything without interfering with clicks.</li><li><strong>The Snowflakes</strong>: Each snowflake <code>div</code> has a random size, opacity, and drift value. It’s styled with CSS and animated using <code>@keyframes</code>.</li><li><strong>The Animation</strong>: The <code>@keyframes</code> animation makes the snowflakes fall vertically while swaying horizontally for a natural effect. 🌨️</li><li><strong>The JavaScript Magic</strong>: JavaScript handles the creation of snowflakes, randomizing their properties and removing them once they’re out of view.</li></ol><hr><h3 id=\"make-it-yours-%F0%9F%8E%A8\">Make It Yours 🎨</h3><p>Customizing the snowfall effect is where the real fun begins! 🌟 Here’s how you can make it uniquely yours. Start by adjusting the <code>snowflakeCount</code> variable to control density, tweak the <code>animation-duration</code> for speed, or swap out <code>‘❄’</code> for emojis like snowmen ☃️ or stars ✨. It’s your canvas, so let your creativity shine!</p><hr><h3 id=\"final-thoughts-%E2%9C%A8\">Final Thoughts ✨</h3><p>Everyone has their own way of celebrating, and this is mine! Bringing festive cheer to the web is my kind of entertainment. 🎉</p><div class=\"kg-card kg-callout-card kg-callout-card-grey\"><div class=\"kg-callout-text\">This snowfall effect is here for the Christmas season, adding a sprinkle of joy and magic to your screen. However, once the season ends, this feature might be removed.</div></div><p>But don't worry! Going forward, I plan to collect and consolidate similar overlays to create a <u>comprehensive library of website enhancements</u>. 🌐 These overlays will be showcased on a demo website, making it easy for anyone to preview, download, and add them to their projects. You can find the repository on <a href=\"https://github.com/decoded-cipher/website-overlays\">GitHub</a>, where anyone can publish new overlays. Feel free to contribute your own creations and be a part of this growing collection! 🌟</p><figure class=\"kg-card kg-bookmark-card\"><a class=\"kg-bookmark-container\" href=\"https://github.com/decoded-cipher/website-overlays\"><div class=\"kg-bookmark-content\"><div class=\"kg-bookmark-title\">GitHub - decoded-cipher/website-overlays</div><div class=\"kg-bookmark-description\">Contribute to decoded-cipher/website-overlays development by creating an account on GitHub.</div><div class=\"kg-bookmark-metadata\"><img class=\"kg-bookmark-icon\" src=\"https://static.ghost.org/v5.0.0/images/link-icon.svg\" alt=\"\"><span class=\"kg-bookmark-author\">GitHub</span><span class=\"kg-bookmark-publisher\">decoded-cipher</span></div></div><div class=\"kg-bookmark-thumbnail\"><img src=\"https://opengraph.githubassets.com/84c15061dc4b9b9d26ba093694054273bd9642ef3ed8f44f04c76267f0935b5c/decoded-cipher/website-overlays\" alt=\"\" onerror=\"this.style.display = 'none'\"></div></a></figure><p>So go ahead, and make it snow! ❄️ Please don’t forget to share your snowy creations &amp; opinions about the snowfall overlay in the comments. Wishing you a <strong>Merry Christmas</strong> and a <strong>Happy New Year</strong>! 🎄🎁</p>",
-                "authors": [
-                    {
-                        "id": "1",
-                        "name": "Arjun Krishna",
-                        "slug": "arjun",
-                        "profile_image": "https://www.gravatar.com/avatar/dd27406b884ca7ede3e5364c3dd6326c?s=250&r=x&d=mp",
-                        "cover_image": null,
-                        "bio": null,
-                        "website": null,
-                        "location": null,
-                        "facebook": null,
-                        "twitter": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "url": "https://blog.inovuslabs.org/author/arjun/"
-                    }
-                ],
-                "tags": [
-                    {
-                        "id": "66e54cbdd29ec7000177a4b5",
-                        "name": "Web Development",
-                        "slug": "web-development",
-                        "description": null,
-                        "feature_image": "https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE2OTg5MDI5Mjh8MA&ixlib=rb-4.0.3&q=80&w=2000",
-                        "visibility": "public",
-                        "og_image": null,
-                        "og_title": null,
-                        "og_description": null,
-                        "twitter_image": null,
-                        "twitter_title": null,
-                        "twitter_description": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "codeinjection_head": null,
-                        "codeinjection_foot": null,
-                        "canonical_url": null,
-                        "accent_color": "#8aaf46",
-                        "url": "https://blog.inovuslabs.org/tag/web-development/"
-                    }
-                ],
-                "url": "https://blog.inovuslabs.org/let-it-snow/",
-                "excerpt": "🎉 Look around! The snowfall you see on this very blog is a live demonstration of what we’re about to build. Yes, it’s already snowing here! Isn’t that magical? 🎄✨",
-                "reading_time": 4
-            },
-            {
-                "title": "When Will the Chains Break? The Silent Struggles of the Silent Voices",
-                "custom_excerpt": null,
-                "published_at": "2024-12-23T12:24:32.000+05:30",
-                "html": "<p>Growing up is often seen as gaining freedom, but for many, that independence feels out of reach. Society tells us we can choose our own path, but family expectations and traditions often keep us from doing so, no matter our age.</p><p>This isn’t about rebellion; it’s about being seen as individuals, not just following rules and traditions.</p><p>We often hear, \"We just want the best for you,\" but it comes with hidden rules:</p><ul><li>\"Pick a safe career.\"</li><li>\"Don’t bring shame to the family.\"</li><li>\"Follow tradition.\"</li></ul><p>True independence means making our own choices without fear of judgment. It’s about being valued for who we are, not what others expect from us.</p><p>Many people feel judged whenever they make decisions. If their dreams don’t fit the expectations, their voices feel ignored. Those wanting a creative career or to start a business are often told, \"It’s too risky\" or \"It’s not practical\". This isn’t love—it’s fear of change. Fear of standing out and fear of failure. Sometimes, people are held back because of old beliefs rather than their potential.</p><p>Traditions can offer comfort, but they can also feel like chains. There’s pressure to fit into a mold—whether it’s for family, stability, or what’s considered \"right\". Where is the promised independence? Life often feels planned by others. The career, love, or freedom you want is only allowed if it fits expectations. This isn’t just about feeling trapped—it’s about the emotional toll of feeling misunderstood, frustrated, and afraid of letting others down.</p><p>It’s time for a change. Society needs to realize that love isn’t control. People need the freedom to make their own choices, live their dreams, and be themselves. To everyone struggling with these pressures: Your dreams and voice matter. It’s okay to feel lost or want something different. It’s okay to fight for the life you want.</p><p>Change takes time, but it begins with the courage to be true to ourselves, embracing the freedom to dream, grow, and shine in our own unique way.</p>",
-                "authors": [
-                    {
-                        "id": "6738e7d928bd740001c4c30e",
-                        "name": "Amenda Maria Johnson",
-                        "slug": "amenda",
-                        "profile_image": "https://res-3.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/Amenda.jpg",
-                        "cover_image": null,
-                        "bio": null,
-                        "website": null,
-                        "location": null,
-                        "facebook": null,
-                        "twitter": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "url": "https://blog.inovuslabs.org/author/amenda/"
-                    }
-                ],
-                "tags": [
-                    {
-                        "id": "66e54cbdd29ec7000177a4af",
-                        "name": "Free Thinking",
-                        "slug": "freethinking",
-                        "description": null,
-                        "feature_image": "https://images.unsplash.com/photo-1553258318-c22356c14808?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDl8fGZyZWUlMjBzcGVlY2h8ZW58MHx8fHwxNjk4OTAyODU1fDA&ixlib=rb-4.0.3&q=80&w=2000",
-                        "visibility": "public",
-                        "og_image": null,
-                        "og_title": null,
-                        "og_description": null,
-                        "twitter_image": null,
-                        "twitter_title": null,
-                        "twitter_description": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "codeinjection_head": null,
-                        "codeinjection_foot": null,
-                        "canonical_url": null,
-                        "accent_color": "#d12323",
-                        "url": "https://blog.inovuslabs.org/tag/freethinking/"
-                    }
-                ],
-                "url": "https://blog.inovuslabs.org/the-silent-struggles-of-silent-voices/",
-                "excerpt": "Growing up is often seen as gaining freedom, but for many, that independence feels out of reach. Society tells us we can choose our own path, but family expectations and traditions often keep us from doing so, no matter our age.\n\nThis isn’t about rebellion; it’s about being seen as individuals, not just following rules and traditions.\n\nWe often hear, \"We just want the best for you,\" but it comes with hidden rules:\n\n * \"Pick a safe career.\"\n * \"Don’t bring shame to the family.\"\n * \"Follow traditi",
-                "reading_time": 1
-            },
-            {
-                "title": "A Rollercoaster Ride Through Design - My Journey So Far",
-                "custom_excerpt": null,
-                "published_at": "2024-11-16T22:19:41.000+05:30",
-                "html": "<p>November 16, 2024—what a day! The skies are heavy with rain, thunder is booming, and Lightning is lighting up the sky like it’s a big show. And here I am, celebrating not only two full years as a UI designer but also reflecting on the incredible journey that led me here. It’s been a wild ride, and now, as I enter my third and final year of BCA, I can’t help but think about how it all started.</p><figure class=\"kg-card kg-image-card\"><img src=\"https://res-3.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/Meq-modified.png\" class=\"kg-image\" alt=\"\" loading=\"lazy\" width=\"1000\" height=\"562\"></figure><p>Let’s rewind to when I was in 9th grade. My school introduced a club called Little KITES (Kerala Infrastructure and Technology for Education). Back then, I had no clue what it was all about. But I was curious and joined anyway. Little did I know, that decision would change my life. Through KITES, I got to attend several tech camps and, surprisingly, even had the chance to teach my friends, juniors, and seniors. That experience taught me one of the most valuable lessons: I could be both a student and a mentor. And this was just the beginning.</p><p>I started off by dabbling in IoT, experimenting with microcontrollers, but it didn’t exactly give me the excitement I was hoping for. So, I moved on and explored different creative fields—Scratch, Python, Visual Designing, Photography, Web Development, Blender, and TupiTube (remember that?). I tried everything, and although it was overwhelming at times, I eventually focused on what I truly loved: Designing and Web Development.</p><p>During my school years, I was the go-to designer—creating cover pages, posters, event banners, and even a school magazine. If it needed a creative touch, I was the one everyone turned to. I also began giving design sessions to my friends and peers. But, here’s the thing: I wasn’t the brightest student academically. I was always somewhere in the middle, around 5th or 6th. But, somehow, I managed to score 96% in my SSLC exams. Who knew?</p><p>And then came the pandemic. Suddenly, we were all at home, attending online classes. But instead of just sitting there, I decided to make the most of my time. I dove deep into video editing—Kinemaster, Inshot, Capcut, VN Editor, Node Video Editor, Alight Motion. I explored every tool I could find. And let’s not forget about Pixellab, Picsart, and Canva. I created wedding videos, social media reels, posters, and logos for shops and travel agencies—all for free. My parents, of course, were convinced I was just wasting time on my phone, but little did they know, I was investing in my creativity!</p><p>During this time, I also got into some cyber-related stuff, including ethical hacking. It wasn’t all smooth sailing, though. Some of my experiences were a bit scary—imagine learning to hack and then facing the consequences of mistakes. But hey, it was all part of the learning process.</p><p>When college started, I walked in with a bit of design experience and some basic knowledge of HTML and CSS. That’s when I stumbled upon Inovus Labs IEDC, a student community at my college. I attended their orientation session, and that’s when I realized something important: the BCA syllabus wasn’t going to cut it in the fast-evolving world. It wasn’t about degrees or textbooks—it was about skills.</p><p>Through Inovus, I met some incredible seniors who introduced me to Figma. This was a game-changer. I quickly fell in love with UI/UX design and decided to dive deep into it. I even landed my first internship as a designer with Inovus Labs. Around that time, I bought my first laptop—not a high-end machine, but it did the job. I used it for Photoshop, Illustrator, and Figma Web. I had a rocky start with Illustrator, so I focused on what worked best for me—Figma and Photoshop. Slowly, Figma became my go-to tool for creating posters, logos, and mockups. It was like my second partner in crime.</p><p>The internship gave me tons of experience, and I eventually became the Chief Creative Officer (CCO) at Inovus. But to be honest, titles don’t mean much to me. In Inovus, everyone is a peer, learning from each other. It’s a place where I discovered my passion for UI/UX design and got the chance to volunteer as a UI/UX designer for Kerala Police Cyberdome. Later, I also got an internship as a graphic designer at GTech MuLearn.</p><p>Through all of this, Inovus gave me countless opportunities to mentor others, lead sessions, and continue learning. Being a designer and a mentor at the same time was one of the most fulfilling experiences of my life. It wasn’t easy, but it was incredibly rewarding.</p><p>And now, I’m proud to say I’m the COO of Inovus Labs, where I manage projects, events, and design. All these experiences, both as a designer and a mentor, have helped me develop skills in team management, project management, event coordination, and even development. Yes, I’m a designer at heart, but I also manage a bit of development on the side—JavaScript, Python, React, HTML, CSS, and even Telegram bots. It’s been a crazy but exciting journey.</p><p>Looking back, I’ve worn many hats: freelance designer, intern, mentor, volunteer, and COO. And through it all, I’ve learned one thing that stands out: It’s not about the software or the tools you use. Whether it’s Figma, Photoshop, or even some obscure editing app, it’s your creativity and skills that matter most.</p><p>As I celebrate my second year in UI design, I also reflect on the years of experimenting, learning, and growing in the broader field of design. Here’s to many more years of creativity, challenges, and growth.</p>",
-                "authors": [
-                    {
-                        "id": "66e54ca3d29ec7000177a480",
-                        "name": "Arjun A Acharry",
-                        "slug": "arjun-a-acharry",
-                        "profile_image": "https://res-5.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/_MG_2998---Copy.jpg",
-                        "cover_image": "https://res-4.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/df5bfb980dfb82fd5276065a3a6f8fa9.jpg",
-                        "bio": "Never Judge Anyone With His Past",
-                        "website": null,
-                        "location": null,
-                        "facebook": null,
-                        "twitter": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "url": "https://blog.inovuslabs.org/author/arjun-a-acharry/"
-                    }
-                ],
-                "tags": [
-                    {
-                        "id": "66e54cbdd29ec7000177a4af",
-                        "name": "Free Thinking",
-                        "slug": "freethinking",
-                        "description": null,
-                        "feature_image": "https://images.unsplash.com/photo-1553258318-c22356c14808?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDl8fGZyZWUlMjBzcGVlY2h8ZW58MHx8fHwxNjk4OTAyODU1fDA&ixlib=rb-4.0.3&q=80&w=2000",
-                        "visibility": "public",
-                        "og_image": null,
-                        "og_title": null,
-                        "og_description": null,
-                        "twitter_image": null,
-                        "twitter_title": null,
-                        "twitter_description": null,
-                        "meta_title": null,
-                        "meta_description": null,
-                        "codeinjection_head": null,
-                        "codeinjection_foot": null,
-                        "canonical_url": null,
-                        "accent_color": "#d12323",
-                        "url": "https://blog.inovuslabs.org/tag/freethinking/"
-                    }
-                ],
-                "url": "https://blog.inovuslabs.org/a-rollercoaster-ride-through-design-my-journey-so-far/",
-                "excerpt": "November 16, 2024—what a day! The skies are heavy with rain, thunder is booming, and Lightning is lighting up the sky like it’s a big show. And here I am, celebrating not only two full years as a UI designer but also reflecting on the incredible journey that led me here. It’s been a wild ride, and now, as I enter my third and final year of BCA, I can’t help but think about how it all started.\n\nLet’s rewind to when I was in 9th grade. My school introduced a club called Little KITES (Kerala Infras",
-                "reading_time": 4
-            }
-        ];
+    const fallbackData = [
+        {
+            "title": "The Secret Friend",
+            "custom_excerpt": null,
+            "published_at": "2024-12-25T18:26:58.000+05:30",
+            "html": "<p>In a small village nestled between snow-covered mountains, life was simple yet challenging. The village, Snowvale, was a quaint place where chimneys puffed smoke into the cold air, and the cobblestone streets were lined with wooden cottages. At the very edge of the village stood a small, weather-worn cabin. It seemed almost too fragile to withstand the harsh winters, but it was home to a young boy named Liam.</p><p>Liam was only twelve years old, but life had already taught him to be resilient. His parents had passed away when he was very young, leaving him to grow up alone. The villagers did their best to look after him, offering food and kind words when they could, but they had their own struggles to face. Despite the loneliness that often accompanied him, Liam had a warm heart and a quiet determination. His bright blue eyes, framed by untidy brown hair, were filled with curiosity and a longing for connection.</p><p>Each day, Liam wandered through the snowy woods surrounding the village. He would talk to the birds, watch the deer, and listen to the sound of the wind rustling through the trees. He liked to imagine that the woods were his secret world, where he wasn’t alone. Still, he wished for a friend—someone who would truly understand him.</p><p>One frosty evening, as Liam sat by a frozen creek, he heard the crunch of snow behind him. Turning around, he saw an old man with a long silver beard and kind, twinkling eyes. The man wore simple, ragged clothes and carried a large sack over his shoulder.</p><p>“Hello, young one,” the man said warmly. “What brings you out here in the cold?”</p><p>“I like it here,” Liam replied, unsure whether to feel curious or cautious. “It’s peaceful. Who are you?”</p><p>“My name is Nicholas,” the man said with a gentle smile. “I’m just a traveler passing through. And you?”</p><p>“I’m Liam,” the boy answered, his voice soft but steady.</p><p>From that day on, Nicholas and Liam became inseparable. Nicholas was unlike anyone Liam had ever met. His laughter was hearty and comforting, his stories were enchanting, and he seemed to make even the coldest days feel warm. They spent hours together, building snowmen, exploring the woods, and sledding down hills. Nicholas often brought small gifts—an apple, a carved trinket, or a loaf of bread. To Liam, he was more than a friend; he was family.</p><p>What Liam didn’t know was that Nicholas was no ordinary traveler. He was Santa Claus, taking time away from his usual duties to bring joy and companionship to a boy who needed it most.</p><p>One day, while delivering toys to a villager in town, Liam met Eliza, the blacksmith’s daughter. Eliza had just moved to Snowvale and was about Liam’s age. She had fiery red hair that shone like embers against the snowy backdrop and a laugh that could brighten the gloomiest day. Despite her bold demeanor, Eliza was gentle and kind. They quickly became friends, spending hours together exploring the village, playing in the snow, and sharing stories by the fire.</p><p>Eliza’s presence brought new joy to Liam’s life. She often visited his little cabin, bringing freshly baked bread or warm soup. The once lonely home began to feel alive with laughter and warmth. Nicholas, watching from the sidelines, felt a deep sense of happiness seeing Liam thrive.</p><p>Under Nicholas’s guidance, Liam discovered a talent for carving wood. He began making simple toys—wooden animals, carts, and dolls. Eliza, ever resourceful, helped him set up a small workshop in his cabin. Soon, Liam’s toys became popular in Snowvale and beyond. Villagers came to him with orders, marveling at his skill. His success brought pride to the village, which had long been overshadowed by hardship.</p><p>As the years passed, Liam grew into a strong and kind young man. His bond with Eliza deepened, and the two fell in love. Together, they expanded the workshop, creating not just toys but hope for their community. Snowvale, once a quiet and struggling village, began to flourish.</p><p>On Christmas Eve, the village was alive with celebration. Candles lit up the square, carolers sang, and the air was filled with the scent of roasted chestnuts. Liam and Eliza stood hand in hand, marveling at how far they had come. Nicholas, ever the mysterious friend, joined them by the large Christmas tree.</p><p>“Close your eyes,” Nicholas said with a playful grin. “I have a surprise for you.”</p><p>Liam and Eliza exchanged curious glances but obeyed. When they opened their eyes, Nicholas was no longer the simple traveler they had known. Standing before them was Santa Claus, dressed in a bright red coat trimmed with white fur, his silver beard glowing under the starlight. A sleigh filled with gifts stood behind him, and reindeer pawed at the snow.</p><p>“You’re Santa Claus?” Liam whispered, his voice filled with wonder.</p><p>Santa smiled. “Yes, my dear friends. But more importantly, I am your friend. You have brought joy, love, and hope to this village, and for that, I am grateful.”</p><p>Liam and Eliza stood in awe, their hearts swelling with gratitude and amazement. Santa placed a hand on Liam’s shoulder and said, “You have shown that even in the hardest times, kindness and love can light the way. That is the true spirit of Christmas.”</p><p>With that, Santa climbed into his sleigh, waved goodbye, and disappeared into the starry sky. Liam and Eliza watched until the golden trail of light faded, their hearts full of wonder.</p><p>In the years that followed, Liam and Eliza continued to bring joy to Snowvale. Their love, kindness, and hard work transformed the village into a thriving, happy place. And every Christmas Eve, they would look up at the stars, remembering the friend who had shown them the magic of love and friendship.</p>",
+            "authors": [
+                {
+                    "id": "66e54ca3d29ec7000177a480",
+                    "name": "Arjun A Acharry",
+                    "slug": "arjun-a-acharry",
+                    "profile_image": "https://res-5.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/_MG_2998---Copy.jpg",
+                    "cover_image": "https://res-4.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/df5bfb980dfb82fd5276065a3a6f8fa9.jpg",
+                    "bio": "Never Judge Anyone With His Past",
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "url": "https://blog.inovuslabs.org/author/arjun-a-acharry/"
+                }
+            ],
+            "tags": [
+                {
+                    "id": "66e6c959b8d0440001291409",
+                    "name": "Fiction",
+                    "slug": "fiction",
+                    "description": null,
+                    "feature_image": "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDEwfHxmaWN0aW9ufGVufDB8fHx8MTcyODI4NTI4Mnww&ixlib=rb-4.0.3&q=80&w=2000",
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": null,
+                    "url": "https://blog.inovuslabs.org/tag/fiction/"
+                }
+            ],
+            "url": "https://blog.inovuslabs.org/the-secret-friend/",
+            "excerpt": "In a small village nestled between snow-covered mountains, life was simple yet challenging. The village, Snowvale, was a quaint place where chimneys puffed smoke into the cold air, and the cobblestone streets were lined with wooden cottages. At the very edge of the village stood a small, weather-worn cabin. It seemed almost too fragile to withstand the harsh winters, but it was home to a young boy named Liam.\n\nLiam was only twelve years old, but life had already taught him to be resilient. His p",
+            "reading_time": 4
+        },
+        {
+            "title": "Let it Snow! A Festive Guide to add Snowfall Effect to your Website",
+            "custom_excerpt": "🎉 Look around! The snowfall you see on this very blog is a live demonstration of what we’re about to build. Yes, it’s already snowing here! Isn’t that magical? 🎄✨",
+            "published_at": "2024-12-25T08:11:40.000+05:30",
+            "html": "<p><strong>Merry Christmas, web enthusiasts!</strong> 🎄 Everyone has their own way of celebration &amp; entertainment, and this is mine—creating magical effects like this snowfall (also, crashing stuff—once in a while) is my way of spreading joy. It’s more than just code; it’s a celebration of creativity and holiday cheer! 🌟</p><figure class=\"kg-card kg-embed-card\"><iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/fuKmbuuhJy8?start=89&amp;feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen=\"\" title=\"This Is My Entertainment..!! | Aadu 2 Movie Scene | Vinayakan | Jayasurya |\"></iframe></figure><p>Ready to sprinkle some holiday magic on your website? Let's build a simple, lightweight snowfall animation using HTML, CSS, and JavaScript. Let’s make your site feel like Christmas! ❄️✨</p><hr><h3 id=\"why-add-snowfall-%F0%9F%8E%85\">Why Add Snowfall? 🎅</h3><p>Snowfall is the perfect seasonal touch for your website. It’s festive—nothing says \"holidays\" like snowflakes gently drifting down your screen. ❄️ It’s mesmerizing, capturing visitors' attention so much they might forget why they came to your site! 😄 And it’s fun and simple. Everyone has their unique way of celebrating, and adding snowfall is a charming, joyful way to spread holiday cheer. 🛠️</p><p>Convinced? Let’s make it snow! 🌨️</p><h3 id=\"what-we%E2%80%99ll-build\">What We’ll Build</h3><p>Let's create a snowfall overlay that works like a charm on both desktop and mobile devices. Here’s what you’ll get:</p><ul><li>Realistic, smooth snowfall animation. ❄️</li><li>A gentle horizontal drift for a natural, windy effect. 🌬️</li><li>Fully customizable size, speed, and density. 🎨</li></ul><p>Look around you! The snowfall you see right now on this very blog is not just a demonstration—it’s live magic in action! 🎉 Isn’t it amazing to see how a few lines of code can transform a webpage into a winter wonderland? That’s the power of creativity and a little holiday spirit.</p><p>Check out the full code on <a href=\"https://gist.github.com/decoded-cipher/5120fae27b42e6cf33043d1f060858ef\" rel=\"noreferrer\">GitHub Gist</a> attached below!</p><figure class=\"kg-card kg-bookmark-card\"><a class=\"kg-bookmark-container\" href=\"https://gist.github.com/decoded-cipher/5120fae27b42e6cf33043d1f060858ef\"><div class=\"kg-bookmark-content\"><div class=\"kg-bookmark-title\">snowfall.html</div><div class=\"kg-bookmark-description\">GitHub Gist: instantly share code, notes, and snippets.</div><div class=\"kg-bookmark-metadata\"><img class=\"kg-bookmark-icon\" src=\"https://static.ghost.org/v5.0.0/images/link-icon.svg\" alt=\"\"><span class=\"kg-bookmark-author\">Gist</span><span class=\"kg-bookmark-publisher\">262588213843476</span></div></div><div class=\"kg-bookmark-thumbnail\"><img src=\"https://github.githubassets.com/assets/gist-og-image-54fd7dc0713e.png\" alt=\"\" onerror=\"this.style.display = 'none'\"></div></a></figure><hr><h3 id=\"the-magic-code-%F0%9F%AA%84\">The Magic Code 🪄</h3><p>Here’s the HTML, CSS, and JavaScript for the snowfall effect. Copy it, customize it, and let it snow on your website! ☃️</p><pre><code class=\"language-html\">&lt;div id=\"snowfall-overlay\"&gt;&lt;/div&gt;</code></pre><pre><code class=\"language-CSS\">#snowfall-overlay {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    pointer-events: none;\n    z-index: 9999;\n    overflow: hidden;\n}\n\n.snowflake {\n    position: fixed;\n    top: -10px;\n    color: white;\n    line-height: 1;\n    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);\n    pointer-events: none;\n    animation: fall linear infinite;\n}\n\n@keyframes fall {\n    0% {\n        transform: translateY(-10vh) translateX(0);\n    }\n    25% {\n        transform: translateY(25vh) translateX(calc(var(--drift) * 0.5));\n    }\n    50% {\n        transform: translateY(50vh) translateX(calc(var(--drift) * -0.5));\n    }\n    75% {\n        transform: translateY(75vh) translateX(calc(var(--drift) * 0.5));\n    }\n    100% {\n        transform: translateY(100vh) translateX(calc(var(--drift) * -0.5));\n    }\n}</code></pre><pre><code class=\"language-js\">document.addEventListener('DOMContentLoaded', () =&gt; {\n    const container = document.getElementById('snowfall-overlay');\n    const snowflakeCount = window.innerWidth &lt;= 768 ? 50 : 100;\n\n    function createSnowflake() {\n        const snowflake = document.createElement('div');\n        snowflake.className = 'snowflake';\n        snowflake.textContent = '❄';\n\n        // Medium size range for a balanced effect\n        const size = Math.random() * (window.innerWidth &lt;= 768 ? 8 : 12) + 6; // Size: 6px to 14px\n        const drift = Math.random() * 20 - 10; // Drift range: -10vw to 10vw\n\n        // Apply styles\n        snowflake.style.cssText = `\n            left: ${Math.random() * 100}%;\n            opacity: ${Math.random() * 0.6 + 0.4};\n            font-size: ${size}px;\n            animation-duration: ${Math.random() * 5 + 10}s;\n            animation-delay: ${Math.random() * 5}s;\n            --drift: ${drift}vw;\n        `;\n\n        container.appendChild(snowflake);\n\n        // Remove snowflake after animation ends\n        snowflake.addEventListener('animationend', () =&gt; snowflake.remove());\n    }\n\n    // Initial batch of snowflakes\n    for (let i = 0; i &lt; snowflakeCount; i++) {\n        setTimeout(createSnowflake, Math.random() * 3000);\n    }\n\n    // Continuously generate snowflakes\n    setInterval(() =&gt; {\n        if (container.childElementCount &lt; snowflakeCount) createSnowflake();\n    }, 300);\n});</code></pre><hr><h3 id=\"how-it-works-%F0%9F%A7%A9\">How It Works 🧩</h3><ol><li><strong>The Snowflake Container</strong>: The <code>#snowfall-overlay</code> div is a full-screen, fixed-position container for our snowflakes. It ensures the snow stays on top of everything without interfering with clicks.</li><li><strong>The Snowflakes</strong>: Each snowflake <code>div</code> has a random size, opacity, and drift value. It’s styled with CSS and animated using <code>@keyframes</code>.</li><li><strong>The Animation</strong>: The <code>@keyframes</code> animation makes the snowflakes fall vertically while swaying horizontally for a natural effect. 🌨️</li><li><strong>The JavaScript Magic</strong>: JavaScript handles the creation of snowflakes, randomizing their properties and removing them once they’re out of view.</li></ol><hr><h3 id=\"make-it-yours-%F0%9F%8E%A8\">Make It Yours 🎨</h3><p>Customizing the snowfall effect is where the real fun begins! 🌟 Here’s how you can make it uniquely yours. Start by adjusting the <code>snowflakeCount</code> variable to control density, tweak the <code>animation-duration</code> for speed, or swap out <code>‘❄’</code> for emojis like snowmen ☃️ or stars ✨. It’s your canvas, so let your creativity shine!</p><hr><h3 id=\"final-thoughts-%E2%9C%A8\">Final Thoughts ✨</h3><p>Everyone has their own way of celebrating, and this is mine! Bringing festive cheer to the web is my kind of entertainment. 🎉</p><div class=\"kg-card kg-callout-card kg-callout-card-grey\"><div class=\"kg-callout-text\">This snowfall effect is here for the Christmas season, adding a sprinkle of joy and magic to your screen. However, once the season ends, this feature might be removed.</div></div><p>But don't worry! Going forward, I plan to collect and consolidate similar overlays to create a <u>comprehensive library of website enhancements</u>. 🌐 These overlays will be showcased on a demo website, making it easy for anyone to preview, download, and add them to their projects. You can find the repository on <a href=\"https://github.com/decoded-cipher/website-overlays\">GitHub</a>, where anyone can publish new overlays. Feel free to contribute your own creations and be a part of this growing collection! 🌟</p><figure class=\"kg-card kg-bookmark-card\"><a class=\"kg-bookmark-container\" href=\"https://github.com/decoded-cipher/website-overlays\"><div class=\"kg-bookmark-content\"><div class=\"kg-bookmark-title\">GitHub - decoded-cipher/website-overlays</div><div class=\"kg-bookmark-description\">Contribute to decoded-cipher/website-overlays development by creating an account on GitHub.</div><div class=\"kg-bookmark-metadata\"><img class=\"kg-bookmark-icon\" src=\"https://static.ghost.org/v5.0.0/images/link-icon.svg\" alt=\"\"><span class=\"kg-bookmark-author\">GitHub</span><span class=\"kg-bookmark-publisher\">decoded-cipher</span></div></div><div class=\"kg-bookmark-thumbnail\"><img src=\"https://opengraph.githubassets.com/84c15061dc4b9b9d26ba093694054273bd9642ef3ed8f44f04c76267f0935b5c/decoded-cipher/website-overlays\" alt=\"\" onerror=\"this.style.display = 'none'\"></div></a></figure><p>So go ahead, and make it snow! ❄️ Please don’t forget to share your snowy creations &amp; opinions about the snowfall overlay in the comments. Wishing you a <strong>Merry Christmas</strong> and a <strong>Happy New Year</strong>! 🎄🎁</p>",
+            "authors": [
+                {
+                    "id": "1",
+                    "name": "Arjun Krishna",
+                    "slug": "arjun",
+                    "profile_image": "https://www.gravatar.com/avatar/dd27406b884ca7ede3e5364c3dd6326c?s=250&r=x&d=mp",
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "url": "https://blog.inovuslabs.org/author/arjun/"
+                }
+            ],
+            "tags": [
+                {
+                    "id": "66e54cbdd29ec7000177a4b5",
+                    "name": "Web Development",
+                    "slug": "web-development",
+                    "description": null,
+                    "feature_image": "https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE2OTg5MDI5Mjh8MA&ixlib=rb-4.0.3&q=80&w=2000",
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": "#8aaf46",
+                    "url": "https://blog.inovuslabs.org/tag/web-development/"
+                }
+            ],
+            "url": "https://blog.inovuslabs.org/let-it-snow/",
+            "excerpt": "🎉 Look around! The snowfall you see on this very blog is a live demonstration of what we’re about to build. Yes, it’s already snowing here! Isn’t that magical? 🎄✨",
+            "reading_time": 4
+        },
+        {
+            "title": "When Will the Chains Break? The Silent Struggles of the Silent Voices",
+            "custom_excerpt": null,
+            "published_at": "2024-12-23T12:24:32.000+05:30",
+            "html": "<p>Growing up is often seen as gaining freedom, but for many, that independence feels out of reach. Society tells us we can choose our own path, but family expectations and traditions often keep us from doing so, no matter our age.</p><p>This isn’t about rebellion; it’s about being seen as individuals, not just following rules and traditions.</p><p>We often hear, \"We just want the best for you,\" but it comes with hidden rules:</p><ul><li>\"Pick a safe career.\"</li><li>\"Don’t bring shame to the family.\"</li><li>\"Follow tradition.\"</li></ul><p>True independence means making our own choices without fear of judgment. It’s about being valued for who we are, not what others expect from us.</p><p>Many people feel judged whenever they make decisions. If their dreams don’t fit the expectations, their voices feel ignored. Those wanting a creative career or to start a business are often told, \"It’s too risky\" or \"It’s not practical\". This isn’t love—it’s fear of change. Fear of standing out and fear of failure. Sometimes, people are held back because of old beliefs rather than their potential.</p><p>Traditions can offer comfort, but they can also feel like chains. There’s pressure to fit into a mold—whether it’s for family, stability, or what’s considered \"right\". Where is the promised independence? Life often feels planned by others. The career, love, or freedom you want is only allowed if it fits expectations. This isn’t just about feeling trapped—it’s about the emotional toll of feeling misunderstood, frustrated, and afraid of letting others down.</p><p>It’s time for a change. Society needs to realize that love isn’t control. People need the freedom to make their own choices, live their dreams, and be themselves. To everyone struggling with these pressures: Your dreams and voice matter. It’s okay to feel lost or want something different. It’s okay to fight for the life you want.</p><p>Change takes time, but it begins with the courage to be true to ourselves, embracing the freedom to dream, grow, and shine in our own unique way.</p>",
+            "authors": [
+                {
+                    "id": "6738e7d928bd740001c4c30e",
+                    "name": "Amenda Maria Johnson",
+                    "slug": "amenda",
+                    "profile_image": "https://res-3.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/Amenda.jpg",
+                    "cover_image": null,
+                    "bio": null,
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "url": "https://blog.inovuslabs.org/author/amenda/"
+                }
+            ],
+            "tags": [
+                {
+                    "id": "66e54cbdd29ec7000177a4af",
+                    "name": "Free Thinking",
+                    "slug": "freethinking",
+                    "description": null,
+                    "feature_image": "https://images.unsplash.com/photo-1553258318-c22356c14808?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDl8fGZyZWUlMjBzcGVlY2h8ZW58MHx8fHwxNjk4OTAyODU1fDA&ixlib=rb-4.0.3&q=80&w=2000",
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": "#d12323",
+                    "url": "https://blog.inovuslabs.org/tag/freethinking/"
+                }
+            ],
+            "url": "https://blog.inovuslabs.org/the-silent-struggles-of-silent-voices/",
+            "excerpt": "Growing up is often seen as gaining freedom, but for many, that independence feels out of reach. Society tells us we can choose our own path, but family expectations and traditions often keep us from doing so, no matter our age.\n\nThis isn’t about rebellion; it’s about being seen as individuals, not just following rules and traditions.\n\nWe often hear, \"We just want the best for you,\" but it comes with hidden rules:\n\n * \"Pick a safe career.\"\n * \"Don’t bring shame to the family.\"\n * \"Follow traditi",
+            "reading_time": 1
+        },
+        {
+            "title": "A Rollercoaster Ride Through Design - My Journey So Far",
+            "custom_excerpt": null,
+            "published_at": "2024-11-16T22:19:41.000+05:30",
+            "html": "<p>November 16, 2024—what a day! The skies are heavy with rain, thunder is booming, and Lightning is lighting up the sky like it’s a big show. And here I am, celebrating not only two full years as a UI designer but also reflecting on the incredible journey that led me here. It’s been a wild ride, and now, as I enter my third and final year of BCA, I can’t help but think about how it all started.</p><figure class=\"kg-card kg-image-card\"><img src=\"https://res-3.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/Meq-modified.png\" class=\"kg-image\" alt=\"\" loading=\"lazy\" width=\"1000\" height=\"562\"></figure><p>Let’s rewind to when I was in 9th grade. My school introduced a club called Little KITES (Kerala Infrastructure and Technology for Education). Back then, I had no clue what it was all about. But I was curious and joined anyway. Little did I know, that decision would change my life. Through KITES, I got to attend several tech camps and, surprisingly, even had the chance to teach my friends, juniors, and seniors. That experience taught me one of the most valuable lessons: I could be both a student and a mentor. And this was just the beginning.</p><p>I started off by dabbling in IoT, experimenting with microcontrollers, but it didn’t exactly give me the excitement I was hoping for. So, I moved on and explored different creative fields—Scratch, Python, Visual Designing, Photography, Web Development, Blender, and TupiTube (remember that?). I tried everything, and although it was overwhelming at times, I eventually focused on what I truly loved: Designing and Web Development.</p><p>During my school years, I was the go-to designer—creating cover pages, posters, event banners, and even a school magazine. If it needed a creative touch, I was the one everyone turned to. I also began giving design sessions to my friends and peers. But, here’s the thing: I wasn’t the brightest student academically. I was always somewhere in the middle, around 5th or 6th. But, somehow, I managed to score 96% in my SSLC exams. Who knew?</p><p>And then came the pandemic. Suddenly, we were all at home, attending online classes. But instead of just sitting there, I decided to make the most of my time. I dove deep into video editing—Kinemaster, Inshot, Capcut, VN Editor, Node Video Editor, Alight Motion. I explored every tool I could find. And let’s not forget about Pixellab, Picsart, and Canva. I created wedding videos, social media reels, posters, and logos for shops and travel agencies—all for free. My parents, of course, were convinced I was just wasting time on my phone, but little did they know, I was investing in my creativity!</p><p>During this time, I also got into some cyber-related stuff, including ethical hacking. It wasn’t all smooth sailing, though. Some of my experiences were a bit scary—imagine learning to hack and then facing the consequences of mistakes. But hey, it was all part of the learning process.</p><p>When college started, I walked in with a bit of design experience and some basic knowledge of HTML and CSS. That’s when I stumbled upon Inovus Labs IEDC, a student community at my college. I attended their orientation session, and that’s when I realized something important: the BCA syllabus wasn’t going to cut it in the fast-evolving world. It wasn’t about degrees or textbooks—it was about skills.</p><p>Through Inovus, I met some incredible seniors who introduced me to Figma. This was a game-changer. I quickly fell in love with UI/UX design and decided to dive deep into it. I even landed my first internship as a designer with Inovus Labs. Around that time, I bought my first laptop—not a high-end machine, but it did the job. I used it for Photoshop, Illustrator, and Figma Web. I had a rocky start with Illustrator, so I focused on what worked best for me—Figma and Photoshop. Slowly, Figma became my go-to tool for creating posters, logos, and mockups. It was like my second partner in crime.</p><p>The internship gave me tons of experience, and I eventually became the Chief Creative Officer (CCO) at Inovus. But to be honest, titles don’t mean much to me. In Inovus, everyone is a peer, learning from each other. It’s a place where I discovered my passion for UI/UX design and got the chance to volunteer as a UI/UX designer for Kerala Police Cyberdome. Later, I also got an internship as a graphic designer at GTech MuLearn.</p><p>Through all of this, Inovus gave me countless opportunities to mentor others, lead sessions, and continue learning. Being a designer and a mentor at the same time was one of the most fulfilling experiences of my life. It wasn’t easy, but it was incredibly rewarding.</p><p>And now, I’m proud to say I’m the COO of Inovus Labs, where I manage projects, events, and design. All these experiences, both as a designer and a mentor, have helped me develop skills in team management, project management, event coordination, and even development. Yes, I’m a designer at heart, but I also manage a bit of development on the side—JavaScript, Python, React, HTML, CSS, and even Telegram bots. It’s been a crazy but exciting journey.</p><p>Looking back, I’ve worn many hats: freelance designer, intern, mentor, volunteer, and COO. And through it all, I’ve learned one thing that stands out: It’s not about the software or the tools you use. Whether it’s Figma, Photoshop, or even some obscure editing app, it’s your creativity and skills that matter most.</p><p>As I celebrate my second year in UI design, I also reflect on the years of experimenting, learning, and growing in the broader field of design. Here’s to many more years of creativity, challenges, and growth.</p>",
+            "authors": [
+                {
+                    "id": "66e54ca3d29ec7000177a480",
+                    "name": "Arjun A Acharry",
+                    "slug": "arjun-a-acharry",
+                    "profile_image": "https://res-5.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/_MG_2998---Copy.jpg",
+                    "cover_image": "https://res-4.cloudinary.com/dbzgbdyvv/image/upload/q_auto/v1/ghost/df5bfb980dfb82fd5276065a3a6f8fa9.jpg",
+                    "bio": "Never Judge Anyone With His Past",
+                    "website": null,
+                    "location": null,
+                    "facebook": null,
+                    "twitter": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "url": "https://blog.inovuslabs.org/author/arjun-a-acharry/"
+                }
+            ],
+            "tags": [
+                {
+                    "id": "66e54cbdd29ec7000177a4af",
+                    "name": "Free Thinking",
+                    "slug": "freethinking",
+                    "description": null,
+                    "feature_image": "https://images.unsplash.com/photo-1553258318-c22356c14808?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDl8fGZyZWUlMjBzcGVlY2h8ZW58MHx8fHwxNjk4OTAyODU1fDA&ixlib=rb-4.0.3&q=80&w=2000",
+                    "visibility": "public",
+                    "og_image": null,
+                    "og_title": null,
+                    "og_description": null,
+                    "twitter_image": null,
+                    "twitter_title": null,
+                    "twitter_description": null,
+                    "meta_title": null,
+                    "meta_description": null,
+                    "codeinjection_head": null,
+                    "codeinjection_foot": null,
+                    "canonical_url": null,
+                    "accent_color": "#d12323",
+                    "url": "https://blog.inovuslabs.org/tag/freethinking/"
+                }
+            ],
+            "url": "https://blog.inovuslabs.org/a-rollercoaster-ride-through-design-my-journey-so-far/",
+            "excerpt": "November 16, 2024—what a day! The skies are heavy with rain, thunder is booming, and Lightning is lighting up the sky like it’s a big show. And here I am, celebrating not only two full years as a UI designer but also reflecting on the incredible journey that led me here. It’s been a wild ride, and now, as I enter my third and final year of BCA, I can’t help but think about how it all started.\n\nLet’s rewind to when I was in 9th grade. My school introduced a club called Little KITES (Kerala Infras",
+            "reading_time": 4
+        }
+    ];
 
 };
 
@@ -1226,16 +1234,17 @@ export const getPodcasts = async () => {
         {
             id: "4NM5QuIiDVeUAy8FaKou4Q",
         },
-    ]
+    ];
 
 };
+
 
 
 // Get all activity
 
 export const getActivity = async () => {
     let data = {
-        "tags": ["Workshop", "Internship", "Bootcamp", "Challenge", "Session", "Exhibition","Release"],
+        "tags": ["Workshop", "Internship", "Bootcamp", "Challenge", "Session", "Exhibition", "Release"],
         "activities": [
             {
                 "id": 1,
@@ -1244,7 +1253,7 @@ export const getActivity = async () => {
                 "description": "A nano degree program to develop the web designing skills of students at Kristu Jyoti college. It have been successfully completed and given the certificate of the nano degree program.",
                 "date": ["01 June 2023", "14 June 2023"],
                 "tags": ["Bootcamp"]
-            },{
+            }, {
                 "id": 2,
                 "title": "Kerala Piravi @ Govt. LP School",
                 "thumbnail": BASE_URL + "/assets/activity/schoolvisit.jpg",
@@ -1377,7 +1386,7 @@ export const getActivity = async () => {
                 "title": "Figma Bootcamp",
                 "thumbnail": BASE_URL + "/assets/activity/figmabootcamp.jpg",
                 "description": "Figma bootcamp was an online workshop conducted by the INOVUS LABS IEDC of Kristu Jyoti college to enhance the designing skills of students with the help of the popular designing tool called Figma. The primary and ultimate goal of the workshop was to create an unshakeable foundation in the field of designing.  ",
-                "date": ["16 October 2023","21 October 2023"],
+                "date": ["16 October 2023", "21 October 2023"],
                 "tags": ["Bootcamp"]
             },
             {
@@ -1429,7 +1438,7 @@ export const getActivity = async () => {
                 "tags": ["Workshop"]
             },
             {
-                "id": 24,              
+                "id": 24,
                 "title": "Introduction to Hacktober Fest 2021",
                 "thumbnail": BASE_URL + "/assets/activity/21hacktober.png",
                 "description": "Inovus Labs IEDC orchestrated the Simple - Introduction to Hacktober fest workshop on October 3, 2021, providing an online space for 16 participants to grasp the essence of this annual open-source event. The workshop served as a platform to elucidate the concept of Hacktober fest and its significance in the open-source realm. Through interactive discussions held on a Discord server, participants delved into the collaborative nature of open-source contributions and learned about the tangible impact they can make. Guided by the event's objective, participants emerged with a comprehensive understanding of Hacktober fest's purpose and avenues for meaningful contributions to open-source projects. This workshop stands as a testament to Inovus Labs IEDC's commitment to fostering a culture of collaboration and innovation, encouraging participants to actively engage in the open-source community and contribute positively to the digital landscape. ",
@@ -1675,7 +1684,7 @@ export const getActivity = async () => {
                 "title": "YIP 6.0  ",
                 "thumbnail": BASE_URL + "/assets/activity/yip6.o.jpg",
                 "description": "We supported students for the Young Innovators Program (YIP) 6.0 , guiding them through the idea submission process. By providing comprehensive assistance and fostering innovation, we helped students submit creative and impactful ideas that address societal challenges.  ",
-                "date": ["09 January 2024","27 February 2024"],
+                "date": ["09 January 2024", "27 February 2024"],
                 "tags": ["Challenge"]
             },
             {
@@ -1683,7 +1692,7 @@ export const getActivity = async () => {
                 "title": "Inovus-Orientation '24  ",
                 "thumbnail": BASE_URL + "/assets/activity/invous orientations.jpg",
                 "description": "The orientation session conducted by Inovus Labs IEDC for BCA,B.Sc Cyber Forensic students aimed to introduce them to the community, focusing on opportunities for creativity, innovation, and entrepreneurial development. The session concluded with an invitation for these students to actively engage in community activities, urging them to explore and contribute to initiatives within the community and the broader community, thereby fostering their creativity and entrepreneurial potential.  ",
-                "date": ["04 July 2024","05 July 2024"],
+                "date": ["04 July 2024", "05 July 2024"],
                 "tags": ["Session"]
             },
             {
@@ -1694,14 +1703,14 @@ export const getActivity = async () => {
                 "date": ["02 August 2024"],
                 "tags": ["Workshop"],
                 "sitelink": ["https://stepone.inovuslabs.org"]
-            },{
+            }, {
                 "id": 57,
                 "title": "Introduction to Blogs",
                 "thumbnail": BASE_URL + "/assets/activity/introblog.jpg",
                 "description": "Introduction to Blog is an event conducted by INOVUS LABS IEDC to introduce participants to the world of blogging. It covers the basics of starting a blog, writing engaging content, and sharing ideas online. The event helps attendees learn how to effectively express themselves and build an online presence through blogging.",
                 "date": ["07 August 2024", "08 August 2024"],
                 "tags": ["Session"],
-            },{
+            }, {
                 "id": 58,
                 "title": "Innovation & Entrepreneurship",
                 "thumbnail": BASE_URL + "/assets/activity/ino.jpg",
@@ -1714,35 +1723,35 @@ export const getActivity = async () => {
                 "description": "DocGen is a document generation tool developed by DevMorphix. It helps users easily create and format documents, streamlining tasks like generating reports, certificates, or other professional documents quickly and efficiently.",
                 "date": ["23 August 2024"],
                 "tags": ["Release"],
-            },{
+            }, {
                 "id": 59,
                 "title": "Herba Soap- Release",
                 "thumbnail": BASE_URL + "/assets/activity/herba.jpg",
                 "description": "Herba Soap is a fundraising product. It is part of an initiative to support the community’s project, i.e, building an electric bike. The soap is crafted with natural ingredients and is sold to raise funds while promoting sustainable and eco-friendly practices. The sale of Herba Soap aligns with INOVUS LABS' mission of fostering innovation and supporting entrepreneurial endeavors.",
                 "date": ["23 August 2024"],
                 "tags": ["Release"],
-            },{
+            }, {
                 "id": 61,
                 "title": "Introduction to Mulearn",
                 "thumbnail": BASE_URL + "/assets/activity/mulearn.jpg",
                 "description": "MuLearn is a community where students and professionals can learn new skills, share knowledge, and work together. It offers resources and challenges in areas like technology and entrepreneurship to help people grow and improve. The goal is to create a space for learning and collaboration.",
                 "date": ["09 September 2024"],
                 "tags": ["Session"],
-            },{
+            }, {
                 "id": 62,
                 "title": "Hacktoberfest 2024",
                 "thumbnail": BASE_URL + "/assets/activity/Hacktober24.png",
                 "description": "MuLearn is a community where students and professionals can learn new skills, share knowledge, and work together. It offers resources and challenges in areas like technology and entrepreneurship to help people grow and improve. The goal is to create a space for learning and collaboration.",
                 "date": ["01 October 2024", "31 October 2024"],
                 "tags": ["Workshop"],
-            },{
+            }, {
                 "id": 63,
                 "title": "Inora - Join Our Team ",
                 "thumbnail": BASE_URL + "/assets/activity/Inora Intern call.png",
                 "description": "Welcoming new buddies . We have conducted interview of all applied students and assigned tasks and selected  intrested students to inovus Fam.",
                 "date": ["13 October 2024", "20 October 2024"],
                 "tags": ["Internship"],
-            },{
+            }, {
                 "id": 64,
                 "title": "Call For Interns ",
                 "thumbnail": BASE_URL + "/assets/activity/Interncall 24.png",
@@ -1751,21 +1760,21 @@ export const getActivity = async () => {
                 "tags": ["Internship"],
                 "sitelink": ["https://forms.gle/igbQXMM25AMJhQ7R6"],
 
-            },{
+            }, {
                 "id": 65,
                 "title": "Help Desk-YIP 7.0",
                 "thumbnail": BASE_URL + "/assets/activity/YIP 7.0 HelpDesk.png",
                 "description": "MuLearn is a community where students and professionals can learn new skills, share knowledge, and work together. It offers resources and challenges in areas like technology and entrepreneurship to help people grow and improve. The goal is to create a space for learning and collaboration.",
                 "date": ["11 November 2024", "15 December 2024"],
                 "tags": ["Challenge"],
-            },{
+            }, {
                 "id": 66,
                 "title": "Stupid Idea Competition",
                 "thumbnail": BASE_URL + "/assets/activity/Stupid Idea Contest24.png",
                 "description": "MuLearn is a community where students and professionals can learn new skills, share knowledge, and work together. It offers resources and challenges in areas like technology and entrepreneurship to help people grow and improve. The goal is to create a space for learning and collaboration.",
-                "date": ["11 November 2024","12 December 2024"],
+                "date": ["11 November 2024", "12 December 2024"],
                 "tags": ["Challenge"],
-            },{
+            }, {
                 "id": 67,
                 "title": "Web Design Bootcamp",
                 "thumbnail": BASE_URL + "/assets/activity/Web-D.png",
@@ -1774,7 +1783,7 @@ export const getActivity = async () => {
                 "tags": ["Bootcamp"],
                 "sitelink": ["https://forms.gle/8Ma9isaK86bW3YvJ6"],
             }
-            ,{
+            , {
                 "id": 68,
                 "title": "Figma Workshop",
                 "thumbnail": BASE_URL + "/assets/activity/figma_workshop'24.png",
@@ -1782,14 +1791,14 @@ export const getActivity = async () => {
                 "date": ["20 January 2025   "],
                 "tags": ["Workshop"],
                 "sitelink": ["https://forms.gle/XDXywkGRtsmgYG7ZA   "],
-            },{
+            }, {
                 "id": 69,
                 "title": "Hangout With Inovus",
                 "thumbnail": BASE_URL + "/assets/activity/Hangout With Inovus (1).png",
                 "description": "The Hangout with Inovus with session had Johna Aswin Selva , a featured alumini of both Inovus Labs IEDC & Kristu Jyoti College, who provided us with a engaging fire chat covering various aspects of ideation,buisness planning and sttrends of student led start-ups.",
                 "date": ["28 January 2025   "],
                 "tags": ["Session"],
-            },{
+            }, {
                 "id": 70,
                 "title": "BizNova",
                 "thumbnail": BASE_URL + "/assets/activity/biznova.png",
@@ -1797,7 +1806,7 @@ export const getActivity = async () => {
                 "date": ["10 February 2025   "],
                 "tags": ["Workshop"],
             }
-            ,{
+            , {
                 "id": 71,
                 "title": "Zephyr 3.0",
                 "thumbnail": BASE_URL + "/assets/activity/Zephyr 3.0.png",
@@ -1805,55 +1814,55 @@ export const getActivity = async () => {
                 "date": ["5 March 2025   "],
                 "tags": ["Workshop"],
             }
-            ,{
+            , {
                 "id": 71,
                 "title": "Arduino@20 - Days with Arduino by Talk & Work",
                 "thumbnail": BASE_URL + "/assets/activity/arduino@20.jpg",
                 "description": "The Arduino@20 event was a grand celebration of Arduino's 20th birthday, where INOVUS LABS IEDC was honored to be one of the nine organizers from Kerala in collaboration with Arduino. Partnering with Unique World Robotics, we welcomed Akhil R. Gomez, who led engaging sessions on the future of robotics.",
-                "date": ["21 March 2025" ,"22 March 2025"],
+                "date": ["21 March 2025", "22 March 2025"],
                 "tags": ["Workshop"],
             }
-            ,{
+            , {
                 "id": 72, //DATE--2026-2027--->>
                 "title": "Introduction to Microsoft Concepts",
-                "thumbnail": BASE_URL + "Microsoft_workshop",
+                "thumbnail": BASE_URL + "/assets/activity/Microsoft_workshop.jpeg",
                 "description": "Inovus Labs IEDC conducted an 'Introduction to Microsoft Concepts' workshop for the students of St. Rita's School of Nursing, providing hands-on experience with Microsoft Word, Excel, and PowerPoint to enhance their digital skills and productivity.",
                 "date": ["12 May 2025"],
                 "tags": ["Workshop"],
             }
-             ,{
+            , {
                 "id": 73,
-                "title": "Akshara Tharangam",
-                "thumbnail": BASE_URL + "/assets/activity/akshara_tharangam.jpg",
+                "title": "Akshara Tharangam- Magazine",
+                "thumbnail": BASE_URL + "/assets/activity/Magazine%20Akshara%20Tharangam%20(1).jpg",
                 "description": "Organized in connection with Reading & Writing Day, Akshara Tharangam invited students to showcase their creativity through short stories, poems, drawings, and artworks, which were compiled into a digital magazine celebrating reading, writing, and creative expression.",
                 "date": ["19 June 2025"],
                 "tags": ["Literary Initiative"]
             }
-            ,{
+            , {
                 "id": 74,
                 "title": "CCA #1: Intro to World of IT",
-                "thumbnail": BASE_URL + "/assets/activity/cca_1.jpg",
+                "thumbnail": BASE_URL + "/assets/activity/cca_1.png",
                 "description": "The first CCA session introduced students of Classes 8 and 9 to emerging fields of technology, including robotics, coding, artificial intelligence, electronics, and renewable energy. Through interactive discussions, icebreaking activities, and idea-pitching sessions, students developed creativity, teamwork, communication, and confidence while exploring the world of technology.",
                 "date": ["20 June 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 75,
                 "title": "Akshara Tharangam: Debate Competition",
-                "thumbnail": BASE_URL + "/assets/activity/debate_competition.jpg",
+                "thumbnail": BASE_URL + "/assets/activity/debate.png",
                 "description": "Organized as part of the Akshara Tharangam programme, the Debate Competition encouraged students to develop critical thinking, public speaking, and teamwork skills by presenting and defending their views on technology, current affairs, and social issues in a structured and engaging environment.",
                 "date": ["25 June 2025"],
                 "tags": ["Competition"]
             }
-            ,{
+            , {
                 "id": 76,
                 "title": "Akshara Tharangam: Writing Day Blogathon Challenge",
-                "thumbnail": BASE_URL + "/assets/activity/blogathon.jpg",
+                "thumbnail": BASE_URL + "/assets/activity/blogathon.jpg.png",
                 "description": "Organized as part of Akshara Tharangam in celebration of Writing Day, the Blogathon Challenge encouraged students to share original blogs on diverse topics. The initiative promoted creative writing, digital content creation, and self-expression, with the best submissions featured on Inovus Labs' official blogging platform.",
                 "date": ["25 June 2025"],
                 "tags": ["Competition"]
             }
-            ,{
+            , {
                 "id": 77,
                 "title": "Akshara Tharangam: Book Sale",
                 "thumbnail": BASE_URL + "/assets/activity/book_sale.jpg",
@@ -1861,7 +1870,7 @@ export const getActivity = async () => {
                 "date": ["26 June 2025", "27 June 2025"],
                 "tags": ["Book Sale"]
             }
-            ,{
+            , {
                 "id": 78,
                 "title": "CCA #2: Introduction to Arduino",
                 "thumbnail": BASE_URL + "/assets/activity/cca_2.jpg",
@@ -1869,7 +1878,7 @@ export const getActivity = async () => {
                 "date": ["04 July 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 79,
                 "title": "CCA #3: Introduction to Sensors & Microcontrollers",
                 "thumbnail": BASE_URL + "/assets/activity/cca_3.jpg",
@@ -1877,7 +1886,7 @@ export const getActivity = async () => {
                 "date": ["11 July 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 80,
                 "title": "CCA #4: Introduction to PictoBlox",
                 "thumbnail": BASE_URL + "/assets/activity/cca_4.jpg",
@@ -1885,7 +1894,7 @@ export const getActivity = async () => {
                 "date": ["18 July 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 81,
                 "title": "CCA #5: Web Design, IoT & Creative Design",
                 "thumbnail": BASE_URL + "/assets/activity/cca_5.jpg",
@@ -1893,7 +1902,7 @@ export const getActivity = async () => {
                 "date": ["25 July 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 82,
                 "title": "CCA #6: Web Design, IoT & Creative Design",
                 "thumbnail": BASE_URL + "/assets/activity/cca_6.jpg",
@@ -1901,7 +1910,7 @@ export const getActivity = async () => {
                 "date": ["01 August 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 83,
                 "title": "CCA #7: Web Development, IoT & Digital Design",
                 "thumbnail": BASE_URL + "/assets/activity/cca_7.jpg",
@@ -1909,7 +1918,7 @@ export const getActivity = async () => {
                 "date": ["08 August 2025"],
                 "tags": ["Workshop"]
             }
-            ,{
+            , {
                 "id": 84,
                 "title": "ROBO-OS – WHAT?",
                 "thumbnail": BASE_URL + "/assets/activity/robo_os_what.jpg",
@@ -1917,233 +1926,233 @@ export const getActivity = async () => {
                 "date": ["16 August 2025"],
                 "tags": ["Webinar"]
             }
-            ,{
-            "id": 85,
-            "title": "What is Innovation? Inovus Orientation",
-            "thumbnail": BASE_URL + "/assets/activity/innovation_orientation.jpg",
-            "description": "Inovus Labs IEDC conducted an orientation session for first-year BCA students, introducing the true meaning of innovation through real-world examples and interactive discussions. The session inspired students to think creatively, develop a problem-solving mindset, and begin their innovation journey by exploring opportunities within the Inovus Labs IEDC ecosystem.",
-            "date": ["26 August 2025"],
-            "tags": ["Orientation"]
-        }
-         ,{
-            "id": 86,
-            "title": "CCA #8: Web Development, IoT & UI/UX Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_8.jpg",
-            "description": "CCA #8 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and UI/UX Design. Students learned HTML lists, forms, and Visual Studio Code basics, gained hands-on experience with Arduino IDE and programming electronic components, and explored Figma to design simple user interfaces. The interactive sessions strengthened creativity, coding skills, logical thinking, problem-solving, and practical technical knowledge through hands-on activities.",
-            "date": ["12 September 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 87,
-            "title": "CCA #9: Web Development, IoT & Creative Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_9.jpg",
-            "description": "CCA #9 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Creative Design. Students explored the fundamentals of HTML and webpage structure, revised PictoBlox programming and LED control concepts, and learned the basics of poster design, including layout, typography, colour theory, and visual hierarchy. The interactive sessions enhanced creativity, coding skills, logical thinking, and confidence through practical learning activities.",
-            "date": ["19 September 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 88,
-            "title": "CCA #10: Introduction to Image Generation",
-            "thumbnail": BASE_URL + "/assets/activity/cca_10.jpg",
-            "description": "CCA #10 introduced students to AI-powered image generation and effective prompting using Gemini. Participants learned how descriptive prompts influence AI-generated images, explored prompt structure, keywords, and creativity, and gained hands-on experience creating and refining prompts for digital art, storytelling, marketing, and content creation. The session enhanced creativity, critical thinking, and confidence in using AI tools for visual expression.",
-            "date": ["26 September 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 89,
-            "title": "Electron Launch – Electric Bike Unveiling",
-            "thumbnail": BASE_URL + "/assets/activity/electron_launch.jpg",
-            "description": "Inovus Labs IEDC officially launched Electron, a student-driven innovation that transformed a conventional petrol-powered bike into a fully electric vehicle. The project showcased sustainable engineering, renewable energy concepts, and hands-on innovation, inspiring students to explore electric mobility, green technology, and real-world problem-solving through engineering.",
-            "date": ["26 September 2025"],
-            "tags": ["Product Launch"]
-        }
-        ,{
-            "id": 90,
-            "title": "Hacktoberfest 2025",
-            "thumbnail": BASE_URL + "/assets/activity/hacktoberfest_2025.jpg",
-            "description": "In collaboration with the μLearn Foundation, Inovus Labs IEDC organized Hacktoberfest 2025, a month-long open-source initiative that brought together 504 students from multiple colleges. Participants contributed to GitHub repositories, learned version control, collaborated on real-world software projects, and strengthened their coding, problem-solving, and teamwork skills through mentorship and community-driven development.",
-            "date": ["01 October 2025", "31 October 2025"],
-            "tags": ["Open Source"]
-        }
-        ,{
-            "id": 91,
-            "title": "Intro to Hacktoberfest",
-            "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest.jpg",
-            "description": "In collaboration with μLearn Foundation and μLearn SCTCE, Inovus Labs IEDC organized an introductory bootcamp on Hacktoberfest. Participants learned Git and GitHub fundamentals, explored beginner-friendly open-source repositories, and understood the complete pull request workflow. The session built confidence in contributing to open-source projects and encouraged students to become active members of the global developer community.",
-            "date": ["02 October 2025"],
-            "tags": ["Bootcamp"]
-        }
-        ,{
-            "id": 92,
-            "title": "Intro to Hacktoberfest",
-            "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest2.jpg",
-            "description": "Inovus Labs IEDC, in collaboration with μLearn Foundation and μLearn SCTCE, organized an introductory Hacktoberfest bootcamp that familiarized students with Git, GitHub, open-source contribution, and the complete pull request workflow. The hands-on session helped beginners confidently take their first steps into the open-source community and inspired continued participation in collaborative software development.",
-            "date": ["02 October 2025"],
-            "tags": ["Bootcamp"]
-        }
-        ,{
-            "id": 93,
-            "title": "CCA #11: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_11.jpg",
-            "description": "CCA #11 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Design. Students learned the fundamentals of HTML, including headings, paragraphs, links, images, lists, and basic CSS, explored LED traffic light and running light patterns using microcontrollers, and gained an understanding of colour theory, colour harmony, contrast, and effective colour combinations for visual design. The practical sessions enhanced creativity, programming skills, logical thinking, teamwork, and confidence through hands-on learning activities.",
-            "date": ["03 October 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 94,
-            "title": "CCA #12: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_12.jpg",
-            "description": "CCA #12 introduced students to three practical technology domains through parallel learning tracks. The Web Development session covered the fundamentals of CSS, including selectors, colors, fonts, spacing, layouts, and styling HTML webpages. The IoT session provided hands-on experience with IR sensors and buzzers, demonstrating obstacle detection, sound indicators, and simple automation circuits. The Design session introduced Figma, where students explored UI/UX fundamentals, interface design, prototyping, and collaborative design tools. These interactive activities strengthened students' creativity, problem-solving, technical knowledge, and confidence in applying modern web, electronics, and digital design concepts.",
-            "date": ["24 October 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 95,
-            "title": "CCA #13: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_13.jpg",
-            "description": "CCA #13 featured three hands-on learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored responsive web design using CSS, learning how websites adapt to different screen sizes through flexible layouts, relative units, and media queries. The IoT session introduced ultrasonic sensors, demonstrating distance measurement, object detection, hardware connections, and basic programming for smart systems. In the Design track, students gained practical experience with Figma by creating digital layouts, posters, and UI designs while applying colour, typography, balance, and composition principles. The interactive sessions enhanced creativity, logical thinking, technical skills, and confidence through practical learning and real-world applications.",
-            "date": ["31 October 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 96,
-            "title": "CCA #14: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_14.jpg",
-            "description": "CCA #14 featured three practical learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored JavaScript fundamentals, including variables, basic syntax, functions, and how JavaScript works with HTML and CSS to create interactive web pages. The IoT session introduced motion detection using an MD sensor and buzzer, demonstrating sensor-based security and automation systems through hands-on circuit building. In the Design track, students participated in a Poster Making Challenge, applying layout, typography, colour combinations, and visual balance to communicate ideas creatively. These interactive activities enhanced creativity, logical thinking, programming knowledge, electronics skills, and confidence through practical learning experiences.",
-            "date": ["07 November 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 97,
-            "title": "CCA #15: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_15.jpg",
-            "description": "CCA #15 featured three project-based learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session guided students in creating a 'Replay of Journey' webpage using HTML to showcase their learning experiences, milestones, and achievements through a well-structured and user-friendly website. The IoT session focused on revising Arduino fundamentals, including board components, programming basics, circuit connections, LEDs, sensors, and the Arduino IDE to strengthen practical electronics knowledge. The Design session reinforced the fundamentals of colour, typography, layout, balance, and composition through revision activities and creative exercises. These interactive sessions improved creativity, technical knowledge, problem-solving abilities, and confidence while preparing students for more advanced web, electronics, and design projects.",
-            "date": ["22 November 2025", "25 November 2025"],
-            "tags": ["Workshop"]
-        },
-        {
-            "id": 98,
-            "title": "CCA #16: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_16.jpg",
-            "description": "CCA #16 featured three interactive learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript DOM manipulation, where they learned to create dynamic and interactive webpages by handling user events, updating webpage content, and validating form inputs. The IoT session focused on implementing an automatic street light system using an LDR sensor, helping students understand light sensing, automation, circuit design, and Arduino programming. In the Design track, students explored logo design principles using Figma, learning about visual identity, typography, color psychology, balance, and brand consistency while creating unique logo concepts. Through hands-on activities and collaborative learning, students strengthened their creativity, programming skills, problem-solving abilities, and practical understanding of modern web development, embedded systems, and digital design.",
-            "date": ["28 November 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 99,
-            "title": "Arduino Workshop",
-            "thumbnail": BASE_URL + "/assets/activity/Arduino_workshop.jpg",
-            "description": "A hands-on Arduino workshop introducing students to the fundamentals of electronics, embedded systems, and microcontroller programming. Participants explored Arduino boards, sensors, actuators, circuit building, and basic coding through practical activities, enhancing their technical knowledge, problem-solving abilities, and confidence in developing real-world IoT projects.",
-            "date": ["15 December 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 100,
-            "title": "CCA #17: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_17.jpg",
-            "description": "CCA #17 continued students' practical learning through Web Development, Internet of Things (IoT), and Design sessions. In Web Development, students learned JavaScript event handling, DOM manipulation, and interactive webpage development by creating responsive user interfaces. The IoT session introduced Bluetooth communication using the HC-05 module, where students built and tested smartphone-controlled Arduino projects to understand wireless automation and embedded system applications. The Design session focused on creating social media posters in Figma, covering layout design, typography, visual hierarchy, icon placement, and color harmony to produce professional digital creatives. The hands-on activities strengthened students' creativity, coding ability, electronics knowledge, collaboration, and confidence in developing real-world technology solutions.",
-            "date": ["05 December 2025"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 101,
-            "title": "KeraKatana – AI Image Generation Challenge",
-            "thumbnail": BASE_URL + "/assets/activity/KeraKatana",
-            "description": "KeraKatana was an online AI image generation challenge organized by Inovus Labs IEDC in collaboration with Chat for Codes. Participants explored the creative fusion of traditional Japanese samurai culture with Kerala's heritage by generating unique AI-powered artwork. The challenge introduced students to prompt engineering, AI image generation tools, and digital art while encouraging creativity, innovation, and experimentation through engaging visual storytelling.",
-            "date": ["09 January 2026", "17 January 2026"],
-            "tags": ["Challenge"]
-        }
-        ,{
-            "id": 102,
-            "title": "CCA #18: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_18.jpg",
-            "description": "CCA #18 provided students with advanced hands-on learning through Web Development, Internet of Things (IoT), and Design sessions. The Web Development track introduced students to REST APIs and asynchronous JavaScript using Fetch API, enabling them to retrieve and display live data from external services in dynamic web applications. The IoT session focused on integrating a DHT11 temperature and humidity sensor with Arduino, allowing students to collect environmental data, process sensor readings, and build simple weather monitoring systems. In the Design track, students explored mobile app UI design using Figma by creating modern interfaces, reusable components, icons, and interactive prototypes while applying design systems and accessibility principles. The practical activities enhanced students' programming, electronics, UI/UX design, collaboration, and real-world problem-solving skills through project-based learning.",
-            "date": ["16 January 2026"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 103,
-            "title": "Zephyr 4.0 Ideathon",
-            "thumbnail": BASE_URL + "/assets/activity/zephyr_ideathon.jpg",
-            "description": "The Zephyr 4.0 Ideathon was organized by Inovus Labs IEDC to introduce students to modern embedded systems and foster innovative thinking through collaborative problem-solving. Participants explored the fundamentals of Zephyr RTOS, embedded system challenges, solution ideation, and feasibility analysis before working in teams to develop creative solutions for real-world problem statements. Guided by experienced mentors, students enhanced their technical knowledge, critical thinking, teamwork, and presentation skills while gaining valuable exposure to embedded technologies and innovation-driven product development.",
-            "date": ["27 January 2026"],
-            "tags": ["Ideathon"]
-        }
-         ,{
-            "id": 104,
-            "title": "Zephyr 4.0 Hackathon",
-            "thumbnail": BASE_URL + "/assets/activity/Zephyr_Hackathon.jpg",
-            "description": "The Zephyr 4.0 Hackathon was organized by Inovus Labs IEDC to introduce students to modern embedded operating systems through a competitive and collaborative learning experience. Participants explored the fundamentals of Zephyr RTOS, including its architecture, system configuration, and application development, before tackling real-world problem statements in teams. Guided by mentors, students applied their technical knowledge, logical reasoning, and teamwork to design innovative embedded solutions within a limited timeframe. The event fostered creativity, problem-solving skills, and hands-on experience with embedded system development while inspiring students to explore modern IoT and real-time operating system technologies.",
-            "date": ["27 January 2026"],
-            "tags": ["Hackathon"]
-        }
+            , {
+                "id": 85,
+                "title": "What is Innovation? Inovus Orientation",
+                "thumbnail": BASE_URL + "/assets/activity/what_is_innovation.png",
+                "description": "Inovus Labs IEDC conducted an orientation session for first-year BCA students, introducing the true meaning of innovation through real-world examples and interactive discussions. The session inspired students to think creatively, develop a problem-solving mindset, and begin their innovation journey by exploring opportunities within the Inovus Labs IEDC ecosystem.",
+                "date": ["26 August 2025"],
+                "tags": ["Orientation"]
+            }
+            , {
+                "id": 86,
+                "title": "CCA #8: Web Development, IoT & UI/UX Design",
+                "thumbnail": BASE_URL + "/assets/activity/caa_8.jpg",
+                "description": "CCA #8 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and UI/UX Design. Students learned HTML lists, forms, and Visual Studio Code basics, gained hands-on experience with Arduino IDE and programming electronic components, and explored Figma to design simple user interfaces. The interactive sessions strengthened creativity, coding skills, logical thinking, problem-solving, and practical technical knowledge through hands-on activities.",
+                "date": ["12 September 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 87,
+                "title": "CCA #9: Web Development, IoT & Creative Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_9_iot.jpg",
+                "description": "CCA #9 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Creative Design. Students explored the fundamentals of HTML and webpage structure, revised PictoBlox programming and LED control concepts, and learned the basics of poster design, including layout, typography, colour theory, and visual hierarchy. The interactive sessions enhanced creativity, coding skills, logical thinking, and confidence through practical learning activities.",
+                "date": ["19 September 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 88,
+                "title": "CCA #10: Introduction to Image Generation",
+                "thumbnail": BASE_URL + "/assets/activity/cca_10.jpg",
+                "description": "CCA #10 introduced students to AI-powered image generation and effective prompting using Gemini. Participants learned how descriptive prompts influence AI-generated images, explored prompt structure, keywords, and creativity, and gained hands-on experience creating and refining prompts for digital art, storytelling, marketing, and content creation. The session enhanced creativity, critical thinking, and confidence in using AI tools for visual expression.",
+                "date": ["26 September 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 89,
+                "title": "Electron Launch – Electric Bike Unveiling",
+                "thumbnail": BASE_URL + "/assets/activity/electron_launch.jpg",
+                "description": "Inovus Labs IEDC officially launched Electron, a student-driven innovation that transformed a conventional petrol-powered bike into a fully electric vehicle. The project showcased sustainable engineering, renewable energy concepts, and hands-on innovation, inspiring students to explore electric mobility, green technology, and real-world problem-solving through engineering.",
+                "date": ["26 September 2025"],
+                "tags": ["Product Launch"]
+            }
+            , {
+                "id": 90,
+                "title": "Hacktoberfest 2025",
+                "thumbnail": BASE_URL + "/assets/activity/Hacktoberfest2025.jpg",
+                "description": "In collaboration with the μLearn Foundation, Inovus Labs IEDC organized Hacktoberfest 2025, a month-long open-source initiative that brought together 504 students from multiple colleges. Participants contributed to GitHub repositories, learned version control, collaborated on real-world software projects, and strengthened their coding, problem-solving, and teamwork skills through mentorship and community-driven development.",
+                "date": ["01 October 2025", "31 October 2025"],
+                "tags": ["Open Source"]
+            }
+            , {
+                "id": 91,
+                "title": "Intro to Hacktoberfest",
+                "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest.jpg",
+                "description": "In collaboration with μLearn Foundation and μLearn SCTCE, Inovus Labs IEDC organized an introductory bootcamp on Hacktoberfest. Participants learned Git and GitHub fundamentals, explored beginner-friendly open-source repositories, and understood the complete pull request workflow. The session built confidence in contributing to open-source projects and encouraged students to become active members of the global developer community.",
+                "date": ["02 October 2025"],
+                "tags": ["Bootcamp"]
+            }
+            , {
+                "id": 92,
+                "title": "Intro to Hacktoberfest",
+                "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest2.jpg",
+                "description": "Inovus Labs IEDC, in collaboration with μLearn Foundation and μLearn SCTCE, organized an introductory Hacktoberfest bootcamp that familiarized students with Git, GitHub, open-source contribution, and the complete pull request workflow. The hands-on session helped beginners confidently take their first steps into the open-source community and inspired continued participation in collaborative software development.",
+                "date": ["02 October 2025"],
+                "tags": ["Bootcamp"]
+            }
+            , {
+                "id": 93,
+                "title": "CCA #11: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_11.jpg",
+                "description": "CCA #11 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Design. Students learned the fundamentals of HTML, including headings, paragraphs, links, images, lists, and basic CSS, explored LED traffic light and running light patterns using microcontrollers, and gained an understanding of colour theory, colour harmony, contrast, and effective colour combinations for visual design. The practical sessions enhanced creativity, programming skills, logical thinking, teamwork, and confidence through hands-on learning activities.",
+                "date": ["03 October 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 94,
+                "title": "CCA #12: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_12.jpg",
+                "description": "CCA #12 introduced students to three practical technology domains through parallel learning tracks. The Web Development session covered the fundamentals of CSS, including selectors, colors, fonts, spacing, layouts, and styling HTML webpages. The IoT session provided hands-on experience with IR sensors and buzzers, demonstrating obstacle detection, sound indicators, and simple automation circuits. The Design session introduced Figma, where students explored UI/UX fundamentals, interface design, prototyping, and collaborative design tools. These interactive activities strengthened students' creativity, problem-solving, technical knowledge, and confidence in applying modern web, electronics, and digital design concepts.",
+                "date": ["24 October 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 95,
+                "title": "CCA #13: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_13.jpg",
+                "description": "CCA #13 featured three hands-on learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored responsive web design using CSS, learning how websites adapt to different screen sizes through flexible layouts, relative units, and media queries. The IoT session introduced ultrasonic sensors, demonstrating distance measurement, object detection, hardware connections, and basic programming for smart systems. In the Design track, students gained practical experience with Figma by creating digital layouts, posters, and UI designs while applying colour, typography, balance, and composition principles. The interactive sessions enhanced creativity, logical thinking, technical skills, and confidence through practical learning and real-world applications.",
+                "date": ["31 October 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 96,
+                "title": "CCA #14: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_14.jpg",
+                "description": "CCA #14 featured three practical learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored JavaScript fundamentals, including variables, basic syntax, functions, and how JavaScript works with HTML and CSS to create interactive web pages. The IoT session introduced motion detection using an MD sensor and buzzer, demonstrating sensor-based security and automation systems through hands-on circuit building. In the Design track, students participated in a Poster Making Challenge, applying layout, typography, colour combinations, and visual balance to communicate ideas creatively. These interactive activities enhanced creativity, logical thinking, programming knowledge, electronics skills, and confidence through practical learning experiences.",
+                "date": ["07 November 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 97,
+                "title": "CCA #15: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_15.jpg",
+                "description": "CCA #15 featured three project-based learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session guided students in creating a 'Replay of Journey' webpage using HTML to showcase their learning experiences, milestones, and achievements through a well-structured and user-friendly website. The IoT session focused on revising Arduino fundamentals, including board components, programming basics, circuit connections, LEDs, sensors, and the Arduino IDE to strengthen practical electronics knowledge. The Design session reinforced the fundamentals of colour, typography, layout, balance, and composition through revision activities and creative exercises. These interactive sessions improved creativity, technical knowledge, problem-solving abilities, and confidence while preparing students for more advanced web, electronics, and design projects.",
+                "date": ["22 November 2025", "25 November 2025"],
+                "tags": ["Workshop"]
+            },
+            {
+                "id": 98,
+                "title": "CCA #16: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_16.jpg",
+                "description": "CCA #16 featured three interactive learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript DOM manipulation, where they learned to create dynamic and interactive webpages by handling user events, updating webpage content, and validating form inputs. The IoT session focused on implementing an automatic street light system using an LDR sensor, helping students understand light sensing, automation, circuit design, and Arduino programming. In the Design track, students explored logo design principles using Figma, learning about visual identity, typography, color psychology, balance, and brand consistency while creating unique logo concepts. Through hands-on activities and collaborative learning, students strengthened their creativity, programming skills, problem-solving abilities, and practical understanding of modern web development, embedded systems, and digital design.",
+                "date": ["28 November 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 99,
+                "title": "Arduino Workshop",
+                "thumbnail": BASE_URL + "/assets/activity/arduino@20.jpg",
+                "description": "A hands-on Arduino workshop introducing students to the fundamentals of electronics, embedded systems, and microcontroller programming. Participants explored Arduino boards, sensors, actuators, circuit building, and basic coding through practical activities, enhancing their technical knowledge, problem-solving abilities, and confidence in developing real-world IoT projects.",
+                "date": ["15 December 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 100,
+                "title": "CCA #17: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_17.jpg",
+                "description": "CCA #17 continued students' practical learning through Web Development, Internet of Things (IoT), and Design sessions. In Web Development, students learned JavaScript event handling, DOM manipulation, and interactive webpage development by creating responsive user interfaces. The IoT session introduced Bluetooth communication using the HC-05 module, where students built and tested smartphone-controlled Arduino projects to understand wireless automation and embedded system applications. The Design session focused on creating social media posters in Figma, covering layout design, typography, visual hierarchy, icon placement, and color harmony to produce professional digital creatives. The hands-on activities strengthened students' creativity, coding ability, electronics knowledge, collaboration, and confidence in developing real-world technology solutions.",
+                "date": ["05 December 2025"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 101,
+                "title": "KeraKatana – AI Image Generation Challenge",
+                "thumbnail": BASE_URL + "/assets/activity/KeraKatana.jpg",
+                "description": "KeraKatana was an online AI image generation challenge organized by Inovus Labs IEDC in collaboration with Chat for Codes. Participants explored the creative fusion of traditional Japanese samurai culture with Kerala's heritage by generating unique AI-powered artwork. The challenge introduced students to prompt engineering, AI image generation tools, and digital art while encouraging creativity, innovation, and experimentation through engaging visual storytelling.",
+                "date": ["09 January 2026", "17 January 2026"],
+                "tags": ["Challenge"]
+            }
+            , {
+                "id": 102,
+                "title": "CCA #18: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_18.jpg",
+                "description": "CCA #18 provided students with advanced hands-on learning through Web Development, Internet of Things (IoT), and Design sessions. The Web Development track introduced students to REST APIs and asynchronous JavaScript using Fetch API, enabling them to retrieve and display live data from external services in dynamic web applications. The IoT session focused on integrating a DHT11 temperature and humidity sensor with Arduino, allowing students to collect environmental data, process sensor readings, and build simple weather monitoring systems. In the Design track, students explored mobile app UI design using Figma by creating modern interfaces, reusable components, icons, and interactive prototypes while applying design systems and accessibility principles. The practical activities enhanced students' programming, electronics, UI/UX design, collaboration, and real-world problem-solving skills through project-based learning.",
+                "date": ["16 January 2026"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 103,
+                "title": "Zephyr 4.0 Ideathon",
+                "thumbnail": BASE_URL + "/assets/activity/zephyr_ideathon2026.jpg",
+                "description": "The Zephyr 4.0 Ideathon was organized by Inovus Labs IEDC to introduce students to modern embedded systems and foster innovative thinking through collaborative problem-solving. Participants explored the fundamentals of Zephyr RTOS, embedded system challenges, solution ideation, and feasibility analysis before working in teams to develop creative solutions for real-world problem statements. Guided by experienced mentors, students enhanced their technical knowledge, critical thinking, teamwork, and presentation skills while gaining valuable exposure to embedded technologies and innovation-driven product development.",
+                "date": ["27 January 2026"],
+                "tags": ["Ideathon"]
+            }
+            , {
+                "id": 104,
+                "title": "Zephyr 4.0 Hackathon",
+                "thumbnail": BASE_URL + "/assets/activity/zephyer2026.jpeg",
+                "description": "The Zephyr 4.0 Hackathon was organized by Inovus Labs IEDC to introduce students to modern embedded operating systems through a competitive and collaborative learning experience. Participants explored the fundamentals of Zephyr RTOS, including its architecture, system configuration, and application development, before tackling real-world problem statements in teams. Guided by mentors, students applied their technical knowledge, logical reasoning, and teamwork to design innovative embedded solutions within a limited timeframe. The event fostered creativity, problem-solving skills, and hands-on experience with embedded system development while inspiring students to explore modern IoT and real-time operating system technologies.",
+                "date": ["27 January 2026"],
+                "tags": ["Hackathon"]
+            }
 
-    
-        ,{
-            "id": 105,
-            "title": "CCA #19: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_19.jpg",
-            "description": "CCA #19 continued the students' practical learning journey through Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript ES6 concepts, including arrow functions, template literals, destructuring, and modules, helping them write cleaner and more efficient code. The IoT session focused on integrating ultrasonic distance sensors with Arduino to build obstacle detection and distance measurement projects, giving students hands-on experience with sensor-based automation. During the Design session, students explored branding and logo design using Figma by creating scalable vector graphics, selecting effective color palettes, and applying design principles to build professional brand identities. The collaborative activities enhanced students' coding proficiency, electronics knowledge, creative thinking, teamwork, and problem-solving skills through project-based learning.",
-            "date": ["23 January 2026"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 106,
-            "title": "CCA #20: Web Development, IoT & Design",
-            "thumbnail": BASE_URL + "/assets/activity/cca_20.jpg",
-            "description": "CCA #20 expanded students' practical knowledge through advanced sessions in Web Development, Internet of Things (IoT), and Digital Design. The Web Development session introduced students to Vue.js fundamentals, including components, reactive data binding, props, and event handling, enabling them to build dynamic and reusable user interfaces. The IoT session focused on integrating servo motors with Arduino to create automated control systems and understand motion-based applications in embedded projects. The Design session emphasized UI/UX wireframing and prototyping using Figma, where students designed intuitive user interfaces while learning layout principles, user flow, spacing, and interactive prototyping. Through hands-on activities and collaborative learning, students strengthened their programming, embedded systems, design thinking, and problem-solving skills while gaining experience in developing real-world technology solutions.",
-            "date": ["06 February 2026"],
-            "tags": ["Workshop"]
-        }
-        ,{
-            "id": 107,
-            "title": "Tryout #1: Introduction to Microsoft Word",
-            "thumbnail": BASE_URL + "/assets/activity/tryout_1_word.jpg",
-            "description": "Tryout #1 introduced students to the fundamentals of Microsoft Word through an interactive hands-on session. Participants learned essential document creation and formatting techniques, including text styling, paragraph alignment, image insertion, table creation, and document organization. The workshop also covered collaboration features such as Track Changes, Comments, and file sharing, enabling students to create professional documents efficiently for academic and personal use. By the end of the session, students had gained confidence in using Microsoft Word for reports, assignments, and everyday productivity tasks.",
-            "date": ["23 February 2025"],
-            "tags": ["Tryout"]
-        }
-        ,{
-            "id": 108,
-            "title": "Tech Web – 5 Days Bootcamp",
-            "thumbnail": BASE_URL + "/assets/activity/tech_web_bootcamp.jpg",
-            "description": "The Tech Web – 5 Days Bootcamp was organized by Inovus Labs IEDC to introduce students to the fundamentals of web development through an intensive hands-on learning experience. Over five days, participants explored the core concepts of HTML and CSS, learning how to structure web pages, apply styling, create responsive layouts, and build visually appealing websites. Interactive coding sessions and practical exercises enabled students to strengthen their problem-solving skills, understand modern web design principles, and gain the confidence to develop their own basic websites. The bootcamp encouraged collaboration, creativity, and continuous learning, providing a strong foundation for students interested in frontend web development.",
-            "date": ["02 March 2026", "06 March 2026"],
-            "tags": ["Bootcamp"]
-        }
-        ,{
-            "id": 109,
-            "title": "Simply Series #01 – LinkedIn Basics",
-            "thumbnail": BASE_URL + "/assets/activity/simply_linkedin",
-            "description": "Simply Series #01 was an introductory session on LinkedIn organized by Inovus Labs IEDC to help students understand the importance of professional networking and personal branding. Participants learned how to create and optimize a professional LinkedIn profile, build meaningful connections, publish engaging posts, and explore internships and career opportunities. The interactive session equipped beginners with the essential skills to confidently use LinkedIn as a platform for professional growth and career development.",
-            "date": ["05 March 2026"],
-            "tags": ["Career Development", "Workshop"]
-        },
-        {
-            "id": 110,
-            "title": "IEDC Startup Summit 2026",
-            "thumbnail": BASE_URL + "/assets/activity/iedc_startup_summit.jpg",
-            "description": "The IEDC Startup Summit 2026 was held at Amal Jyothi College of Engineering to inspire students to explore entrepreneurship and innovation. The summit featured interactive sessions with experienced entrepreneurs, discussions on startup development, and recognition of successful founders for their outstanding contributions to the startup ecosystem. Students gained valuable insights into building and managing startups while learning about future entrepreneurial initiatives and opportunities introduced through the IEDC action plan. The event encouraged participants to develop an entrepreneurial mindset, transform innovative ideas into impactful ventures, and actively engage in Kerala's growing startup ecosystem.",
-            "date": ["07 March 2026"],
-            "tags": ["Summit"]
-        },
-        {
-            "id": 111,
-            "title": "Mutate – µLearn Campus Lead Meet",
-            "thumbnail": BASE_URL + "/assets/activity/mutate_mulearn",
-            "description": "Mutate – µLearn Campus Lead Meet was an engaging community event organized to introduce students to the µLearn ecosystem and its collaborative learning culture. The session highlighted skill development pathways, project-based learning, community contribution, and networking opportunities available through µLearn. Participants gained a clear understanding of how to actively engage with the platform, build real-world projects, collaborate with peers, and accelerate their personal and professional growth through continuous learning and innovation.",
-            "date": ["07 March 2026"],
-            "tags": ["Community Meet"]
-        },
-        {
-            "id": 112,
-            "title": "Tryout #2 – Introduction to Microsoft Excel",
-            "thumbnail": BASE_URL + "/assets/activity/tryout_excel",
-            "description": "Tryout #2 was an introductory workshop on Microsoft Excel organized by Inovus Labs IEDC to help students develop essential spreadsheet skills. Participants explored the Excel interface, learned how to organize and manage data, apply formatting, and use fundamental formulas and functions such as SUM and AVERAGE. Through interactive hands-on exercises, students gained practical experience in performing calculations, managing datasets, and using Excel efficiently for academic, personal, and professional tasks. The session built a strong foundation in spreadsheet applications while improving confidence in digital productivity tools.",
-            "date": ["11 March 2026"],
-            "tags": ["Workshop"]//DATE--2026-2027---> THE END>
-        },
-    ]
+
+            , {
+                "id": 105,
+                "title": "CCA #19: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_19.jpg",
+                "description": "CCA #19 continued the students' practical learning journey through Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript ES6 concepts, including arrow functions, template literals, destructuring, and modules, helping them write cleaner and more efficient code. The IoT session focused on integrating ultrasonic distance sensors with Arduino to build obstacle detection and distance measurement projects, giving students hands-on experience with sensor-based automation. During the Design session, students explored branding and logo design using Figma by creating scalable vector graphics, selecting effective color palettes, and applying design principles to build professional brand identities. The collaborative activities enhanced students' coding proficiency, electronics knowledge, creative thinking, teamwork, and problem-solving skills through project-based learning.",
+                "date": ["23 January 2026"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 106,
+                "title": "CCA #20: Web Development, IoT & Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_20.jpg",
+                "description": "CCA #20 expanded students' practical knowledge through advanced sessions in Web Development, Internet of Things (IoT), and Digital Design. The Web Development session introduced students to Vue.js fundamentals, including components, reactive data binding, props, and event handling, enabling them to build dynamic and reusable user interfaces. The IoT session focused on integrating servo motors with Arduino to create automated control systems and understand motion-based applications in embedded projects. The Design session emphasized UI/UX wireframing and prototyping using Figma, where students designed intuitive user interfaces while learning layout principles, user flow, spacing, and interactive prototyping. Through hands-on activities and collaborative learning, students strengthened their programming, embedded systems, design thinking, and problem-solving skills while gaining experience in developing real-world technology solutions.",
+                "date": ["06 February 2026"],
+                "tags": ["Workshop"]
+            }
+            , {
+                "id": 107,
+                "title": "Tryout #1: Introduction to Microsoft Word",
+                "thumbnail": BASE_URL + "/assets/activity/tryout_1_word.jpg",
+                "description": "Tryout #1 introduced students to the fundamentals of Microsoft Word through an interactive hands-on session. Participants learned essential document creation and formatting techniques, including text styling, paragraph alignment, image insertion, table creation, and document organization. The workshop also covered collaboration features such as Track Changes, Comments, and file sharing, enabling students to create professional documents efficiently for academic and personal use. By the end of the session, students had gained confidence in using Microsoft Word for reports, assignments, and everyday productivity tasks.",
+                "date": ["23 February 2025"],
+                "tags": ["Tryout"]
+            }
+            , {
+                "id": 108,
+                "title": "Tech Web – 5 Days Bootcamp",
+                "thumbnail": BASE_URL + "/assets/activity/tech_web_bootcamp.jpg",
+                "description": "The Tech Web – 5 Days Bootcamp was organized by Inovus Labs IEDC to introduce students to the fundamentals of web development through an intensive hands-on learning experience. Over five days, participants explored the core concepts of HTML and CSS, learning how to structure web pages, apply styling, create responsive layouts, and build visually appealing websites. Interactive coding sessions and practical exercises enabled students to strengthen their problem-solving skills, understand modern web design principles, and gain the confidence to develop their own basic websites. The bootcamp encouraged collaboration, creativity, and continuous learning, providing a strong foundation for students interested in frontend web development.",
+                "date": ["02 March 2026", "06 March 2026"],
+                "tags": ["Bootcamp"]
+            }
+            , {
+                "id": 109,
+                "title": "Simply Series #01 – LinkedIn Basics",
+                "thumbnail": BASE_URL + "/assets/activity/simply_linkedin.jpg",
+                "description": "Simply Series #01 was an introductory session on LinkedIn organized by Inovus Labs IEDC to help students understand the importance of professional networking and personal branding. Participants learned how to create and optimize a professional LinkedIn profile, build meaningful connections, publish engaging posts, and explore internships and career opportunities. The interactive session equipped beginners with the essential skills to confidently use LinkedIn as a platform for professional growth and career development.",
+                "date": ["05 March 2026"],
+                "tags": ["Career Development", "Workshop"]
+            },
+            {
+                "id": 110,
+                "title": "IEDC Startup Summit 2026",
+                "thumbnail": BASE_URL + "/assets/activity/iedc_startup_summit.jpg",
+                "description": "The IEDC Startup Summit 2026 was held at Amal Jyothi College of Engineering to inspire students to explore entrepreneurship and innovation. The summit featured interactive sessions with experienced entrepreneurs, discussions on startup development, and recognition of successful founders for their outstanding contributions to the startup ecosystem. Students gained valuable insights into building and managing startups while learning about future entrepreneurial initiatives and opportunities introduced through the IEDC action plan. The event encouraged participants to develop an entrepreneurial mindset, transform innovative ideas into impactful ventures, and actively engage in Kerala's growing startup ecosystem.",
+                "date": ["07 March 2026"],
+                "tags": ["Summit"]
+            },
+            {
+                "id": 111,
+                "title": "Mutate – µLearn Campus Lead Meet",
+                "thumbnail": BASE_URL + "/assets/activity/mutate_mulearn.jpg",
+                "description": "Mutate – µLearn Campus Lead Meet was an engaging community event organized to introduce students to the µLearn ecosystem and its collaborative learning culture. The session highlighted skill development pathways, project-based learning, community contribution, and networking opportunities available through µLearn. Participants gained a clear understanding of how to actively engage with the platform, build real-world projects, collaborate with peers, and accelerate their personal and professional growth through continuous learning and innovation.",
+                "date": ["07 March 2026"],
+                "tags": ["Community Meet"]
+            },
+            {
+                "id": 112,
+                "title": "Tryout #2 – Introduction to Microsoft Excel",
+                "thumbnail": BASE_URL + "/assets/activity/tryout_excel.jpg",
+                "description": "Tryout #2 was an introductory workshop on Microsoft Excel organized by Inovus Labs IEDC to help students develop essential spreadsheet skills. Participants explored the Excel interface, learned how to organize and manage data, apply formatting, and use fundamental formulas and functions such as SUM and AVERAGE. Through interactive hands-on exercises, students gained practical experience in performing calculations, managing datasets, and using Excel efficiently for academic, personal, and professional tasks. The session built a strong foundation in spreadsheet applications while improving confidence in digital productivity tools.",
+                "date": ["11 March 2026"],
+                "tags": ["Workshop"]//DATE--2026-2027---> THE END>
+            },
+        ]
     };
 
     return data;
@@ -2163,323 +2172,323 @@ export const getReccuringEvents = async () => {
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/hangout-john.jpg",
                 "tags": ["Hangout with Inovus"]
-               
-            },{
+
+            }, {
                 "id": 2,
                 "date": "25 April 2020",
                 "title": "Hangout with Inovus -Dr. Jimmy Mathew",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/hangout-drjimmy.jpg",
                 "tags": ["Hangout with Inovus"]
-               
-            },{
+
+            }, {
                 "id": 3,
                 "date": "05 May 2020",
                 "title": "Hangout with Inovus -Mehar M P",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/hangout-mehar.jpg",
                 "tags": ["Hangout with Inovus"]
-               
-            },{
+
+            }, {
                 "id": 4,
                 "date": "19 May 2020",
                 "title": "Hangout with Inovus -Enfa Rose George",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/hangout-enfa.jpg",
                 "tags": ["Hangout with Inovus"]
-               
-            },{
+
+            }, {
                 "id": 5,
                 "date": "16 May 2021",
                 "title": "Simply Linkedin",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/simply-linkedin.jpg",
                 "tags": ["Simply Series"]
-               
-            },{
+
+            }, {
                 "id": 6,
                 "date": "01 July 2021",
                 "title": "Simply Blockchain",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/simply-blockchain.jpg",
                 "tags": ["Simply Series"]
-               
-            },{
+
+            }, {
                 "id": 7,
                 "date": "01 July 2023",
                 "title": "Weekend Workbench #1",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template1.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 8,
                 "date": "08 July 2023",
                 "title": "Weekend Workbench #2",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template2.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 9,
                 "date": "15 July 2023",
                 "title": "Weekend Workbench #3",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template3.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 10,
                 "date": "22 July 2023",
                 "title": "Weekend Workbench #4",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template4.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 11,
                 "date": "29 July 2023",
                 "title": "Weekend Workbench #5",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template5.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 12,
                 "date": "5 August 2023",
                 "title": "Weekend Workbench #6",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template6.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 13,
                 "date": "23 September 2023",
                 "title": "Weekend Workbench #7",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template8.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 14,
                 "date": "30 September 2023",
                 "title": "Weekend Workbench #8",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 1.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 15,
                 "date": "07 October 2023",
                 "title": "Weekend Workbench #9",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 2.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 16,
                 "date": "14 October 2023",
                 "title": "Weekend Workbench #10",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 3.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 17,
                 "date": "21 October 2023",
                 "title": "Weekend Workbench #11",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 11.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 18,
                 "date": "04 November 2023",
                 "title": "Weekend Workbench #12",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 12.png",
                 "tags": ["Weekend Workbench"]
-           
-            },{
+
+            }, {
                 "id": 19,
                 "date": "11 November 2023",
                 "title": "Weekend Workbench #13",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 13.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 20,
                 "date": "18 November 2023",
                 "title": "Weekend Workbench #14",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 14.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 21,
                 "date": "02 December 2023",
                 "title": "Weekend Workbench #15",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 15.png",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 22,
                 "date": "09 December 2023",
                 "title": "Weekend Workbench #16",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Template 16.jpg",
                 "tags": ["Weekend Workbench"]
-               
-            },{
+
+            }, {
                 "id": 23,
                 "date": "16 December 2023",
                 "title": "Weekend Workbench #17",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/17.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 24,
                 "date": "23 December 2023",
                 "title": "Weekend Workbench #18",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/18.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 25,
                 "date": "13 January 2024",
                 "title": "Weekend Workbench #19",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Weekend Workbench 19.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 26,
                 "date": "20 January 2024",
                 "title": "Weekend Workbench #20",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Weekend Workbench.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 27,
                 "date": "27 January 2024",
                 "title": "Weekend Workbench #21",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/Weekend workbench 21.mp4",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 28,
                 "date": "3 February 2024",
                 "title": "Weekend Workbench #22",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Weekend Workbech 22.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 29,
                 "date": "10 February 2024",
                 "title": "Weekend Workbench #23",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/Weekend Workbench 23.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 30,
                 "date": "17 February 2024",
                 "title": "Weekend Workbench #24",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/Weekend workbench 24.mp4",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 31,
                 "date": "24 February 2024",
                 "title": "Weekend Workbench #25",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/weekend workbench 25.mp4",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 32,
                 "date": "2 March 2024",
                 "title": "Weekend Workbench #26",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/weekend workbench 26.mp4",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 33,
                 "date": "9 March 2024",
                 "title": "Weekend Workbench #27",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/weekend workbench 27.mp4",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 34,
                 "date": "16 March 2024",
                 "title": "Weekend Workbench #28",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/WeekendWorkbench28.png.mp4 ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 35,
                 "date": "23 March 2024",
                 "title": "Weekend Workbench #29",
                 "description": "",
                 "video": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench29.mp4 ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 36,
                 "date": "30 March 2024",
                 "title": "Weekend Workbench #30",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench30.webp ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 37,
                 "date": "6 July 2024",
                 "title": "Weekend Workbench 2.0 #1",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkebench2.0.1.png ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 38,
                 "date": "13 July 2024",
                 "title": "Weekend Workbench 2.0 #2",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/WeekendWorkebench2.0.2.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 39,
                 "date": "20 July 2024",
                 "title": "Weekend Workbench 2.0 #3",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekend workbench 2.0.3.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 40,
                 "date": "27 July 2024",
                 "title": "Weekend Workbench 2.0 #4",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekend workbench 2.0.4.jpg",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 41,
                 "date": "10 August 2024",
                 "title": "Weekend Workbench 2.0 #5",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.5.jpg ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 42,
                 "date": "17 August 2024",
                 "title": "Weekend Workbench 2.0 #6",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.6.jpg ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 43,
                 "date": "24 August 2024",
                 "title": "Weekend Workbench 2.0 #7",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.7.jpg ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 44,
                 "date": "31 August 2024",
                 "title": "Weekend Workbench 2.0 #8",
@@ -2487,49 +2496,49 @@ export const getReccuringEvents = async () => {
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.8.jpg ",
                 "tags": ["Weekend Workbench"]
             }
-            ,{
+            , {
                 "id": 45,
                 "date": "21 September 2024",
                 "title": "Weekend Workbench 2.0 #9",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.9.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 46,
                 "date": "28 September 2024",
                 "title": "Weekend Workbench 2.0 #10",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.10.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 47,
                 "date": "12 October 2024",
                 "title": "Weekend Workbench 2.0 #11",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.11.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 48,
                 "date": "26 October 2024",
                 "title": "Weekend Workbench 2.0 #12",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.12.png ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 49,
                 "date": "09 November 2024",
                 "title": "Weekend Workbench 2.0 #13",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkbench2.0.13.png ",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 50,
                 "date": "25 January 2025",
                 "title": "Weekend Workbench 2.0 #14",
                 "description": "",
                 "thumbnail": BASE_URL + "/assets/reccuringevents/workbench/weekendworkebench 2.0.14.png",
                 "tags": ["Weekend Workbench"]
-            },{
+            }, {
                 "id": 51,
                 "date": "01 February 2025",
                 "title": "Weekend Workbench 2.0 #15",
@@ -2561,7 +2570,7 @@ export const getSocialPosts = async () => {
                 "id": 3,
                 "url": "https://www.instagram.com/reel/DHf5AGtzxMo/?utm_source=ig_embed&amp;utm_campaign=loading"
             }
-            
+
         ],
         "linkedin": [
             {
@@ -2591,7 +2600,7 @@ export const getSocialPosts = async () => {
                 "url": "https://www.youtube.com/embed/videoseries?si=hum7bwG0SkRttfJE&amp;list=PLf17cHBJCwYj9Dsjy7k8DauwLCXwBR2BS"
             }
         ],
-        "twitter": [ 
+        "twitter": [
             {
                 "id": 1,
                 "url": "https://x.com/Decoded_Cipher/status/1871973532760154622"
@@ -2603,9 +2612,9 @@ export const getSocialPosts = async () => {
             },
             {
                 "id": 3,
-                "url": "https://twitter.com/InovusLabs/status/1754872488343802048"  
+                "url": "https://twitter.com/InovusLabs/status/1754872488343802048"
             }
-            
+
         ],
         "threads": [
             {
@@ -2637,143 +2646,143 @@ export const getGalleryAssets = async () => {
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/founders&succesors (2).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/founders&succesors (2).jpg',
-          },{
+        }, {
             id: 27,
             // title: '',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/jithin_shah.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/jithin_shah.jpg',
-          },        {
+        }, {
             id: 28,
             // title: '',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/founders&succesors (1).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/founders&succesors (1).jpg',
-          },        
-          {
+        },
+        {
             id: 29,
             // title: '',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/jithin_shah_2.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/jithin_shah_2.jpg',
-          },
-          {
+        },
+        {
             id: 31,
             title: 'Founders & Successors',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/founders&succesors (3).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/founders&succesors (3).jpg',
-          },        
-          {
+        },
+        {
             id: 32,
             title: 'Founders & Successors',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/founders&successors.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/founders&successors.jpg',
-          },{
+        }, {
             id: 1,
             title: 'Team Inovus at IEDC Summit 2018',
             description: 'Venue: Amal Jyothi College of Engineering, Kanjirappally',
             largeURL: BASE_URL + '/assets/gallery/012.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/012.jpg',
-          },{
+        }, {
             id: 33,
             title: 'Team Inovus at IEDC Summit 2019',
             description: 'Venue: Sahrdaya College of Engineering and Technology',
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2019 (1).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2019 (1).jpg',
-        },{
+        }, {
             id: 34,
             title: 'Team Inovus at IEDC Summit 2019',
             description: 'Venue: Sahrdaya College of Engineering and Technology',
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2019 (2).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2019 (2).jpg',
-          },{
+        }, {
             id: 35,
             title: 'Team Inovus at IEDC Summit 2022',
             description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2022 (2).jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2022 (2).jpeg',
-          },{
+        }, {
             id: 36,
             title: 'Team Inovus at IEDC Summit 2022',
             description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2022 (1).jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2022 (1).jpeg',
-          },{
+        }, {
             id: 37,
             title: 'Team Inovus at IEDC Summit 2022',
             // description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2022 (3).jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2022 (3).jpeg',
-          },{
+        }, {
             id: 38,
             title: 'Team Inovus at IEDC Summit 2022',
             // description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2022 (4).jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2022 (4).jpeg',
-          },{
+        }, {
             id: 39,
             title: 'Introdutcion to IoT',
             description: "Venue: College of Applied Sciences Mallapally",
             largeURL: BASE_URL + '/assets/gallery/college of Applied Sciences Mallapally.jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/college of Applied Sciences Mallapally.jpeg',
-          },
-          {
+        },
+        {
             id: 2,
             title: 'Team Inovus at IEDC Summit 2023',
             description: 'Venue: College of Engineering, Trivandrum',
             largeURL: BASE_URL + '/assets/gallery/007.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/007.jpg',
-          },
-          {
+        },
+        {
             id: 3,
             title: 'Team Inovus with Mr. Deepu S Nath, MD, Faya USA.',
             description: 'Venue: College of Engineering, Trivandrum',
             largeURL: BASE_URL + '/assets/gallery/008.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/008.jpg',
-          },
-          {
+        },
+        {
             id: 20,
             title: 'Arduino Workshop 2023',
-          //   description: 'Venue: Kristu Jyoti College of Mangement and Technology',
+            //   description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + "/assets/iotGallery/arduino_workshop'23.jpg",
             thumbnailURL: BASE_URL + "/assets/iotGallery/arduino_workshop'23.jpg",
-          },
-          {
-          id: 4,
-        //   title: 'Image 1',
-        //   description: 'Image 1 description',
-          largeURL: BASE_URL + '/assets/gallery/001.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/001.jpg',
         },
         {
-          id: 5,
-        //   title: 'Image 2',
-        //   description: 'Image 2 description',
-          largeURL: BASE_URL + '/assets/gallery/002.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/002.jpg',
+            id: 4,
+            //   title: 'Image 1',
+            //   description: 'Image 1 description',
+            largeURL: BASE_URL + '/assets/gallery/001.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/001.jpg',
         },
         {
-          id: 6,
-          title: 'Blessing Ceremony of Inovus Labs IEDC Post-renovation',
-        //   description: 'Image 3 description',
-          largeURL: BASE_URL + '/assets/gallery/003.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/003.jpg',
+            id: 5,
+            //   title: 'Image 2',
+            //   description: 'Image 2 description',
+            largeURL: BASE_URL + '/assets/gallery/002.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/002.jpg',
         },
         {
-          id: 7,
-          title: 'The INOVUS site showcased at the ASUS showroom in Lulu Mall!',
-        //   description: 'The INOVUS site showcased at the ASUS showroom in Lulu Mall!',
-          largeURL: BASE_URL + '/assets/gallery/004.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/004.jpg',
+            id: 6,
+            title: 'Blessing Ceremony of Inovus Labs IEDC Post-renovation',
+            //   description: 'Image 3 description',
+            largeURL: BASE_URL + '/assets/gallery/003.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/003.jpg',
         },
         {
-          id: 8,
-        //   title: 'Image 5',
-        //   description: 'Image 5 description',
-          largeURL: BASE_URL + '/assets/gallery/005.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/005.jpg',
+            id: 7,
+            title: 'The INOVUS site showcased at the ASUS showroom in Lulu Mall!',
+            //   description: 'The INOVUS site showcased at the ASUS showroom in Lulu Mall!',
+            largeURL: BASE_URL + '/assets/gallery/004.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/004.jpg',
+        },
+        {
+            id: 8,
+            //   title: 'Image 5',
+            //   description: 'Image 5 description',
+            largeURL: BASE_URL + '/assets/gallery/005.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/005.jpg',
         },
         {
             id: 9,
@@ -2782,48 +2791,48 @@ export const getGalleryAssets = async () => {
             largeURL: BASE_URL + '/assets/gallery/meetgigisir.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/meetgigisir.jpg',
         },
-        
+
         {
-          id: 11,
-        //   title: 'Image 9',
-        //   description: 'Image 9 description',
-          largeURL: BASE_URL + '/assets/gallery/009.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/009.jpg',
+            id: 11,
+            //   title: 'Image 9',
+            //   description: 'Image 9 description',
+            largeURL: BASE_URL + '/assets/gallery/009.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/009.jpg',
         },
         {
-          id: 12,
-        //   title: 'Image 10',
-        //   description: 'Image 10 description',
-          largeURL: BASE_URL + '/assets/gallery/010.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/010.jpg',
+            id: 12,
+            //   title: 'Image 10',
+            //   description: 'Image 10 description',
+            largeURL: BASE_URL + '/assets/gallery/010.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/010.jpg',
         },
         {
-          id: 13,
-          title: 'Team Inovus with Ajay Basil',
-        //   description: '',
-          largeURL: BASE_URL + '/assets/gallery/meetajaybasil.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/meetajaybasil.jpg',
+            id: 13,
+            title: 'Team Inovus with Ajay Basil',
+            //   description: '',
+            largeURL: BASE_URL + '/assets/gallery/meetajaybasil.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/meetajaybasil.jpg',
         },
         {
-          id: 14,
-        //   title: 'Image 11',
-        //   description: 'Image 11 description',
-          largeURL: BASE_URL + '/assets/gallery/011.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/011.jpg',
+            id: 14,
+            //   title: 'Image 11',
+            //   description: 'Image 11 description',
+            largeURL: BASE_URL + '/assets/gallery/011.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/011.jpg',
         },
         {
-          id: 15,
-          title: 'Team Inovus with Akhil',
-        //   description: 'Image 11 description',
-          largeURL: BASE_URL + '/assets/gallery/meetakhildamodar.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/meetakhildamodar.jpg',
-        },{
-        id: 40,
-        title: 'Christmas 2023',
-        // description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
-        largeURL: BASE_URL + '/assets/gallery/christmas 2023.jpeg',
-        thumbnailURL: BASE_URL + '/assets/gallery/christmas 2023.jpeg',
-      },
+            id: 15,
+            title: 'Team Inovus with Akhil',
+            //   description: 'Image 11 description',
+            largeURL: BASE_URL + '/assets/gallery/meetakhildamodar.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/meetakhildamodar.jpg',
+        }, {
+            id: 40,
+            title: 'Christmas 2023',
+            // description: "Venue: St. Joseph's College of Engineering and Technology, Palai",
+            largeURL: BASE_URL + '/assets/gallery/christmas 2023.jpeg',
+            thumbnailURL: BASE_URL + '/assets/gallery/christmas 2023.jpeg',
+        },
         {
             id: 16,
             title: 'Team Inovus with Thomman',
@@ -2837,27 +2846,27 @@ export const getGalleryAssets = async () => {
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/meetthoman2.jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/meetthoman2.jpeg',
-          },
+        },
         {
             id: 25,
             title: 'Entrepreneurial Symposium',
             description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/Entrepreneurial Symposium.png',
             thumbnailURL: BASE_URL + '/assets/gallery/Entrepreneurial Symposium.png',
-          },
-          {
+        },
+        {
             id: 49,
             title: 'With Ajay Basil',
             description: 'Entrepreneurial Symposium',
             largeURL: BASE_URL + '/assets/gallery/Ajay Basil(2).jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/Ajay Basil(2).jpeg',
-          },
+        },
         {
-          id: 17,
-          title: 'Trip',
-          description: 'Kuttikanam',
-          largeURL: BASE_URL + '/assets/gallery/teaminovus.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/teaminovus.jpg',
+            id: 17,
+            title: 'Trip',
+            description: 'Kuttikanam',
+            largeURL: BASE_URL + '/assets/gallery/teaminovus.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/teaminovus.jpg',
         },
         {
             id: 18,
@@ -2872,116 +2881,116 @@ export const getGalleryAssets = async () => {
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/teammeet.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/teammeet.jpg',
-          },
+        },
         {
-          id: 19,
-          title: 'Bulb Sale',
-          description: 'Product Release, Kristu Jyoti College of Mangement and Technology',
-          largeURL: BASE_URL + '/assets/gallery/Bulb_sale.jpg',
-          thumbnailURL: BASE_URL + '/assets/gallery/Bulb_sale.jpg',
-        },{
+            id: 19,
+            title: 'Bulb Sale',
+            description: 'Product Release, Kristu Jyoti College of Mangement and Technology',
+            largeURL: BASE_URL + '/assets/gallery/Bulb_sale.jpg',
+            thumbnailURL: BASE_URL + '/assets/gallery/Bulb_sale.jpg',
+        }, {
             id: 20,
             title: 'Herba Soaps Product Release',
             description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/herbarelease.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/herbarelease.jpg',
-          },
-          {
+        },
+        {
             id: 21,
             title: 'Release of Newsletter',
             description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/newsletter_release.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/newsletter_release.jpg',
-          },{
+        }, {
             id: 22,
             title: 'Product DocGen',
             description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/docgen1.jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/docgen1.jpeg',
-          },{
+        }, {
             id: 23,
             title: 'Release of DocGen',
             description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/Inovusteam.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/Inovusteam.jpg',
-          },{
+        }, {
             id: 41,
             title: 'Team Inovus at IEDC Summit 2024',
             description: 'With Anoop Ambika CEO,KSUM at NIT Calicut ',
             largeURL: BASE_URL + '/assets/gallery/iedc summit 2024.png',
             thumbnailURL: BASE_URL + '/assets/gallery/iedc summit 2024.png',
-          },
-          {
+        },
+        {
             id: 25,
             title: 'Weekend Workbench',
             // description: 'Venue: Kristu Jyoti College of Mangement and Technology',
             largeURL: BASE_URL + '/assets/gallery/weekendworkbench.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/weekendworkbench.jpg',
-          },{
+        }, {
             id: 43,
             title: 'Fire Chat with Johna Aswin Selva',
             description: 'Alumini Interaction',
             largeURL: BASE_URL + '/assets/gallery/talk with Johna Aswin Selva.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/talk with Johna Aswin Selva.jpg',
-          },{
+        }, {
             id: 44,
             title: 'Bike Conversion to EV',
             // description: '',
             largeURL: BASE_URL + '/assets/gallery/bike building.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/bike building.jpg',
-          },
-          {
+        },
+        {
             id: 47,
             title: 'Product Sale',
             description: 'Sale of hand-made : Soap, Bulb, Tube at college reception',
             largeURL: BASE_URL + '/assets/gallery/soap_sale.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/soap_sale.jpg',
-          },
-           {
+        },
+        {
             id: 50,
             title: 'With Sherin Sir',
             description: '',
             largeURL: BASE_URL + '/assets/gallery/sherin sir.jpeg',
             thumbnailURL: BASE_URL + '/assets/gallery/sherin sir.jpeg',
-          },
-          
-          {
+        },
+
+        {
             id: 48,
             title: 'Zephyr 3.0',
             description: 'Science Exhibiton organised by Computer Department incollaboration with Inovus Labs',
             largeURL: BASE_URL + '/assets/gallery/zephyr3.0.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/zephyr3.0.jpg',
-          },
-          {
+        },
+        {
             id: 45,
             title: 'With George Kulanagra',
             description: 'Founder of Labour India',
             largeURL: BASE_URL + '/assets/gallery/georgesir.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/georgesir.jpg',
-          },
-          {
+        },
+        {
             id: 46,
             title: 'Arduino@20',
             description: '20th Birthday Celebration of Arduino',
             largeURL: BASE_URL + '/assets/gallery/arduino@20.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/arduino@20.jpg',
-          },
-          {
+        },
+        {
             id: 10,
             title: 'PerMute',
             description: 'Annual gathering of Mulearn',
             largeURL: BASE_URL + '/assets/gallery/permute.jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/permute.jpg',
-          },
-          {
+        },
+        {
             id: 51,
             title: 'With Deepu S Nath, MD, Faya USA.',
             description: 'PerMute-Annual gathering of Mulearn',
             largeURL: BASE_URL + '/assets/gallery/Deepu(permute).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/Deepu(permute).jpg',
-          },       
-          
-          
+        },
+
+
     ]
 
     return data;
@@ -2994,14 +3003,14 @@ export const getGalleryAssets = async () => {
 export const getNanoDegreeDetails = async () => {
 
     let data = [
-                    
+
         {
             id: 1,
             title: "Internet of Things (IoT) with Arduino",
             description: "The 'Internet of Things (IoT) with Arduino' nano degree program is an ideal starting point for beginners eager to explore the exciting world of IoT. This user-friendly program introduces participants to the basics of Arduino, a popular open-source electronics platform, and seamlessly integrates IoT concepts. Through hands-on projects and step-by-step guidance, learners gain practical skills in building smart, connected devices. By the end of the program, students will have a solid foundation in IoT development, empowering them to bring their creative ideas to life in the rapidly evolving digital landscape.",
             level: "Beginner",
             status: true,
-            
+
             syllabus: [
                 {
                     id: 1,
@@ -3179,11 +3188,11 @@ export const getNanoDegreeDetails = async () => {
                         }
                     ]
                 },
-                
+
             ],
 
             projects: [
-                
+
                 {
                     id: 1,
                     title: "Automated Room Lighting System",
@@ -3276,7 +3285,7 @@ export const getNanoDegreeDetails = async () => {
                     components: [
                         "Arduino",
                         "Numeric keypad",
-                        "16x2 LCD screen", 
+                        "16x2 LCD screen",
                         "Servo motor",
                     ],
                     skills: [
@@ -3322,7 +3331,7 @@ export const getNanoDegreeDetails = async () => {
     ]
 
     return data;
-    
+
 }
 
 
@@ -3684,9 +3693,9 @@ export const getcurrentTeam = async () => {
                     description: 'As Nodal Officer, I foster talent, guide growth, oversee committee selection.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Nodal officer.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/roji1978",
-                      github: "",
-                      linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
+                        instagram: "https://www.instagram.com/roji1978",
+                        github: "",
+                        linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
                     }
                 }, {
                     name: ' Cina Mathew',
@@ -3698,7 +3707,7 @@ export const getcurrentTeam = async () => {
                         github: "",
                         linkedin: "https://www.linkedin.com/in/cina-mathew-883372195"
                     }
-                }, 
+                },
                 //{
                 //     name: ' Jithin Sha',
                 //     position: 'Mentor',
@@ -3786,7 +3795,7 @@ export const getcurrentTeam = async () => {
                     description: 'Hi I’m the CEO of inovus labs, provides effective guidance in coordinating events and activities of the community.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Student lead 1.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amith_abey_stephen",
+                        instagram: "https://www.instagram.com/amith_abey_stephen",
                         github: "https://github.com/Amith-Abey-Stephen",
                         linkedin: "https://www.linkedin.com/in/amith-abey-stephen"
                     }
@@ -3797,22 +3806,22 @@ export const getcurrentTeam = async () => {
                     description: 'Hi I’m the Student Lead 2 of inovus labs, provides effective guidance in coordinating events and activities of the community.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Student lead 2.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/josnaanv",
+                        instagram: "https://www.instagram.com/josnaanv",
                         github: "https://github.com/JosnaAnn",
                         linkedin: "https://www.linkedin.com/in/josna-ann-varghese-418753300"
                     }
                 },
 
                 {
-                        name: ' Lydia Johnson',
-                        position: 'Operation Lead',
-                        description: '',
-                       avatar: BASE_URL + '/assets/team/2025-2026/Operation lead.jpg',
-                        social: {
-                            instagram: "https://www.instagram.com/lydiajso",
-                            github: "https://github.com/1yd1aa",
-                            linkedin: "https://www.linkedin.com/in/lydia-j-775968318"
-                        }
+                    name: ' Lydia Johnson',
+                    position: 'Operation Lead',
+                    description: '',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Operation lead.jpg',
+                    social: {
+                        instagram: "https://www.instagram.com/lydiajso",
+                        github: "https://github.com/1yd1aa",
+                        linkedin: "https://www.linkedin.com/in/lydia-j-775968318"
+                    }
                 },
 
                 {
@@ -3821,7 +3830,7 @@ export const getcurrentTeam = async () => {
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Teachnical Lead.jpg',
                     social: {
-                      instagram: "",
+                        instagram: "",
                         github: "https://github.com/SanTechBoard",
                         linkedin: "https://www.linkedin.com/in/sane-sunil-55a552334/"
                     }
@@ -3837,7 +3846,7 @@ export const getcurrentTeam = async () => {
                         github: "https://github.com/tomkondody",
                         linkedin: " https://www.linkedin.com/in/tomthomaskondody"
                     }
-                }, 
+                },
 
                 {
                     name: ' Aaron Anil',
@@ -3850,38 +3859,38 @@ export const getcurrentTeam = async () => {
                         linkedin: "https://www.linkedin.com/in/aaron-anil-thomas-897b6433a"
                     }
                 },
-                
+
                 {
                     name: ' Anasuya S Kurup',
                     position: 'Women Innovation Lead',
                     description: 'I’m the women in tech lead of inovus labs. I’m the one who lead and mentor all kind of women exclusive programs. I guide and mentor students and be the spearhead of all women exclusive programs.  ',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Women Innovation lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Women Innovation lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/anasuya_nadamel_",
+                        instagram: "https://www.instagram.com/anasuya_nadamel_",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/anasuya-s-kurup-60258624a"
                     }
                 },
-                
+
                 {
                     name: ' Vyshak K Pradeep',
                     position: 'Community Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Community Lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Community Lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/_why_shak",
+                        instagram: "https://www.instagram.com/_why_shak",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/vyshak-k-pradeep-b30886350"
                     }
-                }, 
-                
+                },
+
                 {
                     name: ' Amenda Maria Johnson',
                     position: 'Finance Lead',
                     description: 'I’m the financial lead of inovus labs IEDC, monitors all kind of financial transactions and the bill-laden of Inovus Labs.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Finance Lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amenda_maria",
+                        instagram: "https://www.instagram.com/amenda_maria",
                         github: "https://github.com/Amendamaria",
                         linkedin: "https://www.linkedin.com/in/amenda-maria-johnson-669420283"
                     }
@@ -3891,49 +3900,49 @@ export const getcurrentTeam = async () => {
                     name: ' Aaliya Gopan',
                     position: 'IPR & Research Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Research & IPR lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Research & IPR lead.jpg',
                     social: {
                         instagram: "https://www.instagram.com/aaliyagopan",
                         github: "https://github.com/AALIYAGOPAN",
                         linkedin: "https://www.linkedin.com/in/aaliya-gopan"
                     }
-                },    
-                
+                },
+
                 {
                     name: ' Alex Renny',
                     position: 'Administartion Lead',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Administration lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/__alex___001__/",
+                        instagram: "https://www.instagram.com/__alex___001__/",
                         github: "https://github.com/mr-alex-001",
                         linkedin: "https://www.linkedin.com/in/alex-renny-48b893319"
                     }
-                },   
-                
+                },
+
                 {
                     name: ' Emil Binoy',
                     position: 'Innovation Lead',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Innovation lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/its_emilefx",
+                        instagram: "https://www.instagram.com/its_emilefx",
                         github: "https://github.com/emil-binoy",
                         linkedin: "https://www.linkedin.com/in/emil-binoy-769261325"
                     }
-                },   
-                
+                },
+
                 {
                     name: ' Sibin',
                     position: 'Event Co-ordinator',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/event coordinator.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/sibin_ullattil",
+                        instagram: "https://www.instagram.com/sibin_ullattil",
                         github: "https://github.com/Sibin-2000",
                         linkedin: ""
                     }
-                },   
+                },
 
                 {
                     name: ' Viswajith B Nair',
@@ -3941,15 +3950,15 @@ export const getcurrentTeam = async () => {
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Event curator.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/viswajithhhh.__/",
+                        instagram: "https://www.instagram.com/viswajithhhh.__/",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/viswajith-b-nair-405295322"
                     }
-                }, 
+                },
             ]
         }
-            
-        
+
+
     ]
 
     return data;
@@ -3973,9 +3982,9 @@ export const getTeamMembers = async () => {
                     description: 'As Nodal Officer, I foster talent, guide growth, oversee committee selection.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Nodal officer.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/roji1978",
-                      github: "",
-                      linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
+                        instagram: "https://www.instagram.com/roji1978",
+                        github: "",
+                        linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
                     }
                 }, {
                     name: ' Cina Mathew',
@@ -3987,7 +3996,7 @@ export const getTeamMembers = async () => {
                         github: "",
                         linkedin: "https://www.linkedin.com/in/cina-mathew-883372195"
                     }
-                }, 
+                },
                 //{
                 //     name: ' Jithin Sha',
                 //     position: 'Mentor',
@@ -4075,7 +4084,7 @@ export const getTeamMembers = async () => {
                     description: 'Hi I’m the CEO of inovus labs, provides effective guidance in coordinating events and activities of the community.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Student lead 1.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amith_abey_stephen",
+                        instagram: "https://www.instagram.com/amith_abey_stephen",
                         github: "https://github.com/Amith-Abey-Stephen",
                         linkedin: "https://www.linkedin.com/in/amith-abey-stephen"
                     }
@@ -4086,22 +4095,22 @@ export const getTeamMembers = async () => {
                     description: 'Hi I’m the Student Lead 2 of inovus labs, provides effective guidance in coordinating events and activities of the community.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Student lead 2.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/josnaanv",
+                        instagram: "https://www.instagram.com/josnaanv",
                         github: "https://github.com/JosnaAnn",
                         linkedin: "https://www.linkedin.com/in/josna-ann-varghese-418753300"
                     }
                 },
 
                 {
-                        name: ' Lydia Johnson',
-                        position: 'Operation Lead',
-                        description: '',
-                       avatar: BASE_URL + '/assets/team/2025-2026/Operation lead.jpg',
-                        social: {
-                            instagram: "https://www.instagram.com/lydiajso",
-                            github: "https://github.com/1yd1aa",
-                            linkedin: "https://www.linkedin.com/in/lydia-j-775968318"
-                        }
+                    name: ' Lydia Johnson',
+                    position: 'Operation Lead',
+                    description: '',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Operation lead.jpg',
+                    social: {
+                        instagram: "https://www.instagram.com/lydiajso",
+                        github: "https://github.com/1yd1aa",
+                        linkedin: "https://www.linkedin.com/in/lydia-j-775968318"
+                    }
                 },
 
                 {
@@ -4110,7 +4119,7 @@ export const getTeamMembers = async () => {
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Teachnical Lead.jpg',
                     social: {
-                      instagram: "",
+                        instagram: "",
                         github: "https://github.com/SanTechBoard",
                         linkedin: "https://www.linkedin.com/in/sane-sunil-55a552334/"
                     }
@@ -4126,7 +4135,7 @@ export const getTeamMembers = async () => {
                         github: "https://github.com/tomkondody",
                         linkedin: " https://www.linkedin.com/in/tomthomaskondody"
                     }
-                }, 
+                },
 
                 {
                     name: ' Aaron Anil',
@@ -4139,38 +4148,38 @@ export const getTeamMembers = async () => {
                         linkedin: "https://www.linkedin.com/in/aaron-anil-thomas-897b6433a"
                     }
                 },
-                
+
                 {
                     name: ' Anasuya S Kurup',
                     position: 'Women Innovation Lead',
                     description: 'I’m the women in tech lead of inovus labs. I’m the one who lead and mentor all kind of women exclusive programs. I guide and mentor students and be the spearhead of all women exclusive programs.  ',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Women Innovation lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Women Innovation lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/anasuya_nadamel_",
+                        instagram: "https://www.instagram.com/anasuya_nadamel_",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/anasuya-s-kurup-60258624a"
                     }
                 },
-                
+
                 {
                     name: ' Vyshak K Pradeep',
                     position: 'Community Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Community Lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Community Lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/_why_shak",
+                        instagram: "https://www.instagram.com/_why_shak",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/vyshak-k-pradeep-b30886350"
                     }
-                }, 
-                
+                },
+
                 {
                     name: ' Amenda Maria Johnson',
                     position: 'Finance Lead',
                     description: 'I’m the financial lead of inovus labs IEDC, monitors all kind of financial transactions and the bill-laden of Inovus Labs.',
                     avatar: BASE_URL + '/assets/team/2025-2026/Finance Lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amenda_maria",
+                        instagram: "https://www.instagram.com/amenda_maria",
                         github: "https://github.com/Amendamaria",
                         linkedin: "https://www.linkedin.com/in/amenda-maria-johnson-669420283"
                     }
@@ -4180,49 +4189,49 @@ export const getTeamMembers = async () => {
                     name: ' Aaliya Gopan',
                     position: 'IPR & Research Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2025-2026/Research & IPR lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2025-2026/Research & IPR lead.jpg',
                     social: {
                         instagram: "https://www.instagram.com/aaliyagopan",
                         github: "https://github.com/AALIYAGOPAN",
                         linkedin: "https://www.linkedin.com/in/aaliya-gopan"
                     }
-                },    
-                
+                },
+
                 {
                     name: ' Alex Renny',
                     position: 'Administartion Lead',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Administration lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/__alex___001__/",
+                        instagram: "https://www.instagram.com/__alex___001__/",
                         github: "https://github.com/mr-alex-001",
                         linkedin: "https://www.linkedin.com/in/alex-renny-48b893319"
                     }
-                },   
-                
+                },
+
                 {
                     name: ' Emil Binoy',
                     position: 'Innovation Lead',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Innovation lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/its_emilefx",
+                        instagram: "https://www.instagram.com/its_emilefx",
                         github: "https://github.com/emil-binoy",
                         linkedin: "https://www.linkedin.com/in/emil-binoy-769261325"
                     }
-                },   
-                
+                },
+
                 {
                     name: ' Sibin',
                     position: 'Event Co-ordinator',
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/event coordinator.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/sibin_ullattil",
+                        instagram: "https://www.instagram.com/sibin_ullattil",
                         github: "https://github.com/Sibin-2000",
                         linkedin: ""
                     }
-                },   
+                },
 
                 {
                     name: ' Viswajith B Nair',
@@ -4230,13 +4239,13 @@ export const getTeamMembers = async () => {
                     description: '',
                     avatar: BASE_URL + '/assets/team/2025-2026/Event curator.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/viswajithhhh.__/",
+                        instagram: "https://www.instagram.com/viswajithhhh.__/",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/viswajith-b-nair-405295322"
                     }
-                },   
+                },
             ]
-        },{
+        }, {
             title: 'Inovus 7th Generation',
             date: '2024',
             showTeam: false,
@@ -4248,15 +4257,15 @@ export const getTeamMembers = async () => {
                     description: 'As Nodal Officer, I foster talent, guide growth, oversee committee selection.',
                     avatar: BASE_URL + '/assets/team/2024/Nodal Officer.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/roji1978",
-                      github: "",
-                      linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
+                        instagram: "https://www.instagram.com/roji1978",
+                        github: "",
+                        linkedin: "https://www.linkedin.com/in/roji-thomas-thomas"
                     }
                 }, {
                     name: ' Cina Mathew',
                     position: 'Assistant Nodal Officer',
                     description: 'As Assistant Nodal Officer, I support talent, drive IEDC growth, aid committee selection.',
-                   avatar: BASE_URL + '/assets/team/2024/Asst.Nodal Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Asst.Nodal Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/cina_kadathukalam",
                         github: "",
@@ -4266,7 +4275,7 @@ export const getTeamMembers = async () => {
                     name: ' Jithin Sha',
                     position: 'Mentor',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Mentor Jithin sha.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Mentor Jithin sha.jpg',
                     social: {
                         instagram: "https://www.instagram.com/last_riddler",
                         github: "https://github.com/Waterloo",
@@ -4276,7 +4285,7 @@ export const getTeamMembers = async () => {
                     name: ' Arjun Krishna',
                     position: 'Mentor',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Mentor Arjun.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Mentor Arjun.jpg',
                     social: {
                         instagram: "https://www.instagram.com/decoded_cipher",
                         github: "https://github.com/decoded-cipher",
@@ -4286,7 +4295,7 @@ export const getTeamMembers = async () => {
                     name: ' Nikhil T Das',
                     position: 'Mentor',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Mentor Nikhil T Das.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Mentor Nikhil T Das.jpg',
                     social: {
                         instagram: "https://www.instagram.com/nikhil_dasz",
                         github: "https://github.com/nikhiltdas",
@@ -4296,7 +4305,7 @@ export const getTeamMembers = async () => {
                     name: ' Milan Sony',
                     position: 'Mentor',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Mentor  Milan.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Mentor  Milan.jpg',
                     social: {
                         instagram: "https://www.instagram.com/milansony_",
                         github: "https://github.com/milan-sony",
@@ -4306,7 +4315,7 @@ export const getTeamMembers = async () => {
                     name: ' Abhishek V Gopal',
                     position: 'Chief Executive Officer',
                     description: 'Hi I’m the CEO of inovus labs, provides effective guidance in coordinating events and activities of the community.',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Executive Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Executive Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/abhishek_oorukary_",
                         github: "https://github.com/abhishek-v-gopal",
@@ -4316,7 +4325,7 @@ export const getTeamMembers = async () => {
                     name: ' Badhusha Shaji',
                     position: 'Chief Technical Officer',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Technical Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Technical Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/_badhu_._sha_",
                         github: "https://github.com/Badhusha3214",
@@ -4326,7 +4335,7 @@ export const getTeamMembers = async () => {
                     name: ' Arjun A Acharry',
                     position: 'Chief Operations Officer',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Operations Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Operations Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/arjun_a_acharry",
                         github: "https://github.com/arjunaacharry",
@@ -4336,17 +4345,17 @@ export const getTeamMembers = async () => {
                     name: ' Devika Anil',
                     position: 'Women In Tech',
                     description: 'I’m the women in tech lead of inovus labs. I’m the one who lead and mentor all kind of women exclusive programs. I guide and mentor students and be the spearhead of all women exclusive programs.  ',
-                   avatar: BASE_URL + '/assets/team/2024/Women in tech.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Women in tech.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/deh_wee",
+                        instagram: "https://www.instagram.com/deh_wee",
                         github: "https://github.com/Dev-vi-ka",
                         linkedin: "https://www.linkedin.com/in/devika-anil-4b25492b3"
                     }
-                },{
+                }, {
                     name: ' Joel Jacob Thomas',
                     position: 'Chief Creative Officer',
                     description: 'I’m the creative lead of inovus labs, I’m monitor all kind of media production activities includes contents for social media, podcasts, posters, flyers and brochures for events.',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Creative Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Creative Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/joel_jacob04",
                         github: "https://github.com/thomasjojacob04",
@@ -4356,7 +4365,7 @@ export const getTeamMembers = async () => {
                     name: ' Alan Rajan',
                     position: 'IPR & Research Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/IPR & Reserch Lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/IPR & Reserch Lead.jpg',
                     social: {
                         instagram: "",
                         github: "",
@@ -4366,7 +4375,7 @@ export const getTeamMembers = async () => {
                     name: ' Nithin Daniel',
                     position: 'Chief Finance Officer',
                     description: 'I’m the financial lead of inovus labs IEDC, monitors all kind of financial transactions and the bill-laden of Inovus Labs.',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Finance Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Finance Officer.jpg',
                     social: {
                         instagram: "https://www.instagram.com/nithin_daniel_",
                         github: "https://github.com/nithin-daniel",
@@ -4376,9 +4385,9 @@ export const getTeamMembers = async () => {
                     name: ' Anasuya S Kurup',
                     position: 'Chief Marketing Officer',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Marketing Officer anasuya.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Marketing Officer anasuya.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/anasuya_nadamel_",
+                        instagram: "https://www.instagram.com/anasuya_nadamel_",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/anasuya-s-kurup-60258624a"
                     }
@@ -4386,9 +4395,9 @@ export const getTeamMembers = async () => {
                     name: ' Amith Abey Stephen',
                     position: 'Stock Manager',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Stock Manager.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Stock Manager.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amith_abey_stephen",
+                        instagram: "https://www.instagram.com/amith_abey_stephen",
                         github: "https://github.com/Amith-Abey-Stephen",
                         linkedin: "https://www.linkedin.com/in/amith-abey-stephen"
                     }
@@ -4396,9 +4405,9 @@ export const getTeamMembers = async () => {
                     name: ' Sane Sunil',
                     position: 'Project Manager',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Project Manager.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Project Manager.jpg',
                     social: {
-                      instagram: "",
+                        instagram: "",
                         github: "https://github.com/SanTechBoard",
                         linkedin: ""
                     }
@@ -4406,9 +4415,9 @@ export const getTeamMembers = async () => {
                     name: ' Angel K Agnes',
                     position: 'Community Lead',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Community Lead.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Community Lead.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/angelkagnes",
+                        instagram: "https://www.instagram.com/angelkagnes",
                         github: "https://github.com/Angel-K-Agnes",
                         linkedin: "https://www.linkedin.com/in/angel-k-agnes-a6127528b"
                     }
@@ -4416,15 +4425,15 @@ export const getTeamMembers = async () => {
                     name: ' Amenda Maria Johnson',
                     position: 'Chief Social Officer',
                     description: '',
-                   avatar: BASE_URL + '/assets/team/2024/Chief Marketing Officer.jpg',
+                    avatar: BASE_URL + '/assets/team/2024/Chief Marketing Officer.jpg',
                     social: {
-                      instagram: "https://www.instagram.com/amenda_maria",
+                        instagram: "https://www.instagram.com/amenda_maria",
                         github: "https://github.com/Amendamaria",
                         linkedin: "https://www.linkedin.com/in/amenda-maria-johnson-669420283"
                     }
-                },   
+                },
             ]
-        },{
+        }, {
             title: 'Inovus 6th Generation',
             date: '2023-2024',
             showTeam: false,
@@ -4442,7 +4451,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Cina Mathew',
                     position: 'Assistant Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2023/cinamathew.jpg',
+                    avatar: BASE_URL + '/assets/team/2023/cinamathew.jpg',
                     social: {
                         instagram: "https://www.instagram.com/cina_kadathukalam",
                         github: "",
@@ -4451,7 +4460,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Arjun Krishna',
                     position: 'Mentor',
-                   avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
                     social: {
                         instagram: "https://www.instagram.com/decoded_cipher",
                         github: "https://github.com/decoded-cipher",
@@ -4460,7 +4469,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Badhusha Shaji',
                     position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/BadhushaShaji.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/BadhushaShaji.jpg',
                     social: {
                         instagram: "https://www.instagram.com/_badhu_._sha_",
                         github: "https://github.com/Badhusha3214",
@@ -4469,7 +4478,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Abhishek V Gopal',
                     position: 'Chief Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/Abhishek.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/Abhishek.jpg',
                     social: {
                         instagram: "https://www.instagram.com/abhishek_oorukary_",
                         github: "https://github.com/abhishek-v-gopal",
@@ -4478,7 +4487,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Nikhil T Das',
                     position: 'Chief Operations Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/NikilTDas.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/NikilTDas.jpg',
                     social: {
                         instagram: "https://www.instagram.com/nikhil_dasz",
                         github: "https://github.com/nikhiltdas",
@@ -4487,7 +4496,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Nithin Daniel',
                     position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/Nithin.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/Nithin.jpg',
                     social: {
                         instagram: "https://www.instagram.com/nithin_daniel_",
                         github: "https://github.com/nithin-daniel",
@@ -4496,16 +4505,16 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Arjun A Acharry',
                     position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/ArjunAcharry.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/ArjunAcharry.jpg',
                     social: {
                         instagram: "https://www.instagram.com/arjun_a_acharry",
                         github: "https://github.com/arjunaacharry",
                         linkedin: "https://www.linkedin.com/in/arjun-a-acharry"
                     }
-                },{
+                }, {
                     name: ' Joel Jacob Thomas',
                     position: 'Chief Marketing Officer',
-                   avatar: BASE_URL + '/assets/team/2023-2024/JoelJacob.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/JoelJacob.jpg',
                     social: {
                         instagram: "https://www.instagram.com/joel_jacob04",
                         github: "https://github.com/thomasjojacob04",
@@ -4514,7 +4523,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Milan Sony',
                     position: 'Community Lead',
-                   avatar: BASE_URL + '/assets/team/2023-2024/milansony.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/milansony.jpg',
                     social: {
                         instagram: "https://www.instagram.com/milansony_",
                         github: "https://github.com/milan-sony",
@@ -4523,13 +4532,13 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Anu Tiji',
                     position: 'IPR & Research Lead',
-                   avatar: BASE_URL + '/assets/team/2023-2024/Anutiji.jpg',
+                    avatar: BASE_URL + '/assets/team/2023-2024/Anutiji.jpg',
                     social: {
                         instagram: "https://www.instagram.com/a_n_u.t_i_j_i",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/anu-tiji-4b9896257"
                     }
-                }, 
+                },
             ]
         }, {
             title: 'Inovus 5th Generation',
@@ -4540,7 +4549,7 @@ export const getTeamMembers = async () => {
                 {
                     name: ' Roji Thomas',
                     position: 'Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
                     social: {
                         instagram: "https://www.instagram.com/roji1978",
                         github: "",
@@ -4549,7 +4558,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Cina Mathew',
                     position: 'Assistant Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2023/cinamathew.jpg',
+                    avatar: BASE_URL + '/assets/team/2023/cinamathew.jpg',
                     social: {
                         instagram: "https://www.instagram.com/cina_kadathukalam",
                         github: "",
@@ -4558,7 +4567,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Arjun Krishna',
                     position: 'Mentor',
-                   avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
                     social: {
                         instagram: "https://www.instagram.com/decoded_cipher",
                         github: "https://github.com/decoded-cipher",
@@ -4567,7 +4576,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: 'Jeeven Josheph',
                     position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2022/jeevenjosheph.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/jeevenjosheph.jpg',
                     social: {
                         instagram: "https://www.instagram.com/jeevanjoseph1310",
                         github: "https://github.com/Jeevan1310",
@@ -4576,7 +4585,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Nikhil T Das',
                     position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2023/Nikhiltdas.JPG',
+                    avatar: BASE_URL + '/assets/team/2023/Nikhiltdas.JPG',
                     social: {
                         instagram: "https://www.instagram.com/nikhil_dasz",
                         github: "https://github.com/nikhiltdas",
@@ -4585,7 +4594,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Joseph Mathai Pathil',
                     position: 'Chief Operations Officer',
-                   avatar: BASE_URL + '/assets/team/2022/josephmathai.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/josephmathai.jpg',
                     social: {
                         instagram: "https://www.instagram.com/the._.humandesigner",
                         github: "https://github.com/josephmathai10",
@@ -4594,7 +4603,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Induchoodan R',
                     position: 'Chief Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2023/Indhuchoodan.JPG',
+                    avatar: BASE_URL + '/assets/team/2023/Indhuchoodan.JPG',
                     social: {
                         instagram: "https://www.instagram.com/_indhuchoodan_r_",
                         github: "",
@@ -4603,16 +4612,16 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Meretta Suresh',
                     position: 'Chief Marketing Officer',
-                   avatar: BASE_URL + '/assets/team/2023/Meritta.JPG',
+                    avatar: BASE_URL + '/assets/team/2023/Meritta.JPG',
                     social: {
                         instagram: "https://www.instagram.com/meru_zz_",
                         github: "https://github.com/merettas",
                         linkedin: "www.linkedin.com/in/meretta-suresh"
                     }
-                },  {
+                }, {
                     name: ' Badhusha Shaji',
                     position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2023/badhushashaji.jpeg',
+                    avatar: BASE_URL + '/assets/team/2023/badhushashaji.jpeg',
                     social: {
                         instagram: "https://www.instagram.com/_badhu_._sha_",
                         github: "https://github.com/Badhusha3214",
@@ -4621,7 +4630,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Aryadevi C S',
                     position: 'Chief Social Officer',
-                   avatar: BASE_URL + '/assets/team/2023/aryadevics.JPG',
+                    avatar: BASE_URL + '/assets/team/2023/aryadevics.JPG',
                     social: {
                         instagram: "",
                         github: "https://github.com/AryadeviCS",
@@ -4630,13 +4639,13 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Amal Joseph',
                     position: 'Chief Innovations Officer',
-                   avatar: BASE_URL + '/assets/team/2023/AmalJoseph.JPG',
+                    avatar: BASE_URL + '/assets/team/2023/AmalJoseph.JPG',
                     social: {
                         instagram: "https://www.instagram.com/the_cam_era_man",
                         github: "https://github.com/thecameraman",
                         linkedin: "https://www.linkedin.com/in/amal-joseph-"
                     }
-                }, 
+                },
             ]
         }, {
             title: 'Inovus 4th Generation',
@@ -4647,7 +4656,7 @@ export const getTeamMembers = async () => {
                 {
                     name: ' Roji Thomas',
                     position: 'Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
                     social: {
                         instagram: "https://www.instagram.com/roji1978",
                         github: "",
@@ -4656,7 +4665,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Arjun Krishna',
                     position: 'Student Co-ordinator',
-                   avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
                     social: {
                         instagram: "https://www.instagram.com/decoded_cipher",
                         github: "https://github.com/decoded-cipher",
@@ -4665,7 +4674,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Sreelakshmi Anilkumar',
                     position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2022/srelekshmi.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/srelekshmi.jpg',
                     social: {
                         instagram: "https://www.instagram.com/__sree.lakshmii__",
                         github: "https://github.com/Sreelakshmi393",
@@ -4674,7 +4683,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Jeevan Joseph',
                     position: 'Chief Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2022/jeevenjosheph.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/jeevenjosheph.jpg',
                     social: {
                         instagram: "https://www.instagram.com/jeevanjoseph1310",
                         github: "https://github.com/Jeevan1310",
@@ -4683,7 +4692,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Sandra Krishnan',
                     position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2022/sandra.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/sandra.jpg',
                     social: {
                         instagram: "",
                         github: "https://github.com/krishnansandra",
@@ -4692,7 +4701,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Joseph Mathai Pathi',
                     position: 'Chief operations Officer',
-                   avatar: BASE_URL + '/assets/team/2022/josephmathai.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/josephmathai.jpg',
                     social: {
                         instagram: "https://www.instagram.com/the._.humandesigner",
                         github: "https://github.com/josephmathai10",
@@ -4701,7 +4710,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Christeena Zachariah',
                     position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2022/christeena.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/christeena.jpg',
                     social: {
                         instagram: "https://www.instagram.com/_c.o.l.o.r_p.e.n.c.i.l_",
                         github: "https://github.com/christeenazacharia",
@@ -4710,13 +4719,13 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Meretta Suresh',
                     position: 'Chief Social Officer',
-                   avatar: BASE_URL + '/assets/team/2022/meretta.jpg',
+                    avatar: BASE_URL + '/assets/team/2022/meretta.jpg',
                     social: {
                         instagram: "https://www.instagram.com/meru_zz_",
                         github: "https://github.com/merettas",
                         linkedin: "www.linkedin.com/in/meretta-suresh"
                     }
-                }, 
+                },
             ]
         }, {
             title: 'Inovus 3rd Generation',
@@ -4727,7 +4736,7 @@ export const getTeamMembers = async () => {
                 {
                     name: ' Roji Thomas',
                     position: 'Nodal Offier',
-                   avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
                     social: {
                         instagram: "https://www.instagram.com/roji1978",
                         github: "",
@@ -4736,7 +4745,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Jithin Shah',
                     position: 'Student Co-ordinator',
-                   avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
                     social: {
                         instagram: "https://www.instagram.com/last_riddler",
                         github: "https://github.com/Waterloo",
@@ -4745,7 +4754,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Antony Frenandez',
                     position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2021/antonyfernandez.png',
+                    avatar: BASE_URL + '/assets/team/2021/antonyfernandez.png',
                     social: {
                         instagram: "https://www.instagram.com/_anto_ny_fernandez",
                         github: "",
@@ -4754,7 +4763,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Indhuchoodan R',
                     position: 'Cheif Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2021/induchoodan.png',
+                    avatar: BASE_URL + '/assets/team/2021/induchoodan.png',
                     social: {
                         instagram: "https://www.instagram.com/_indhuchoodan_r_",
                         github: "",
@@ -4763,7 +4772,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Franklin Jetty Johnson',
                     position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2021/franklin.png',
+                    avatar: BASE_URL + '/assets/team/2021/franklin.png',
                     social: {
                         instagram: "https://www.instagram.com/jhonsfranky17",
                         github: "",
@@ -4772,7 +4781,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Thomas George',
                     position: 'Chief Marketing Officer',
-                   avatar: BASE_URL + '/assets/team/2021/thomasgeorge.png',
+                    avatar: BASE_URL + '/assets/team/2021/thomasgeorge.png',
                     social: {
                         instagram: "https://www.instagram.com/tommy._.zephyrus",
                         github: "",
@@ -4781,7 +4790,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Ckesiah Mary Sam',
                     position: 'Chief Innovations Officer',
-                   avatar: BASE_URL + '/assets/team/2021/ckeiah.png',
+                    avatar: BASE_URL + '/assets/team/2021/ckeiah.png',
                     social: {
                         instagram: "https://www.instagram.com/ck_msj",
                         github: "",
@@ -4790,7 +4799,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Jaike Jacob Binoy',
                     position: 'Chief Operations Officer',
-                   avatar: BASE_URL + '/assets/team/2021/jaikejacob.png',
+                    avatar: BASE_URL + '/assets/team/2021/jaikejacob.png',
                     social: {
                         instagram: "https://www.instagram.com/whitedeist",
                         github: "",
@@ -4799,7 +4808,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: 'Sheril Susan Manu',
                     position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2021/sherilsusan.png',
+                    avatar: BASE_URL + '/assets/team/2021/sherilsusan.png',
                     social: {
                         instagram: "https://www.instagram.com/susan_sheril",
                         github: "",
@@ -4808,7 +4817,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Nikhil T Das',
                     position: 'Chief Social Officer',
-                   avatar: BASE_URL + '/assets/team/2021/nikhiltdas.png',
+                    avatar: BASE_URL + '/assets/team/2021/nikhiltdas.png',
                     social: {
                         instagram: "https://www.instagram.com/nikhil_dasz",
                         github: "https://github.com/nikhiltdas",
@@ -4817,7 +4826,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Meera Mariam Jacob',
                     position: 'Stock Manager',
-                   avatar: BASE_URL + '/assets/team/2021/meeramariam.png',
+                    avatar: BASE_URL + '/assets/team/2021/meeramariam.png',
                     social: {
                         instagram: "https://www.instagram.com/merzm.e",
                         github: "",
@@ -4826,13 +4835,13 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Anuraj T R',
                     position: 'Event Curator',
-                   avatar: BASE_URL + '/assets/team/2021/anuraj.png',
+                    avatar: BASE_URL + '/assets/team/2021/anuraj.png',
                     social: {
                         instagram: "https://www.instagram.com/_al0ne_walker_",
                         github: "https://github.com/anuraj2001",
                         linkedin: "https://www.linkedin.com/in/anuraj-t-r-0061b5209"
                     }
-                }, 
+                },
             ]
         }, {
             title: 'Inovus 2nd Generation',
@@ -4843,7 +4852,7 @@ export const getTeamMembers = async () => {
                 {
                     name: ' Roji Thomas',
                     position: 'Nodal Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/rojithomas.jpg',
                     social: {
                         instagram: "https://www.instagram.com/roji1978",
                         github: "",
@@ -4852,7 +4861,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Jithin Shah',
                     position: 'Student Co-ordinator',
-                   avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/jithinshah.jpg',
                     social: {
                         instagram: "https://www.instagram.com/last_riddler",
                         github: "https://github.com/Waterloo",
@@ -4861,7 +4870,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Laya Anna Lalan',
                     position: 'Chief Executive Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/layaanna.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/layaanna.jpg',
                     social: {
                         instagram: "https://www.instagram.com/_laya.anna_",
                         github: "",
@@ -4870,7 +4879,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Midhun Murali',
                     position: 'Chief Technical Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/midhunmurali.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/midhunmurali.jpg',
                     social: {
                         instagram: "https://www.instagram.com/midhun_art",
                         github: "",
@@ -4879,7 +4888,7 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Megha Manoj',
                     position: 'Chief Financial Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/meghamanoj.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/meghamanoj.jpg',
                     social: {
                         instagram: "",
                         github: "",
@@ -4888,16 +4897,16 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Karpaka Devi',
                     position: 'Chief Marketing Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/karpaka.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/karpaka.jpg',
                     social: {
                         instagram: "",
                         github: "",
                         linkedin: ""
                     }
                 }, {
-                    name:' Arjun Krishna',
+                    name: ' Arjun Krishna',
                     position: 'Chief Innovations Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/arjunkrishna.jpg',
                     social: {
                         instagram: "https://www.instagram.com/decoded_cipher",
                         github: "https://github.com/decoded-cipher",
@@ -4906,16 +4915,16 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Johna Aswin Selva',
                     position: 'Chief Operations Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/johnaaswin.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/johnaaswin.jpg',
                     social: {
                         instagram: "",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/johna-aswin-selva"
                     }
-                },{
-                    name:' Justin Titus',
+                }, {
+                    name: ' Justin Titus',
                     position: 'Chief Creative Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/justin.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/justin.jpg',
                     social: {
                         instagram: "https://www.instagram.com/justinkuriantitus",
                         github: "",
@@ -4924,13 +4933,13 @@ export const getTeamMembers = async () => {
                 }, {
                     name: ' Alan Varghese ',
                     position: 'Chief Social Officer',
-                   avatar: BASE_URL + '/assets/team/2018-2020/alanvarghese.jpg',
+                    avatar: BASE_URL + '/assets/team/2018-2020/alanvarghese.jpg',
                     social: {
                         instagram: "",
                         github: "",
                         linkedin: "https://www.linkedin.com/in/mindtraveller64"
                     }
-                },  
+                },
             ]
         }, {
             title: 'The Founders of Inovus Labs IEDC',
@@ -4938,17 +4947,17 @@ export const getTeamMembers = async () => {
             showTeam: false,
             members: [
 
-            {
-              name: '',
-              position: '',
-              avatar: BASE_URL + '/assets/team/founders.jpg',
-              social: {
-                facebook: ""
-              }
-            },
-             
-            
-             
+                {
+                    name: '',
+                    position: '',
+                    avatar: BASE_URL + '/assets/team/founders.jpg',
+                    social: {
+                        facebook: ""
+                    }
+                },
+
+
+
             ]
         },
     ];
@@ -4967,9 +4976,9 @@ export const getNewsReports = async () => {
             title: "Atom EV",
             discription: "A student driven initiative to build an electric vehicle.",
             imgSrc: BASE_URL + "/assets/projects/Atom.jpg"
-          }, 
-            
-        
+        },
+
+
     ]
 
     return data;
@@ -5017,16 +5026,16 @@ export const Buggy = async () => {
 
 // Search Component
 export const SearchComponent = (search) => {
-    
-        let result = [];
-    
-        for(let i=0; i<stockList.length; i++) {
-            if(stockList[i].toLowerCase().includes(search.toLowerCase())) {
-                result.push(stockList[i]);
-            }
+
+    let result = [];
+
+    for (let i = 0; i < stockList.length; i++) {
+        if (stockList[i].toLowerCase().includes(search.toLowerCase())) {
+            result.push(stockList[i]);
         }
-    
-        return result;
+    }
+
+    return result;
 };
 
 
@@ -5036,54 +5045,54 @@ export const getIotGalleryAssets = async () => {
 
     let data = [
         {
-          id: 1,
-        //   title: 'Image 1',
-        //   description: 'Image 1 description',
-          largeURL: BASE_URL + '/assets/iotGallery/01.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/01.jpg',
+            id: 1,
+            //   title: 'Image 1',
+            //   description: 'Image 1 description',
+            largeURL: BASE_URL + '/assets/iotGallery/01.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/01.jpg',
         },
         {
-          id: 2,
-        //   title: 'Image 2',
-        //   description: 'Image 2 description',
-          largeURL: BASE_URL + '/assets/iotGallery/02.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/02.jpg',
+            id: 2,
+            //   title: 'Image 2',
+            //   description: 'Image 2 description',
+            largeURL: BASE_URL + '/assets/iotGallery/02.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/02.jpg',
         },
         {
-          id: 3,
-        //   title: 'Blessing Ceremony of Inovus Labs IEDC Post-renovation',
-        //   description: 'Image 3 description',
-          largeURL: BASE_URL + '/assets/iotGallery/03.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/03.jpg',
+            id: 3,
+            //   title: 'Blessing Ceremony of Inovus Labs IEDC Post-renovation',
+            //   description: 'Image 3 description',
+            largeURL: BASE_URL + '/assets/iotGallery/03.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/03.jpg',
         },
         {
-          id: 4,
-        //   title: 'Image 4',
-        //   description: 'Image 4 description',
-          largeURL: BASE_URL + '/assets/iotGallery/04.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/04.jpg',
+            id: 4,
+            //   title: 'Image 4',
+            //   description: 'Image 4 description',
+            largeURL: BASE_URL + '/assets/iotGallery/04.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/04.jpg',
         },
         {
-          id: 5,
-        //   title: 'Image 5',
-        //   description: 'Image 5 description',
-          largeURL: BASE_URL + '/assets/iotGallery/05.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/05.jpg',
+            id: 5,
+            //   title: 'Image 5',
+            //   description: 'Image 5 description',
+            largeURL: BASE_URL + '/assets/iotGallery/05.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/05.jpg',
         },
         {
-          id: 6,
-          title: 'Arduino Workshop 2023',
-        //   description: 'Image 6 description',
-          largeURL: BASE_URL + '/assets/iotGallery/06.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/06.jpg',
+            id: 6,
+            title: 'Arduino Workshop 2023',
+            //   description: 'Image 6 description',
+            largeURL: BASE_URL + '/assets/iotGallery/06.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/06.jpg',
         },
         {
-          id: 7,
-          title: 'Arduino Workshop 2023',
-        //   description: 'Image 7 description',
-          largeURL: BASE_URL + '/assets/iotGallery/07.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/07.jpg',
-        },{
+            id: 7,
+            title: 'Arduino Workshop 2023',
+            //   description: 'Image 7 description',
+            largeURL: BASE_URL + '/assets/iotGallery/07.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/07.jpg',
+        }, {
             id: 14,
             title: 'Arduino Workshop 2023',
             //   description: 'Image 10 description',
@@ -5091,18 +5100,18 @@ export const getIotGalleryAssets = async () => {
             thumbnailURL: BASE_URL + "/assets/iotGallery/arduino_workshop'23.jpg",
         },
         {
-          id: 8,
-          title: 'Some Components',
-        //   description: 'Image 8 description',
-          largeURL: BASE_URL + '/assets/iotGallery/08.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/08.jpg',
+            id: 8,
+            title: 'Some Components',
+            //   description: 'Image 8 description',
+            largeURL: BASE_URL + '/assets/iotGallery/08.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/08.jpg',
         },
         {
-          id: 9,
-          title: 'Open PC',
-        //   description: 'Image 9 description',
-          largeURL: BASE_URL + '/assets/iotGallery/09.jpg',
-          thumbnailURL: BASE_URL + '/assets/iotGallery/09.jpg',
+            id: 9,
+            title: 'Open PC',
+            //   description: 'Image 9 description',
+            largeURL: BASE_URL + '/assets/iotGallery/09.jpg',
+            thumbnailURL: BASE_URL + '/assets/iotGallery/09.jpg',
         },
         {
             id: 10,
@@ -5113,26 +5122,26 @@ export const getIotGalleryAssets = async () => {
         },
         {
             id: 11,
-              title: 'RFID Based Door-Lock',
+            title: 'RFID Based Door-Lock',
             //   description: 'Image 10 description',
             largeURL: BASE_URL + '/assets/iotGallery/11.jpg',
             thumbnailURL: BASE_URL + '/assets/iotGallery/11.jpg',
         },
         {
             id: 12,
-              title: 'Mr.Bilberto',
+            title: 'Mr.Bilberto',
             //   description: 'Image 10 description',
             largeURL: BASE_URL + '/assets/iotGallery/12.jpg',
             thumbnailURL: BASE_URL + '/assets/iotGallery/12.jpg',
         },
         {
             id: 13,
-              title: 'Smart Inovus',
+            title: 'Smart Inovus',
             //   description: 'Image 10 description',
             largeURL: BASE_URL + '/assets/iotGallery/13.jpg',
             thumbnailURL: BASE_URL + '/assets/iotGallery/13.jpg',
         },
-            // {
+        // {
         //     id: 15,
         //     title: 'Arduino Workshop 2023',
         //     //   description: 'Image 10 description',
@@ -5162,7 +5171,7 @@ export const getOutreachEvents = async () => {
             images: [
                 BASE_URL + "/assets/activity/arduinoIHRD.jpeg"
             ]
-        },{
+        }, {
             id: 2,
             title: "IoT & Robotics Exhibition",
             location: "St Berchmans Higher Secondary School, Changanacherry",
@@ -5185,7 +5194,7 @@ export const getOutreachEvents = async () => {
             images: [
                 BASE_URL + "/assets/activity/handonIOT.jpg"
             ]
-        },{
+        }, {
             id: 4,
             title: "Inspire Orientation",
             location: "Placid Vidya Vihar Senior Secondary School, Changanacherry",
@@ -5256,7 +5265,7 @@ export const getOutreachEvents = async () => {
             images: [
                 BASE_URL + "/assets/activity/ui_design mangalm.jpeg"
             ]
-        },{
+        }, {
             id: 10,
             title: "PrepSpark - Secret to Success",
             location: " Government Engineering College, Idukki",
@@ -5267,7 +5276,7 @@ export const getOutreachEvents = async () => {
             images: [
                 BASE_URL + "/assets/activity/PrepSpark.jpg"
             ]
-        },{
+        }, {
             id: 11,
             title: "Intro to IoT- MACE CLUB",
             location: " Mar Athanasius College, Kothamangalam",

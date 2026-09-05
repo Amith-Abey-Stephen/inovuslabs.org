@@ -16,7 +16,7 @@
                     <swiper-slide>
                         <a :href="partner.url" target="_blank">
                             <div class="flex justify-center items-center">
-                                <img class="partner_logo max-h-24" :src="'https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/' + partner.logo"
+                                <img class="partner_logo max-h-24" :src="$cdn_base_url + '/assets/logos/' + partner.logo"
                                     :alt="partner.name" />
                             </div>
                         </a>
@@ -37,8 +37,8 @@
 <script>
 
     import { Swiper, SwiperSlide } from 'swiper/vue';
-    import 'swiper/scss';
-    import 'swiper/scss/autoplay';
+    import 'swiper/css';
+    import 'swiper/css/autoplay';
     import { Autoplay } from 'swiper/modules';
 
     export default {

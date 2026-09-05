@@ -31,7 +31,7 @@
       </div>
       
       <div class="w-full lg:w-1/3 py-4 lg:py-20">
-        <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/online-gallery-animate.svg" alt="Gallery" />
+        <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/online-gallery-animate.svg'" alt="Gallery" />
       </div>
     </div>
   </section>

@@ -92,6 +92,8 @@
   </script>
 
   <style scoped>
+  @reference "@/assets/main.css";
+
   .carousel {
     @apply w-full h-[500px] relative overflow-hidden;
   }

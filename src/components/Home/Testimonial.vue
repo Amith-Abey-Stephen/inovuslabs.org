@@ -54,11 +54,10 @@
 <script>
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/scss';
-import 'swiper/scss/autoplay';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
-
-const BASE_URL = "https://storage.googleapis.com/inovuslabs-cdn.appspot.com";
+import { CDN_BASE_URL as BASE_URL } from "@/API/index.js";
 
 export default {
     name: 'Testimonial',

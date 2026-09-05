@@ -25,7 +25,7 @@
         </div>
         
         <div class="w-full lg:w-1/3 py-4 lg:py-20">
-          <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/about-us-page-animate.svg" alt="About" />
+          <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/about-us-page-animate.svg'" alt="About" />
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@
       <div class="items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:px-6">
         
         <div class="w-full" :class="{'hidden': !isMobile}">
-          <img src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Mission Impossible-bro.svg" alt="office content 1">
+          <img :src="$cdn_base_url + '/assets/illustrations/Mission Impossible-bro.svg'" alt="office content 1">
         </div>
         
         <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="w-full" :class="{'hidden': isMobile}">
-          <img src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Mission Impossible-bro.svg" alt="office content 1">
+          <img :src="$cdn_base_url + '/assets/illustrations/Mission Impossible-bro.svg'" alt="office content 1">
         </div>
 
       </div>
@@ -64,7 +64,7 @@
       <div class="items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:px-6">
         
         <div class="w-full" :class="{'pr-16': !isMobile, 'my-12': isMobile}">
-          <img class="" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Creative writing-pana.svg" alt="office content 1">
+          <img class="" :src="$cdn_base_url + '/assets/illustrations/Creative writing-pana.svg'" alt="office content 1">
         </div>
         
         <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -84,7 +84,7 @@
       <div class="items-center px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:px-6 lg:pt-24 mb-12">
         
         <div class="w-full" :class="{'hidden': !isMobile, 'my-12': isMobile}">
-          <img src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Shared goals-amico.svg" alt="office content 1">
+          <img :src="$cdn_base_url + '/assets/illustrations/Shared goals-amico.svg'" alt="office content 1">
         </div>
         
         <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
@@ -103,7 +103,7 @@ entrepreneurship among the students.</p>
         </div>
 
         <div class="w-full" :class="{'hidden': isMobile}">
-          <img class="pl-16" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Shared goals-amico.svg" alt="office content 1">
+          <img class="pl-16" :src="$cdn_base_url + '/assets/illustrations/Shared goals-amico.svg'" alt="office content 1">
         </div>
 
       </div>
