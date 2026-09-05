@@ -27,7 +27,7 @@
             </div>
             
             <div class="w-full lg:w-1/3 py-4 lg:py-20">
-                <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/broadcast-animate.svg" alt="Podcast" />
+                <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/broadcast-animate.svg'" alt="Podcast" />
             </div>
         </div>
     </section>
@@ -135,9 +135,7 @@
 
     import PublicLayout from "@/layouts/PublicLayout.vue";
 
-    import { getPodcasts } from "@/API/index.js";
-
-    const BASE_URL = "https://storage.googleapis.com/inovuslabs-cdn.appspot.com";
+    import { getPodcasts, CDN_BASE_URL as BASE_URL } from "@/API/index.js";
 
     export default {
         name: 'PodcastView',

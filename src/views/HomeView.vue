@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="w-full lg:w-1/3 py-4 lg:py-20">
-          <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/innovation-animate.svg" alt="Gallery" />
+          <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/innovation-animate.svg'" alt="Gallery" />
         </div>
       </div>
     </section>
@@ -81,6 +81,7 @@ import 'swiper/scss/autoplay';
 import { Autoplay } from 'swiper/modules';
 
 import PublicLayout from "@/layouts/PublicLayout.vue";
+import { CDN_BASE_URL } from "@/API/index.js";
 
 import ActiveEvents from "@/components/Home/ActiveEvents.vue";
 import Testimonial from "@/components/Home/Testimonial.vue";
@@ -148,7 +149,7 @@ export default {
         id: 1,
         name: "Entinker Technology Solutions Pvt. Ltd.",
         incubators: ["Jithin Shah M A", "Joseph Sabu"],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/entinker.png",
+        image: CDN_BASE_URL + "/assets/logos/entinker.png",
         description: "One pistop solution for all your technological barriers.   Entinker",
         link: "https://inovuslabs.com/"
       },
@@ -156,7 +157,7 @@ export default {
         id: 2,
         name: "Simple Print",
         incubators: ["Freddy Jetty Johnson"],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/simple_print_black.png",
+        image: CDN_BASE_URL + "/assets/logos/simple_print_black.png",
         description: "Simpleprint is an online print service system that will serve to be a huge releif to the inefficient print media services available at present. It is an aggregator service and connects customers with Print Service Providers, thereby acting as an interface between them.",
         link: "https://inovuslabs.com/"
       },
@@ -164,7 +165,7 @@ export default {
         id: 3,
         name: "Eduknow Techno Solutions",
         incubators: ["Jithin Shah M A"],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/eduknow.png",
+        image: CDN_BASE_URL + "/assets/logos/eduknow.png",
         description: "Eduknow is an engagement and marketing tool for educational institutions. It helps in updating the parents with relevant information of activities related with their ward and educational institution.",
         link: "https://inovuslabs.com/"
       },
@@ -172,7 +173,7 @@ export default {
         id: 4,
         name: "EduNext Community",
         incubators: ["Nikhil T Das"],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/EDUNEXT COMMUNITY LOGO.png",
+        image: CDN_BASE_URL + "/assets/logos/EDUNEXT COMMUNITY LOGO.png",
         description: "Edunext is a non-profit initiative aimed to develop interpersonal skills in school students through workshops,bootcamps, fireside and analytical chats",
         link: "https://inovuslabs.com/"
       },
@@ -180,7 +181,7 @@ export default {
         id: 5,
         name: "DevMorphix",
         incubators: ["Badusha Shaji", "Abhishek V Gopal", "Arjun A Acharry", ""],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/DevMorphix.png",
+        image: CDN_BASE_URL + "/assets/logos/DevMorphix.png",
         description: "Welcome to the digital revolution! Elevate your business with our innovative web development, IoT solutions, automations, design, and captivating kiosk displays.",
         link: "https://devmorphix.com/"
       },
@@ -188,7 +189,7 @@ export default {
         id: 6,
         name: "Herba Soap",
         incubators: ["Tom Thomas"],
-        image: "https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/logos/herba.png",
+        image: CDN_BASE_URL + "/assets/logos/herba.png",
         description: "Handcrafted 100% natural soaps made with care and love by students. Each bar is chemical-free, eco-friendly, and created to nourish your skin while supporting student initiatives. Discover the perfect blend of purity and purpose in every soap.",
         link: "https://inovuslabs.com/"
       }
