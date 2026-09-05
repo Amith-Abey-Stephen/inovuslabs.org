@@ -5,23 +5,6 @@ export const CDN_BASE_URL = (
 ).replace(/\/+$/, "");
 
 const BASE_URL = CDN_BASE_URL;
-// Firebase imports
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, get } from "firebase/database"; // Make sure 'get' is imported
-
-const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
-    measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID,
-    databaseURL: import.meta.env.VITE_APP_FIREBASE_DATABASE_URL
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 
 
 
@@ -1227,41 +1210,33 @@ export const getBlogAuthors = async () => {
 // Get recent podcasts published on Inora: The Inovus Radio
 export const getPodcasts = async () => {
 
-    const reference = ref(database, 'data'); // Replace with your Firebase node path
+    return [
+        //latest is added at the top
 
-    try {
-        const snapshot = await get(reference);
-        const data = snapshot.val();
+        {
+            id: "097IqRJucvwRpT381XLPap",
+        },
+        {
+            id: "3wfepAuvFLZsQ5a3LtdD9g",
+        },
+        {
+            id: "1LsmopRnxO9qZqaZFNz1IP"
+        },
+        {
+            id: "1hjB9fhd6X0VYVE4XVSYu0",
+        },
+        {
+            id: "1vGHYAQqzAQg7X7wNN0SQA",
+        },
+        {
+            id: "2TrSXp7Ry7dwMwqBM25Blw",
+        },
+        {
+            id: "4NM5QuIiDVeUAy8FaKou4Q",
+        },
+    ];
 
-        const ids = Object.values(data).map(item => ({ id: item.id }));
-        return ids;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return [
-            {
-                id: "097IqRJucvwRpT381XLPap",
-            },
-            {
-                id: "3wfepAuvFLZsQ5a3LtdD9g",
-            },
-            {
-                id: "1LsmopRnxO9qZqaZFNz1IP"
-            },
-            {
-                id: "1hjB9fhd6X0VYVE4XVSYu0",
-            },
-            {
-                id: "1vGHYAQqzAQg7X7wNN0SQA",
-            },
-            {
-                id: "2TrSXp7Ry7dwMwqBM25Blw",
-            },
-            {
-                id: "4NM5QuIiDVeUAy8FaKou4Q",
-            },
-        ];
-    };
-}
+};
 
 
 
