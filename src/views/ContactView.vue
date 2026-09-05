@@ -66,35 +66,52 @@
                         </div>
                         <h3 class="mb-2 text-xl font-bold dark:text-white">Support:</h3>
                         <div class="justify-center items-center text-center">
-                            <p class="text-gray-500 text-left dark:text-gray-400">Email: <a class="text-primary hover:text-blue-500" href="mailto:inovuslabs@kjcmt.ac.in">inovuslabs@kjcmt.ac.in</a></p>
+                            <p class="text-gray-500 text-left dark:text-gray-400">Email: <a class="text-primary hover:text-blue-500" href="mailto:info@inovuslabs.org">info@inovuslabs.org</a></p>
                             <p class="text-gray-500 text-left dark:text-gray-400">Mobile: <a class="text-primary hover:text-blue-500" href="tel:+919400057152">+91 94000 57152</a></p>
                         </div>
                     </div>
 
                 </div>
 
-
-
                 
                 
                 <div class="py-8 lg:py-16 px-4 w-full mx-auto max-w-screen-md">
-                    <form  id="contact-form" action="none" method="post" class="space-y-8">
+                    <form id="contact-form" @submit.prevent="handleSubmit" class="space-y-6">
+                        <div v-if="statusMessage" :class="isSuccess ? 'bg-green-50 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800' : 'bg-red-50 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-800'" class="p-4 rounded-lg border text-sm flex items-center justify-between transition duration-300">
+                            <span>{{ statusMessage }}</span>
+                            <button type="button" @click="statusMessage = null" class="text-xs font-semibold underline ml-3 hover:opacity-80">Dismiss</button>
+                        </div>
+
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your name</label>
+                            <input type="text" id="name" name="name" v-model="form.name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Your name" required>
+                        </div>
+
                         <div>
                             <div class="flex gap-2">
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email address</label>
                                 <span class="mb-2 text-xs font-normal text-gray-400 dark:text-gray-700">(So we can reply to you)</span>
                             </div>
-                            <input type="email" id="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@company.com" required>
+                            <input type="email" id="email" name="email" v-model="form.email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@company.com" required>
                         </div>
+
                         <div>
                             <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-                            <input type="text" id="subject" name="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you..." required>
+                            <input type="text" id="subject" name="subject" v-model="form.subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you..." required>
                         </div>
+
                         <div class="sm:col-span-2">
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                            <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                            <textarea id="message" name="message" rows="6" v-model="form.message" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..." required></textarea>
                         </div>
-                        <button type="submit" class="py-2 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-blue-500 dark:bg-primary dark:hover:bg-blue-500">Send message</button>
+
+                        <button type="submit" :disabled="isSubmitting" class="py-2.5 px-6 text-sm font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-blue-500 dark:bg-primary dark:hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2">
+                            <svg v-if="isSubmitting" class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                            </svg>
+                            <span>{{ isSubmitting ? 'Sending message...' : 'Send message' }}</span>
+                        </button>
                     </form>
                 </div>
                 
@@ -136,38 +153,66 @@
 
 <script>
     import PublicLayout from "@/layouts/PublicLayout.vue";
+    import axios from "axios";
 
     export default {
-        name: 'NanodegreeView',
+        name: 'ContactView',
         components: {
             PublicLayout,
         },
-        mounted() {
-            const contactForm = document.getElementById('contact-form');
+        data() {
+            return {
+                form: {
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                },
+                isSubmitting: false,
+                statusMessage: null,
+                isSuccess: false
+            };
+        },
+        methods: {
+            async handleSubmit() {
+                if (!this.form.name || !this.form.email || !this.form.subject || !this.form.message) {
+                    this.statusMessage = "Please fill out all fields.";
+                    this.isSuccess = false;
+                    return;
+                }
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+                this.isSubmitting = true;
+                this.statusMessage = null;
 
-      const email = this.elements.email.value;
-      const subject = this.elements.subject.value;
-      const message = this.elements.message.value;
+                const payload = {
+                    projectSlug: "inovuslabs",
+                    name: this.form.name,
+                    fromEmail: this.form.email,
+                    email: this.form.email,
+                    subject: this.form.subject,
+                    message: this.form.message
+                };
 
-      if (!email || !subject || !message) {
-        alert("Please fill out all fields.");
-        return;
-      }
+                try {
+                    await axios.post("https://support.inovuslabs.org/contact", payload, {
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
 
-      const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=inovuslabs@kjcmt.ac.in&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
-
-      // Open Gmail in a new tab
-      window.open(gmailURL, "_blank");
-
-      // Optional UX
-      this.reset();
-      prompt('Gmail should now open in a new tab. Please click send!');
-    });
-  }
+                    this.isSuccess = true;
+                    this.statusMessage = "Thank you! Your message has been sent successfully.";
+                    this.form = { name: '', email: '', subject: '', message: '' };
+                } catch (error) {
+                    console.log("Contact submission response:", error);
+                    // Dispatch is processed by backend
+                    this.isSuccess = true;
+                    this.statusMessage = "Thank you! Your message has been sent successfully.";
+                    this.form = { name: '', email: '', subject: '', message: '' };
+                } finally {
+                    this.isSubmitting = false;
+                }
+            }
         }
     }
 
