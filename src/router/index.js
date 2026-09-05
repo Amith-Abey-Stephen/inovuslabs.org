@@ -198,9 +198,8 @@ const router = createRouter({
 
 
 // Change page title on route change
-router.beforeEach((to, from, next) => {
+router.beforeEach((to) => {
   document.title = `${to.meta.title} - Inovus Labs IEDC` || 'Inovus Labs IEDC'
-  next()
 })
 
 
