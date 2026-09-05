@@ -1813,7 +1813,337 @@ export const getActivity = async () => {
                 "date": ["21 March 2025" ,"22 March 2025"],
                 "tags": ["Workshop"],
             }
-        ]
+            ,{
+                "id": 72, //DATE--2026-2027--->>
+                "title": "Introduction to Microsoft Concepts",
+                "thumbnail": BASE_URL + "Microsoft_workshop",
+                "description": "Inovus Labs IEDC conducted an 'Introduction to Microsoft Concepts' workshop for the students of St. Rita's School of Nursing, providing hands-on experience with Microsoft Word, Excel, and PowerPoint to enhance their digital skills and productivity.",
+                "date": ["12 May 2025"],
+                "tags": ["Workshop"],
+            }
+             ,{
+                "id": 73,
+                "title": "Akshara Tharangam",
+                "thumbnail": BASE_URL + "/assets/activity/akshara_tharangam.jpg",
+                "description": "Organized in connection with Reading & Writing Day, Akshara Tharangam invited students to showcase their creativity through short stories, poems, drawings, and artworks, which were compiled into a digital magazine celebrating reading, writing, and creative expression.",
+                "date": ["19 June 2025"],
+                "tags": ["Literary Initiative"]
+            }
+            ,{
+                "id": 74,
+                "title": "CCA #1: Intro to World of IT",
+                "thumbnail": BASE_URL + "/assets/activity/cca_1.jpg",
+                "description": "The first CCA session introduced students of Classes 8 and 9 to emerging fields of technology, including robotics, coding, artificial intelligence, electronics, and renewable energy. Through interactive discussions, icebreaking activities, and idea-pitching sessions, students developed creativity, teamwork, communication, and confidence while exploring the world of technology.",
+                "date": ["20 June 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 75,
+                "title": "Akshara Tharangam: Debate Competition",
+                "thumbnail": BASE_URL + "/assets/activity/debate_competition.jpg",
+                "description": "Organized as part of the Akshara Tharangam programme, the Debate Competition encouraged students to develop critical thinking, public speaking, and teamwork skills by presenting and defending their views on technology, current affairs, and social issues in a structured and engaging environment.",
+                "date": ["25 June 2025"],
+                "tags": ["Competition"]
+            }
+            ,{
+                "id": 76,
+                "title": "Akshara Tharangam: Writing Day Blogathon Challenge",
+                "thumbnail": BASE_URL + "/assets/activity/blogathon.jpg",
+                "description": "Organized as part of Akshara Tharangam in celebration of Writing Day, the Blogathon Challenge encouraged students to share original blogs on diverse topics. The initiative promoted creative writing, digital content creation, and self-expression, with the best submissions featured on Inovus Labs' official blogging platform.",
+                "date": ["25 June 2025"],
+                "tags": ["Competition"]
+            }
+            ,{
+                "id": 77,
+                "title": "Akshara Tharangam: Book Sale",
+                "thumbnail": BASE_URL + "/assets/activity/book_sale.jpg",
+                "description": "Organized in collaboration with DC Books as part of Reading Week, the Akshara Tharangam Book Sale encouraged students to rediscover the joy of reading through a wide collection of books offered at a special discount, promoting reading habits and lifelong learning.",
+                "date": ["26 June 2025", "27 June 2025"],
+                "tags": ["Book Sale"]
+            }
+            ,{
+                "id": 78,
+                "title": "CCA #2: Introduction to Arduino",
+                "thumbnail": BASE_URL + "/assets/activity/cca_2.jpg",
+                "description": "The second CCA session introduced students to the fundamentals of Arduino and basic electronics through interactive demonstrations and hands-on circuit-building activities. Participants explored electronic components, understood how simple circuits work, and developed practical problem-solving skills while fostering curiosity in STEM and innovation.",
+                "date": ["04 July 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 79,
+                "title": "CCA #3: Introduction to Sensors & Microcontrollers",
+                "thumbnail": BASE_URL + "/assets/activity/cca_3.jpg",
+                "description": "The third CCA session introduced students to the fundamentals of the Internet of Things (IoT), sensors, and microcontrollers through interactive discussions and real-world examples. Participants explored smart technologies, shared innovative ideas, and developed a foundational understanding of connected devices and their practical applications.",
+                "date": ["11 July 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 80,
+                "title": "CCA #4: Introduction to PictoBlox",
+                "thumbnail": BASE_URL + "/assets/activity/cca_4.jpg",
+                "description": "The fourth CCA session introduced students to PictoBlox through interactive block-based programming activities. Participants explored coding concepts, created simple animations, and developed logical thinking, creativity, and confidence while building a strong foundation for future coding and robotics projects.",
+                "date": ["18 July 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 81,
+                "title": "CCA #5: Web Design, IoT & Creative Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_5.jpg",
+                "description": "CCA #5 featured three parallel learning tracks, introducing students to web development, IoT, and creative design. Participants learned HTML fundamentals for building web pages, gained hands-on experience with Arduino by controlling an LED through simple programming, and explored creative thinking through poster design activities. The sessions enhanced technical knowledge, creativity, logical thinking, and practical problem-solving skills in an interactive learning environment.",
+                "date": ["25 July 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 82,
+                "title": "CCA #6: Web Design, IoT & Creative Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_6.jpg",
+                "description": "CCA #6 featured three parallel learning tracks focusing on web development, IoT, and digital design. Students explored HTML attributes, image and anchor tags to build interactive web pages, learned the fundamentals of IR and Ultrasonic sensors through real-world IoT applications, and gained hands-on experience with colour theory and Figma for creating digital designs. The sessions strengthened creativity, technical knowledge, problem-solving, and practical skills through engaging learning activities.",
+                "date": ["01 August 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 83,
+                "title": "CCA #7: Web Development, IoT & Digital Design",
+                "thumbnail": BASE_URL + "/assets/activity/cca_7.jpg",
+                "description": "CCA #7 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Digital Design. Students learned HTML lists, forms, and basic web development in VS Code, explored Arduino IDE programming and IoT automation concepts, and gained hands-on experience with Figma to create visually appealing digital designs. The sessions strengthened technical knowledge, creativity, coding skills, problem-solving, and confidence through interactive practical activities.",
+                "date": ["08 August 2025"],
+                "tags": ["Workshop"]
+            }
+            ,{
+                "id": 84,
+                "title": "ROBO-OS – WHAT?",
+                "thumbnail": BASE_URL + "/assets/activity/robo_os_what.jpg",
+                "description": "In collaboration with µLearn KJCMT, Inovus Labs IEDC organized an online session introducing the Robot Operating System (ROS). Led by robotics expert Jerin Peter, the session explored ROS fundamentals, autonomous navigation, SLAM, and real-world robotics applications, inspiring over 180 participants from six countries to explore robotics, automation, and open-source innovation.",
+                "date": ["16 August 2025"],
+                "tags": ["Webinar"]
+            }
+            ,{
+            "id": 85,
+            "title": "What is Innovation? Inovus Orientation",
+            "thumbnail": BASE_URL + "/assets/activity/innovation_orientation.jpg",
+            "description": "Inovus Labs IEDC conducted an orientation session for first-year BCA students, introducing the true meaning of innovation through real-world examples and interactive discussions. The session inspired students to think creatively, develop a problem-solving mindset, and begin their innovation journey by exploring opportunities within the Inovus Labs IEDC ecosystem.",
+            "date": ["26 August 2025"],
+            "tags": ["Orientation"]
+        }
+         ,{
+            "id": 86,
+            "title": "CCA #8: Web Development, IoT & UI/UX Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_8.jpg",
+            "description": "CCA #8 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and UI/UX Design. Students learned HTML lists, forms, and Visual Studio Code basics, gained hands-on experience with Arduino IDE and programming electronic components, and explored Figma to design simple user interfaces. The interactive sessions strengthened creativity, coding skills, logical thinking, problem-solving, and practical technical knowledge through hands-on activities.",
+            "date": ["12 September 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 87,
+            "title": "CCA #9: Web Development, IoT & Creative Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_9.jpg",
+            "description": "CCA #9 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Creative Design. Students explored the fundamentals of HTML and webpage structure, revised PictoBlox programming and LED control concepts, and learned the basics of poster design, including layout, typography, colour theory, and visual hierarchy. The interactive sessions enhanced creativity, coding skills, logical thinking, and confidence through practical learning activities.",
+            "date": ["19 September 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 88,
+            "title": "CCA #10: Introduction to Image Generation",
+            "thumbnail": BASE_URL + "/assets/activity/cca_10.jpg",
+            "description": "CCA #10 introduced students to AI-powered image generation and effective prompting using Gemini. Participants learned how descriptive prompts influence AI-generated images, explored prompt structure, keywords, and creativity, and gained hands-on experience creating and refining prompts for digital art, storytelling, marketing, and content creation. The session enhanced creativity, critical thinking, and confidence in using AI tools for visual expression.",
+            "date": ["26 September 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 89,
+            "title": "Electron Launch – Electric Bike Unveiling",
+            "thumbnail": BASE_URL + "/assets/activity/electron_launch.jpg",
+            "description": "Inovus Labs IEDC officially launched Electron, a student-driven innovation that transformed a conventional petrol-powered bike into a fully electric vehicle. The project showcased sustainable engineering, renewable energy concepts, and hands-on innovation, inspiring students to explore electric mobility, green technology, and real-world problem-solving through engineering.",
+            "date": ["26 September 2025"],
+            "tags": ["Product Launch"]
+        }
+        ,{
+            "id": 90,
+            "title": "Hacktoberfest 2025",
+            "thumbnail": BASE_URL + "/assets/activity/hacktoberfest_2025.jpg",
+            "description": "In collaboration with the μLearn Foundation, Inovus Labs IEDC organized Hacktoberfest 2025, a month-long open-source initiative that brought together 504 students from multiple colleges. Participants contributed to GitHub repositories, learned version control, collaborated on real-world software projects, and strengthened their coding, problem-solving, and teamwork skills through mentorship and community-driven development.",
+            "date": ["01 October 2025", "31 October 2025"],
+            "tags": ["Open Source"]
+        }
+        ,{
+            "id": 91,
+            "title": "Intro to Hacktoberfest",
+            "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest.jpg",
+            "description": "In collaboration with μLearn Foundation and μLearn SCTCE, Inovus Labs IEDC organized an introductory bootcamp on Hacktoberfest. Participants learned Git and GitHub fundamentals, explored beginner-friendly open-source repositories, and understood the complete pull request workflow. The session built confidence in contributing to open-source projects and encouraged students to become active members of the global developer community.",
+            "date": ["02 October 2025"],
+            "tags": ["Bootcamp"]
+        }
+        ,{
+            "id": 92,
+            "title": "Intro to Hacktoberfest",
+            "thumbnail": BASE_URL + "/assets/activity/intro_hacktoberfest2.jpg",
+            "description": "Inovus Labs IEDC, in collaboration with μLearn Foundation and μLearn SCTCE, organized an introductory Hacktoberfest bootcamp that familiarized students with Git, GitHub, open-source contribution, and the complete pull request workflow. The hands-on session helped beginners confidently take their first steps into the open-source community and inspired continued participation in collaborative software development.",
+            "date": ["02 October 2025"],
+            "tags": ["Bootcamp"]
+        }
+        ,{
+            "id": 93,
+            "title": "CCA #11: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_11.jpg",
+            "description": "CCA #11 featured three parallel learning tracks in Web Development, Internet of Things (IoT), and Design. Students learned the fundamentals of HTML, including headings, paragraphs, links, images, lists, and basic CSS, explored LED traffic light and running light patterns using microcontrollers, and gained an understanding of colour theory, colour harmony, contrast, and effective colour combinations for visual design. The practical sessions enhanced creativity, programming skills, logical thinking, teamwork, and confidence through hands-on learning activities.",
+            "date": ["03 October 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 94,
+            "title": "CCA #12: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_12.jpg",
+            "description": "CCA #12 introduced students to three practical technology domains through parallel learning tracks. The Web Development session covered the fundamentals of CSS, including selectors, colors, fonts, spacing, layouts, and styling HTML webpages. The IoT session provided hands-on experience with IR sensors and buzzers, demonstrating obstacle detection, sound indicators, and simple automation circuits. The Design session introduced Figma, where students explored UI/UX fundamentals, interface design, prototyping, and collaborative design tools. These interactive activities strengthened students' creativity, problem-solving, technical knowledge, and confidence in applying modern web, electronics, and digital design concepts.",
+            "date": ["24 October 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 95,
+            "title": "CCA #13: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_13.jpg",
+            "description": "CCA #13 featured three hands-on learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored responsive web design using CSS, learning how websites adapt to different screen sizes through flexible layouts, relative units, and media queries. The IoT session introduced ultrasonic sensors, demonstrating distance measurement, object detection, hardware connections, and basic programming for smart systems. In the Design track, students gained practical experience with Figma by creating digital layouts, posters, and UI designs while applying colour, typography, balance, and composition principles. The interactive sessions enhanced creativity, logical thinking, technical skills, and confidence through practical learning and real-world applications.",
+            "date": ["31 October 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 96,
+            "title": "CCA #14: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_14.jpg",
+            "description": "CCA #14 featured three practical learning tracks in Web Development, Internet of Things (IoT), and Design. Students explored JavaScript fundamentals, including variables, basic syntax, functions, and how JavaScript works with HTML and CSS to create interactive web pages. The IoT session introduced motion detection using an MD sensor and buzzer, demonstrating sensor-based security and automation systems through hands-on circuit building. In the Design track, students participated in a Poster Making Challenge, applying layout, typography, colour combinations, and visual balance to communicate ideas creatively. These interactive activities enhanced creativity, logical thinking, programming knowledge, electronics skills, and confidence through practical learning experiences.",
+            "date": ["07 November 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 97,
+            "title": "CCA #15: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_15.jpg",
+            "description": "CCA #15 featured three project-based learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session guided students in creating a 'Replay of Journey' webpage using HTML to showcase their learning experiences, milestones, and achievements through a well-structured and user-friendly website. The IoT session focused on revising Arduino fundamentals, including board components, programming basics, circuit connections, LEDs, sensors, and the Arduino IDE to strengthen practical electronics knowledge. The Design session reinforced the fundamentals of colour, typography, layout, balance, and composition through revision activities and creative exercises. These interactive sessions improved creativity, technical knowledge, problem-solving abilities, and confidence while preparing students for more advanced web, electronics, and design projects.",
+            "date": ["22 November 2025", "25 November 2025"],
+            "tags": ["Workshop"]
+        },
+        {
+            "id": 98,
+            "title": "CCA #16: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_16.jpg",
+            "description": "CCA #16 featured three interactive learning tracks in Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript DOM manipulation, where they learned to create dynamic and interactive webpages by handling user events, updating webpage content, and validating form inputs. The IoT session focused on implementing an automatic street light system using an LDR sensor, helping students understand light sensing, automation, circuit design, and Arduino programming. In the Design track, students explored logo design principles using Figma, learning about visual identity, typography, color psychology, balance, and brand consistency while creating unique logo concepts. Through hands-on activities and collaborative learning, students strengthened their creativity, programming skills, problem-solving abilities, and practical understanding of modern web development, embedded systems, and digital design.",
+            "date": ["28 November 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 99,
+            "title": "Arduino Workshop",
+            "thumbnail": BASE_URL + "/assets/activity/Arduino_workshop.jpg",
+            "description": "A hands-on Arduino workshop introducing students to the fundamentals of electronics, embedded systems, and microcontroller programming. Participants explored Arduino boards, sensors, actuators, circuit building, and basic coding through practical activities, enhancing their technical knowledge, problem-solving abilities, and confidence in developing real-world IoT projects.",
+            "date": ["15 December 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 100,
+            "title": "CCA #17: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_17.jpg",
+            "description": "CCA #17 continued students' practical learning through Web Development, Internet of Things (IoT), and Design sessions. In Web Development, students learned JavaScript event handling, DOM manipulation, and interactive webpage development by creating responsive user interfaces. The IoT session introduced Bluetooth communication using the HC-05 module, where students built and tested smartphone-controlled Arduino projects to understand wireless automation and embedded system applications. The Design session focused on creating social media posters in Figma, covering layout design, typography, visual hierarchy, icon placement, and color harmony to produce professional digital creatives. The hands-on activities strengthened students' creativity, coding ability, electronics knowledge, collaboration, and confidence in developing real-world technology solutions.",
+            "date": ["05 December 2025"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 101,
+            "title": "KeraKatana – AI Image Generation Challenge",
+            "thumbnail": BASE_URL + "/assets/activity/KeraKatana",
+            "description": "KeraKatana was an online AI image generation challenge organized by Inovus Labs IEDC in collaboration with Chat for Codes. Participants explored the creative fusion of traditional Japanese samurai culture with Kerala's heritage by generating unique AI-powered artwork. The challenge introduced students to prompt engineering, AI image generation tools, and digital art while encouraging creativity, innovation, and experimentation through engaging visual storytelling.",
+            "date": ["09 January 2026", "17 January 2026"],
+            "tags": ["Challenge"]
+        }
+        ,{
+            "id": 102,
+            "title": "CCA #18: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_18.jpg",
+            "description": "CCA #18 provided students with advanced hands-on learning through Web Development, Internet of Things (IoT), and Design sessions. The Web Development track introduced students to REST APIs and asynchronous JavaScript using Fetch API, enabling them to retrieve and display live data from external services in dynamic web applications. The IoT session focused on integrating a DHT11 temperature and humidity sensor with Arduino, allowing students to collect environmental data, process sensor readings, and build simple weather monitoring systems. In the Design track, students explored mobile app UI design using Figma by creating modern interfaces, reusable components, icons, and interactive prototypes while applying design systems and accessibility principles. The practical activities enhanced students' programming, electronics, UI/UX design, collaboration, and real-world problem-solving skills through project-based learning.",
+            "date": ["16 January 2026"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 103,
+            "title": "Zephyr 4.0 Ideathon",
+            "thumbnail": BASE_URL + "/assets/activity/zephyr_ideathon.jpg",
+            "description": "The Zephyr 4.0 Ideathon was organized by Inovus Labs IEDC to introduce students to modern embedded systems and foster innovative thinking through collaborative problem-solving. Participants explored the fundamentals of Zephyr RTOS, embedded system challenges, solution ideation, and feasibility analysis before working in teams to develop creative solutions for real-world problem statements. Guided by experienced mentors, students enhanced their technical knowledge, critical thinking, teamwork, and presentation skills while gaining valuable exposure to embedded technologies and innovation-driven product development.",
+            "date": ["27 January 2026"],
+            "tags": ["Ideathon"]
+        }
+         ,{
+            "id": 104,
+            "title": "Zephyr 4.0 Hackathon",
+            "thumbnail": BASE_URL + "/assets/activity/Zephyr_Hackathon.jpg",
+            "description": "The Zephyr 4.0 Hackathon was organized by Inovus Labs IEDC to introduce students to modern embedded operating systems through a competitive and collaborative learning experience. Participants explored the fundamentals of Zephyr RTOS, including its architecture, system configuration, and application development, before tackling real-world problem statements in teams. Guided by mentors, students applied their technical knowledge, logical reasoning, and teamwork to design innovative embedded solutions within a limited timeframe. The event fostered creativity, problem-solving skills, and hands-on experience with embedded system development while inspiring students to explore modern IoT and real-time operating system technologies.",
+            "date": ["27 January 2026"],
+            "tags": ["Hackathon"]
+        }
+
+    
+        ,{
+            "id": 105,
+            "title": "CCA #19: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_19.jpg",
+            "description": "CCA #19 continued the students' practical learning journey through Web Development, Internet of Things (IoT), and Design. The Web Development session introduced students to JavaScript ES6 concepts, including arrow functions, template literals, destructuring, and modules, helping them write cleaner and more efficient code. The IoT session focused on integrating ultrasonic distance sensors with Arduino to build obstacle detection and distance measurement projects, giving students hands-on experience with sensor-based automation. During the Design session, students explored branding and logo design using Figma by creating scalable vector graphics, selecting effective color palettes, and applying design principles to build professional brand identities. The collaborative activities enhanced students' coding proficiency, electronics knowledge, creative thinking, teamwork, and problem-solving skills through project-based learning.",
+            "date": ["23 January 2026"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 106,
+            "title": "CCA #20: Web Development, IoT & Design",
+            "thumbnail": BASE_URL + "/assets/activity/cca_20.jpg",
+            "description": "CCA #20 expanded students' practical knowledge through advanced sessions in Web Development, Internet of Things (IoT), and Digital Design. The Web Development session introduced students to Vue.js fundamentals, including components, reactive data binding, props, and event handling, enabling them to build dynamic and reusable user interfaces. The IoT session focused on integrating servo motors with Arduino to create automated control systems and understand motion-based applications in embedded projects. The Design session emphasized UI/UX wireframing and prototyping using Figma, where students designed intuitive user interfaces while learning layout principles, user flow, spacing, and interactive prototyping. Through hands-on activities and collaborative learning, students strengthened their programming, embedded systems, design thinking, and problem-solving skills while gaining experience in developing real-world technology solutions.",
+            "date": ["06 February 2026"],
+            "tags": ["Workshop"]
+        }
+        ,{
+            "id": 107,
+            "title": "Tryout #1: Introduction to Microsoft Word",
+            "thumbnail": BASE_URL + "/assets/activity/tryout_1_word.jpg",
+            "description": "Tryout #1 introduced students to the fundamentals of Microsoft Word through an interactive hands-on session. Participants learned essential document creation and formatting techniques, including text styling, paragraph alignment, image insertion, table creation, and document organization. The workshop also covered collaboration features such as Track Changes, Comments, and file sharing, enabling students to create professional documents efficiently for academic and personal use. By the end of the session, students had gained confidence in using Microsoft Word for reports, assignments, and everyday productivity tasks.",
+            "date": ["23 February 2025"],
+            "tags": ["Tryout"]
+        }
+        ,{
+            "id": 108,
+            "title": "Tech Web – 5 Days Bootcamp",
+            "thumbnail": BASE_URL + "/assets/activity/tech_web_bootcamp.jpg",
+            "description": "The Tech Web – 5 Days Bootcamp was organized by Inovus Labs IEDC to introduce students to the fundamentals of web development through an intensive hands-on learning experience. Over five days, participants explored the core concepts of HTML and CSS, learning how to structure web pages, apply styling, create responsive layouts, and build visually appealing websites. Interactive coding sessions and practical exercises enabled students to strengthen their problem-solving skills, understand modern web design principles, and gain the confidence to develop their own basic websites. The bootcamp encouraged collaboration, creativity, and continuous learning, providing a strong foundation for students interested in frontend web development.",
+            "date": ["02 March 2026", "06 March 2026"],
+            "tags": ["Bootcamp"]
+        }
+        ,{
+            "id": 109,
+            "title": "Simply Series #01 – LinkedIn Basics",
+            "thumbnail": BASE_URL + "/assets/activity/simply_linkedin",
+            "description": "Simply Series #01 was an introductory session on LinkedIn organized by Inovus Labs IEDC to help students understand the importance of professional networking and personal branding. Participants learned how to create and optimize a professional LinkedIn profile, build meaningful connections, publish engaging posts, and explore internships and career opportunities. The interactive session equipped beginners with the essential skills to confidently use LinkedIn as a platform for professional growth and career development.",
+            "date": ["05 March 2026"],
+            "tags": ["Career Development", "Workshop"]
+        },
+        {
+            "id": 110,
+            "title": "IEDC Startup Summit 2026",
+            "thumbnail": BASE_URL + "/assets/activity/iedc_startup_summit.jpg",
+            "description": "The IEDC Startup Summit 2026 was held at Amal Jyothi College of Engineering to inspire students to explore entrepreneurship and innovation. The summit featured interactive sessions with experienced entrepreneurs, discussions on startup development, and recognition of successful founders for their outstanding contributions to the startup ecosystem. Students gained valuable insights into building and managing startups while learning about future entrepreneurial initiatives and opportunities introduced through the IEDC action plan. The event encouraged participants to develop an entrepreneurial mindset, transform innovative ideas into impactful ventures, and actively engage in Kerala's growing startup ecosystem.",
+            "date": ["07 March 2026"],
+            "tags": ["Summit"]
+        },
+        {
+            "id": 111,
+            "title": "Mutate – µLearn Campus Lead Meet",
+            "thumbnail": BASE_URL + "/assets/activity/mutate_mulearn",
+            "description": "Mutate – µLearn Campus Lead Meet was an engaging community event organized to introduce students to the µLearn ecosystem and its collaborative learning culture. The session highlighted skill development pathways, project-based learning, community contribution, and networking opportunities available through µLearn. Participants gained a clear understanding of how to actively engage with the platform, build real-world projects, collaborate with peers, and accelerate their personal and professional growth through continuous learning and innovation.",
+            "date": ["07 March 2026"],
+            "tags": ["Community Meet"]
+        },
+        {
+            "id": 112,
+            "title": "Tryout #2 – Introduction to Microsoft Excel",
+            "thumbnail": BASE_URL + "/assets/activity/tryout_excel",
+            "description": "Tryout #2 was an introductory workshop on Microsoft Excel organized by Inovus Labs IEDC to help students develop essential spreadsheet skills. Participants explored the Excel interface, learned how to organize and manage data, apply formatting, and use fundamental formulas and functions such as SUM and AVERAGE. Through interactive hands-on exercises, students gained practical experience in performing calculations, managing datasets, and using Excel efficiently for academic, personal, and professional tasks. The session built a strong foundation in spreadsheet applications while improving confidence in digital productivity tools.",
+            "date": ["11 March 2026"],
+            "tags": ["Workshop"]//DATE--2026-2027---> THE END>
+        },
+    ]
     };
 
     return data;
@@ -2649,7 +2979,7 @@ export const getGalleryAssets = async () => {
             description: 'PerMute-Annual gathering of Mulearn',
             largeURL: BASE_URL + '/assets/gallery/Deepu(permute).jpg',
             thumbnailURL: BASE_URL + '/assets/gallery/Deepu(permute).jpg',
-          },
+          },       
           
           
     ]
