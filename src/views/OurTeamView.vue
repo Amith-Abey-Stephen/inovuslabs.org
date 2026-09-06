@@ -32,7 +32,7 @@
             </div>
             
             <div class="w-full lg:w-1/3 py-4 lg:py-20">
-                <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/team-work-animate.svg" alt="Team" />
+                <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/team-work-animate.svg'" alt="Team" />
             </div>
         </div>
     </section>

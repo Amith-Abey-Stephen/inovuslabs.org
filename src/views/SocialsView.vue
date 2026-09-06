@@ -29,7 +29,7 @@
                 </div>
                 
                 <div class="w-full lg:w-1/3 py-4 lg:py-20">
-                    <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/social-ideas-animate.svg" alt="Socials" />
+                    <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/social-ideas-animate.svg'" alt="Socials" />
                 </div>
             </div>
         </section>

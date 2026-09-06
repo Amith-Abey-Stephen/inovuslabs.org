@@ -1,0 +1,48 @@
+# Inovus Labs IEDC
+
+> Innovation and Entrepreneurship Development Centre (IEDC) at Kristu Jyoti College of Management and Technology (KJCMT), Changanassery, Kerala, India.
+
+Inovus Labs IEDC is a student-driven innovation and technology hub established under the Kerala Startup Mission (KSUM). We bridge the gap between academic theory and industry engineering through hardware prototyping, maker culture, cohort learning, and venture creation.
+
+## Core Initiatives & Facilities
+
+- [Mini IoT Lab](https://inovuslabs.org/iot-lab): A specialized hardware prototyping laboratory equipped with microcontrollers (Arduino, ESP32, Raspberry Pi), development boards, sensors, actuators, and electronic test gear for student builders.
+- [Nano Degree Program](https://inovuslabs.org/nanodegree): Intensive, cohort-based curriculum designed to equip students with hands-on software development, system architecture, and maker practices.
+- [Student Projects](https://inovuslabs.org/projects): Repository of open-source applications, hardware MVPs, and student inventions incubated within the lab.
+- [Events & Bootcamps](https://inovuslabs.org/events): Hackathons, maker sprints, speaker sessions, and technical summits hosted throughout the academic year.
+- [Recurring Meetups](https://inovuslabs.org/reccuring-events): Weekly community coding nights, maker circles, and peer mentoring sessions.
+- [Outreach Programs](https://inovuslabs.org/outreach): Technology empowerment initiatives, school robotics/coding workshops, and digital literacy camps across regional communities.
+- [Resources & Component Stock](https://inovuslabs.org/resources): Living inventory of available microcontrollers, electronic modules, developer roadmaps, and toolkits.
+
+## Media & Publications
+
+- [BuggyNews](https://inovuslabs.org/buggy): Tech newsletter featuring curated developer news, open-source breakdowns, and student inventions.
+- [Blogs & Insights](https://inovuslabs.org/blog): Technical articles, engineering tutorials, and founder retrospectives written by community members.
+- [Inora Podcast](https://inovuslabs.org/inora): Conversations with technology practitioners, young founders, and startup leaders.
+- [Annual Reports](https://inovuslabs.org/reports): Transparent operational reports, metric reviews, and innovation audit summaries.
+
+## Institutional & Geographic Details
+
+- **Institution**: Kristu Jyoti College of Management and Technology (KJCMT)
+- **Affiliation**: Mahatma Gandhi (MG) University, Kerala
+- **Governing Body**: Kerala Startup Mission (KSUM) IEDC Ecosystem
+- **Address**: Chethipuzha P.O, Changanassery, Kottayam District, Kerala 686104, India
+- **Coordinates**: Latitude `9.4533° N`, Longitude `76.5415° E`
+- **Email**: info@inovuslabs.org
+- **Phone**: +91 94000 57152
+
+## Canonical Routes Directory
+
+- [Home](https://inovuslabs.org/home): Main landing portal and active highlights.
+- [About Us](https://inovuslabs.org/about): Background, history, mission, and leadership.
+- [Our Team](https://inovuslabs.org/team): Executive leads, technical captains, and faculty mentors.
+- [Gallery](https://inovuslabs.org/gallery): High-resolution photographic archives of past activities.
+- [Social Channels](https://inovuslabs.org/socials): Official links to LinkedIn, GitHub, Instagram, Twitter/X, and YouTube.
+- [Now](https://inovuslabs.org/now): Current operational sprints, active cohorts, and upcoming deadlines.
+- [IEDC Guidelines](https://inovuslabs.org/iedc-guidelines): Official operating frameworks, funding norms, and participation policies.
+- [Contact](https://inovuslabs.org/contact): Direct contact channels and interactive query form.
+
+## Optional Machine-Readable Resources
+
+- [Full Knowledge Base](https://inovuslabs.org/llms-full.txt): Comprehensive multi-section context file for deep retrieval and reasoning agents.
+- [Sitemap](https://inovuslabs.org/sitemap.xml): Full XML sitemap of all indexed public URLs.

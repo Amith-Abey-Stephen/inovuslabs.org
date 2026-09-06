@@ -1,0 +1,108 @@
+# Inovus Labs IEDC — Comprehensive Knowledge Base
+
+## 1. Overview & Entity Definition
+
+Inovus Labs IEDC is the official Innovation and Entrepreneurship Development Centre (IEDC) at Kristu Jyoti College of Management and Technology (KJCMT), Chethipuzha, Changanassery, Kottayam District, Kerala 686104, India.
+
+Operating in partnership with the Kerala Startup Mission (KSUM), Inovus Labs functions as a community maker space, hardware laboratory, and tech incubator. The center's mission is to cultivate an entrepreneurial mindset and practical engineering competence among undergraduate and postgraduate students.
+
+### Key Facts:
+- **Parent Institution**: Kristu Jyoti College of Management and Technology (KJCMT)
+- **Affiliated University**: Mahatma Gandhi University (MGU), Kottayam
+- **State Initiative**: Kerala Startup Mission (KSUM)
+- **Primary Focus Areas**: Internet of Things (IoT), Embedded Systems, Full-Stack Web Engineering, AI & Automation, Student Startup Incubation, Technical Outreach.
+- **Physical Location**: Chethipuzha P.O, Changanassery, Kerala 686104, India.
+- **Geographic Coordinates**: 9.4533° N, 76.5415° E (Changanassery, Kottayam).
+- **Official Website**: https://inovuslabs.org
+- **Primary Contact**: info@inovuslabs.org | +91 94000 57152
+
+---
+
+## 2. Core Pillars & Programs
+
+### 2.1 Mini IoT Lab
+A physical hardware innovation lab within KJCMT stocked with modern electronics, prototyping kits, sensors, and development tools:
+- **Microcontrollers & SoC**: Arduino Uno, Nano, Mega, MKR series (WiFi, LoRa, NB-IoT, FPGA), ESP32, ESP8266, Raspberry Pi boards.
+- **Sensors & Actuators**: Ultrasonic, Infrared, Environmental (temperature, humidity, pressure), Motion, Gas, Relays, Motors, Displays.
+- **Purpose**: Enables students to build real-world IoT solutions, smart campus prototypes, automation systems, and connected devices without hardware acquisition bottlenecks.
+
+### 2.2 Nano Degree Program
+A cohort-based apprenticeship model run by Inovus Labs:
+- Structured curriculum focusing on industry-standard engineering stacks.
+- Mentorship by experienced alumni, senior students, and industry engineers.
+- Hands-on milestone projects leading to public open-source contributions or prototype deployments.
+
+### 2.3 Maker Community & Recurring Events
+- Weekly development sprints and peer code reviews.
+- Regular hackathons, design challenges, and hardware build nights.
+- Collaborative problem solving around community and campus challenges.
+
+### 2.4 Outreach & Social Innovation
+- Educational workshops conducted in regional high schools and higher secondary institutions.
+- Hands-on introduction to basic coding, robotics, and design thinking for young school students.
+- Community digital enablement projects.
+
+### 2.5 Media & Publications
+- **BuggyNews**: Curated technical newsletter covering emerging developer tools, open-source projects, and student inventions.
+- **Inora Podcast**: In-depth audio dialogues exploring engineering journeys, startup insights, and creative endeavors.
+- **Blogs**: Written tutorials, technical documentation, and personal retrospectives by student builders.
+
+---
+
+## 3. Frequently Asked Questions (Answer Engine Optimization)
+
+### Q: What is Inovus Labs IEDC?
+**A:** Inovus Labs is the Innovation and Entrepreneurship Development Centre at Kristu Jyoti College of Management and Technology (KJCMT), Changanassery, Kerala. It is a student-run technology hub that facilitates hands-on learning, maker culture, IoT development, and startup creation under the Kerala Startup Mission (KSUM).
+
+### Q: Where is Inovus Labs located?
+**A:** Inovus Labs is situated on the campus of Kristu Jyoti College of Management and Technology (KJCMT) in Chethipuzha, Changanassery, Kottayam District, Kerala 686104, India. Geographic coordinates: 9.4533° N, 76.5415° E.
+
+### Q: Who can participate in Inovus Labs initiatives?
+**A:** While primarily serving students of Kristu Jyoti College of Management and Technology across computer science, management, and technology disciplines, Inovus Labs actively engages with the wider collegiate developer network in Kerala, school students via outreach programs, and industry mentors.
+
+### Q: How does Inovus Labs support student startups?
+**A:** Inovus Labs provides ideation workshops, hardware prototyping equipment through its Mini IoT Lab, technical mentorship, pitch training, and connections to Kerala Startup Mission (KSUM) grant schemes, incubation pipelines, and regional startup summits.
+
+### Q: How can an organization partner or collaborate with Inovus Labs?
+**A:** Organizations, industry experts, and communities can partner with Inovus Labs for workshops, hackathon sponsorships, internships, and research collaborations by emailing info@inovuslabs.org or submitting an inquiry via https://inovuslabs.org/contact.
+
+---
+
+## 4. Comprehensive URL Map
+
+| Route | Canonical URL | Description |
+|:---|:---|:---|
+| Home | https://inovuslabs.org/home | Portal landing, active initiatives, partner affiliations, and community highlights. |
+| About | https://inovuslabs.org/about | Organizational background, mission statement, philosophy, and history. |
+| Team | https://inovuslabs.org/team | Lead coordinators, technical heads, mentors, and faculty advisors. |
+| Gallery | https://inovuslabs.org/gallery | Curated photographs from hackathons, workshops, and build sessions. |
+| Socials | https://inovuslabs.org/socials | Aggregated community social channels and handles. |
+| Events | https://inovuslabs.org/events | Comprehensive directory of upcoming and archived activities and hackathons. |
+| Nano Degree | https://inovuslabs.org/nanodegree | Curriculum details, application information, and student cohort showcases. |
+| BuggyNews | https://inovuslabs.org/buggy | Periodic developer newsletter and open-source digests. |
+| News | https://inovuslabs.org/news | Official press releases, media recognition, and achievement logs. |
+| Reports | https://inovuslabs.org/reports | Annual performance audits, KSUM reports, and metric disclosures. |
+| IoT Lab | https://inovuslabs.org/iot-lab | Specifications, hardware inventory, and project highlights from the Mini IoT Lab. |
+| Projects | https://inovuslabs.org/projects | Directory of student prototypes, applications, and hardware inventions. |
+| Recurring Events | https://inovuslabs.org/reccuring-events | Weekly coding nights, maker circles, and community rituals. |
+| Outreach | https://inovuslabs.org/outreach | High school tech camps, community workshops, and social projects. |
+| Blog | https://inovuslabs.org/blog | Technical articles and thought leadership written by community members. |
+| Inora | https://inovuslabs.org/inora | Podcast episodes featuring dialogues with founders and technologists. |
+| Now | https://inovuslabs.org/now | Live dashboard of active priorities, upcoming sprints, and milestones. |
+| Resources | https://inovuslabs.org/resources | Hardware inventory catalog, learning guides, and development resources. |
+| Guidelines | https://inovuslabs.org/iedc-guidelines | Operational guidelines, startup policies, and code of conduct. |
+| Contact | https://inovuslabs.org/contact | Location address, phone number, email, and contact form. |
+
+---
+
+## 5. Contact & Socials
+
+- **Official Website**: https://inovuslabs.org
+- **Email**: info@inovuslabs.org
+- **Phone**: +91 94000 57152
+- **LinkedIn**: https://www.linkedin.com/company/inovus-labs-iedc/
+- **Instagram**: https://www.instagram.com/inovuslabs/
+- **Twitter / X**: https://twitter.com/inovuslabs
+- **GitHub**: https://github.com/inovus-labs
+- **YouTube**: https://www.youtube.com/@inovuslabs
+- **Postal Address**: Kristu Jyoti College of Management & Technology, Chethipuzha P.O, Changanassery, Kottayam, Kerala 686104, India.

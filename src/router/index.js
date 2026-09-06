@@ -41,7 +41,10 @@ const router = createRouter({
       name: '',
       component: Splash,
       meta: {
-        title: 'Home'
+        title: 'Home',
+        description: "Welcome to Inovus Labs IEDC at Kristu Jyoti College, Changanassery. Sparking tomorrow's innovations through maker culture, IoT, tech learning, and student entrepreneurship.",
+        keywords: "Inovus Labs, IEDC, KJCMT, Innovation Hub, Student Startups, Changanassery, Kerala Startup Mission",
+        ogType: "website"
       }
     },
     {
@@ -49,7 +52,10 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Home'
+        title: 'Home',
+        description: "Explore the innovation ecosystem of Inovus Labs IEDC at Kristu Jyoti College, Changanassery. Discover active events, partners, testimonials, and student tech culture.",
+        keywords: "Inovus Labs Home, IEDC Kerala, Maker Hub, IoT Prototyping, Startup Incubation, KJCMT",
+        ogType: "website"
       }
     },
 
@@ -58,25 +64,45 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView,
-      meta: { title: 'About' }
+      meta: {
+        title: 'About Us',
+        description: "Learn about Inovus Labs IEDC, our journey, mission, and vision to build a thriving culture of technological creativity and entrepreneurship at KJCMT.",
+        keywords: "About Inovus Labs, IEDC Mission, Vision, College Innovation Cell, Kristu Jyoti College",
+        ogType: "website"
+      }
     },
     {
       path: '/gallery',
       name: 'gallery',
       component: GalleryView,
-      meta: { title: 'Gallery' }
+      meta: {
+        title: 'Gallery',
+        description: "Browse high-resolution photographs and highlights from workshops, hackathons, speaker sessions, and community events at Inovus Labs IEDC.",
+        keywords: "Inovus Labs Gallery, Event Photos, Hackathon Pictures, Tech Meetup Photos, KJCMT Innovation Gallery",
+        ogType: "website"
+      }
     },
     {
       path: '/socials',
       name: 'socials',
       component: SocialsView,
-      meta: { title: 'Socials' }
+      meta: {
+        title: 'Socials & Community',
+        description: "Connect with Inovus Labs across all community platforms: LinkedIn, Instagram, Twitter/X, GitHub, YouTube, and Threads.",
+        keywords: "Inovus Labs Socials, Follow Inovus, Student Community, LinkedIn, Instagram, GitHub, Twitter",
+        ogType: "website"
+      }
     },
     {
       path: '/team',
       name: 'team',
       component: OurTeamView,
-      meta: { title: 'Our Team' }
+      meta: {
+        title: 'Our Team',
+        description: "Meet the executive committee, technical leads, creative strategists, and faculty coordinators behind Inovus Labs IEDC.",
+        keywords: "Inovus Labs Team, Student Leads, Executive Committee, Coordinators, Mentors, KJCMT IEDC",
+        ogType: "profile"
+      }
     },
 
     // Navbar : Initiatives pages
@@ -84,75 +110,135 @@ const router = createRouter({
       path: '/events',
       name: 'events',
       component: ActivityView,
-      meta: { title: 'Events' }
+      meta: {
+        title: 'Events & Activities',
+        description: "Discover upcoming hackathons, tech bootcamps, maker workshops, and startup summits hosted by Inovus Labs IEDC.",
+        keywords: "Inovus Labs Events, Tech Workshops, Hackathons Kerala, Startup Summits, College Bootcamps",
+        ogType: "website"
+      }
     },
     {
       path: '/nanodegree',
       name: 'nanodegree',
       component: NanodegreeView,
-      meta: { title: 'Nano Degree' }
+      meta: {
+        title: 'Nano Degree Program',
+        description: "Inovus Labs Nano Degree is an intensive hands-on cohort program designed to transform students into job-ready software engineers and makers.",
+        keywords: "Nano Degree, Inovus Labs Cohort, Web Engineering, Practical Skills, Student Upskilling Kerala",
+        ogType: "website"
+      }
     },
     {
       path: '/buggy',
       name: 'BuggyNews',
       component: BuggyNews,
-      meta: { title: 'BuggyNews' }
+      meta: {
+        title: 'BuggyNews',
+        description: "BuggyNews: Tech highlights, student developer insights, open-source discoveries, and curated engineering news from Inovus Labs.",
+        keywords: "BuggyNews, Inovus News, Tech Newsletter, Student Developer Stories, Engineering Highlights",
+        ogType: "website"
+      }
     },
     {
       path: '/news',
       name: 'news',
       component: NewsView,
-      meta: { title: 'News' }
+      meta: {
+        title: 'News & Press',
+        description: "Official press releases, media coverage, awards, and milestones achieved by Inovus Labs IEDC and its student founders.",
+        keywords: "Inovus Labs News, Press Coverage, Startup Awards, College Milestones, Tech Announcements",
+        ogType: "website"
+      }
     },
     {
       path: '/reports',
       name: 'reports',
       component: ReportsView,
-      meta: { title: 'Reports' }
+      meta: {
+        title: 'Annual & Activity Reports',
+        description: "Access transparent annual reports, metric reviews, and comprehensive activity documentation of Inovus Labs IEDC.",
+        keywords: "Inovus Labs Reports, Annual Report, Activity Documentation, IEDC Kerala Audits",
+        ogType: "website"
+      }
     },
 
     {
       path: '/iot-lab',
       name: 'iot-lab',
       component: MiniIotLabView,
-      meta: { title: 'IoT Lab' }
+      meta: {
+        title: 'Mini IoT Lab',
+        description: "Explore the Inovus Labs Mini IoT Lab: A dedicated maker hardware space featuring microcontrollers, sensors, 3D prototyping, and development boards.",
+        keywords: "Mini IoT Lab, Hardware Prototyping, Arduino, ESP32, Raspberry Pi, Sensors Kerala, Maker Lab",
+        ogType: "website"
+      }
     },
     {
       path: '/projects',
       name: 'project',
       component: ProjectView,
-      meta: { title: 'Projects' }
+      meta: {
+        title: 'Student Projects & Inventions',
+        description: "Showcase of innovative hardware prototypes, web applications, and software tools built by student makers at Inovus Labs.",
+        keywords: "Inovus Projects, Student Innovations, Hardware MVPs, Open Source Projects, College Tech Inventions",
+        ogType: "website"
+      }
     },
     {
       path: '/reccuring-events',
       name: 'reccuring-events',
       component: ReccuringEventsView,
-      meta: { title: 'Reccuring Events' }
+      meta: {
+        title: 'Recurring Events',
+        description: "Regular weekly coding meetups, hardware tinkering circles, and community building sessions conducted by Inovus Labs.",
+        keywords: "Recurring Events, Weekly Coding Sprints, Maker Circles, Regular Workshops, Inovus Community",
+        ogType: "website"
+      }
     },
     {
       path: '/outreach',
       name: 'outreach',
       component: OutreachView,
-      meta: { title: 'Outreach Programs' }
+      meta: {
+        title: 'Outreach Programs',
+        description: "Social impact programs, digital literacy initiatives, and school workshops conducted by Inovus Labs to democratize technology education.",
+        keywords: "Outreach Programs, Social Innovation, School Tech Workshops, Community Service Kerala, Inovus Outreach",
+        ogType: "website"
+      }
     },
     {
       path: '/blog',
       name: 'blog',
       component: BlogView,
-      meta: { title: 'Blogs' }
+      meta: {
+        title: 'Blogs & Insights',
+        description: "Read technical articles, engineering guides, thought leadership, and maker reflections written by students and mentors at Inovus Labs.",
+        keywords: "Inovus Labs Blog, Tech Articles, Maker Guides, Student Perspectives, Engineering Insights",
+        ogType: "article"
+      }
     },
     {
       path: '/inora',
       name: 'inora',
       component: PodcastView,
-      meta: { title: 'Inora' }
+      meta: {
+        title: 'Inora Podcast',
+        description: "Listen to Inora, the flagship podcast by Inovus Labs exploring dialogues with passionate technologists, founders, and innovators.",
+        keywords: "Inora Podcast, Inovus Podcast, Tech Dialogues, Student Founders, Entrepreneurship Audio",
+        ogType: "website"
+      }
     },
 
     {
       path: '/now',
       name: 'now',
       component: NowView,
-      meta: { title: 'Now' }
+      meta: {
+        title: 'Now',
+        description: "What Inovus Labs is actively working on right now — current cohorts, upcoming hackathons, ongoing prototyping sprints, and focus areas.",
+        keywords: "Inovus Now, Active Sprints, What We Are Doing Now, Current Initiatives",
+        ogType: "website"
+      }
     },
 
     // Contact page
@@ -160,7 +246,12 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView,
-      meta: { title: 'Contact' }
+      meta: {
+        title: 'Contact Us',
+        description: "Get in touch with Inovus Labs IEDC at Kristu Jyoti College of Management & Technology, Changanassery, Kerala. Email: info@inovuslabs.org | Tel: +91 94000 57152.",
+        keywords: "Contact Inovus Labs, Address, Phone, Email, Kristu Jyoti College Changanassery Kerala",
+        ogType: "website"
+      }
     },
 
     // Resources page
@@ -168,39 +259,96 @@ const router = createRouter({
       path: '/resources',
       name: 'resources',
       component: ResourcesView,
-      meta: { title: 'Resources' }
+      meta: {
+        title: 'Resources & Inventory',
+        description: "Curated learning roadmaps, developer documentation, hardware component stock lists, and toolkits for student creators.",
+        keywords: "Inovus Resources, Hardware Stock, Microcontroller Inventory, Maker Toolkits, Learning Guides",
+        ogType: "website"
+      }
     },
 
-    // Contact page
+    // Guidelines page
     {
       path: '/iedc-guidelines',
       name: 'iedc-guidelines',
       component: GuidelinesView,
-      meta: { title: 'IEDC Guidelines' }
+      meta: {
+        title: 'IEDC Guidelines & Policies',
+        description: "Official guidelines, funding norms, student eligibility criteria, and operational policies for Inovus Labs IEDC.",
+        keywords: "IEDC Guidelines, Kerala Startup Mission Policies, Student Startup Norms, Innovation Rules",
+        ogType: "website"
+      }
     },
 
     {
       path: '/:pathMatch(.*)*',
       name: '404',
       component: NotFoundView,
-      meta: { title: '404' }
+      meta: {
+        title: '404 - Page Not Found',
+        description: "The page you are looking for does not exist. Return to the Inovus Labs IEDC homepage.",
+        ogType: "website"
+      }
     },
-
-    // Maintainance page
-    // {
-    //   path: '/',
-    //   name: 'maintainance',
-    //   component: MaintainanceView,
-    //   meta: { title: 'Maintainance' }
-    // },
   ]
 })
 
 
-// Change page title on route change
-router.beforeEach((to, from, next) => {
-  document.title = `${to.meta.title} - Inovus Labs IEDC` || 'Inovus Labs IEDC'
-  next()
+// Synchronize document title, canonical link, OpenGraph, Twitter, and meta tags dynamically
+router.afterEach((to) => {
+  const pageTitle = to.meta && to.meta.title
+    ? `${to.meta.title} - Inovus Labs IEDC`
+    : "Inovus Labs IEDC - Sparking Tomorrow's Innovations"
+  document.title = pageTitle
+
+  const description = to.meta && to.meta.description
+    ? to.meta.description
+    : "Inovus Labs IEDC is the innovation and maker hub at Kristu Jyoti College of Management & Technology (KJCMT), Changanassery, Kerala."
+
+  let descMeta = document.querySelector('meta[name="description"]')
+  if (!descMeta) {
+    descMeta = document.createElement('meta')
+    descMeta.setAttribute('name', 'description')
+    document.head.appendChild(descMeta)
+  }
+  descMeta.setAttribute('content', description)
+
+  if (to.meta && to.meta.keywords) {
+    let kwMeta = document.querySelector('meta[name="keywords"]')
+    if (!kwMeta) {
+      kwMeta = document.createElement('meta')
+      kwMeta.setAttribute('name', 'keywords')
+      document.head.appendChild(kwMeta)
+    }
+    kwMeta.setAttribute('content', to.meta.keywords)
+  }
+
+  const canonicalUrl = `https://inovuslabs.org${to.path === '/' ? '' : to.path}`
+  let canonical = document.querySelector('link[rel="canonical"]')
+  if (!canonical) {
+    canonical = document.createElement('link')
+    canonical.setAttribute('rel', 'canonical')
+    document.head.appendChild(canonical)
+  }
+  canonical.setAttribute('href', canonicalUrl)
+
+  const updateMeta = (attr, key, content) => {
+    let el = document.querySelector(`meta[${attr}="${key}"]`)
+    if (!el) {
+      el = document.createElement('meta')
+      el.setAttribute(attr, key)
+      document.head.appendChild(el)
+    }
+    el.setAttribute('content', content)
+  }
+
+  updateMeta('property', 'og:title', pageTitle)
+  updateMeta('property', 'og:description', description)
+  updateMeta('property', 'og:url', canonicalUrl)
+  updateMeta('property', 'og:type', (to.meta && to.meta.ogType) || 'website')
+
+  updateMeta('name', 'twitter:title', pageTitle)
+  updateMeta('name', 'twitter:description', description)
 })
 
 

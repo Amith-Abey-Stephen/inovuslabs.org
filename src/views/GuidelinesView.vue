@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/3 py-4 lg:py-20">
-                <img class="w-full h-full" src="https://storage.googleapis.com/inovuslabs-cdn.appspot.com/assets/illustrations/Guideline main animated.svg" alt="Guidelines" />
+                <img class="w-full h-full" :src="$cdn_base_url + '/assets/illustrations/Guideline main animated.svg'" alt="Guidelines" />
             </div>
             
         </div>
@@ -73,8 +73,7 @@
 <script>
     import Guidelines from "@/components/Guidelines.vue";
     import PublicLayout from "@/layouts/PublicLayout.vue";
-
-    const BASE_URL = "https://storage.googleapis.com/inovuslabs-cdn.appspot.com";
+    import { CDN_BASE_URL as BASE_URL } from "@/API/index.js";
 
     export default {
         name: 'GuidelinesView',
