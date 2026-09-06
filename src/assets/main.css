@@ -2,6 +2,8 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 
+@variant dark (&:not(*));
+
 @theme {
   --color-bgPrimary: #F3F4F6;
   --color-bg-primary: #F3F4F6;
@@ -16,4 +18,4 @@
   --color-bg-white: #FFFFFF;
   --color-footercolor: #111828;
   --color-footer-color: #111828;
-}
+}
